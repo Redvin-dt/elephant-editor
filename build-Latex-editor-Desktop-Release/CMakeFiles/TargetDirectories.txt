@@ -1,0 +1,8 @@
+/home/pavel/HSE project/main_project_folder/build-Latex-editor-Desktop-Release/CMakeFiles/Latex-editor.dir
+/home/pavel/HSE project/main_project_folder/build-Latex-editor-Desktop-Release/CMakeFiles/edit_cache.dir
+/home/pavel/HSE project/main_project_folder/build-Latex-editor-Desktop-Release/CMakeFiles/rebuild_cache.dir
+/home/pavel/HSE project/main_project_folder/build-Latex-editor-Desktop-Release/CMakeFiles/list_install_components.dir
+/home/pavel/HSE project/main_project_folder/build-Latex-editor-Desktop-Release/CMakeFiles/install.dir
+/home/pavel/HSE project/main_project_folder/build-Latex-editor-Desktop-Release/CMakeFiles/install/local.dir
+/home/pavel/HSE project/main_project_folder/build-Latex-editor-Desktop-Release/CMakeFiles/install/strip.dir
+/home/pavel/HSE project/main_project_folder/build-Latex-editor-Desktop-Release/CMakeFiles/Latex-editor_autogen.dir
