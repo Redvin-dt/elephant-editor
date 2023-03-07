@@ -19,6 +19,10 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        CodeEditor.cpp
+        CodeEditor.h
+        LineNumberArea.cpp
+        LineNumberArea.h
         ${TS_FILES}
 )
 
