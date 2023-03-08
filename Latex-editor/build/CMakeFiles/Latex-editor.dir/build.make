@@ -76,6 +76,7 @@ include CMakeFiles/Latex-editor.dir/flags.make
 ../Latex-editor_en_US.ts: ../SyntaxStyle.cpp
 ../Latex-editor_en_US.ts: ../SyntaxStyle.h
 ../Latex-editor_en_US.ts: CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+../Latex-editor_en_US.ts: Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp
 ../Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_CodeEditor.cpp
 ../Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp
 ../Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_SyntaxStyle.cpp

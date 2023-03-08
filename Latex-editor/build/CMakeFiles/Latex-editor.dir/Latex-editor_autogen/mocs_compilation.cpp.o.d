@@ -292,18 +292,19 @@ CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
  /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp \
  /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/../../../LineNumberArea.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
- /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_SyntaxStyle.cpp \
  /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/../../../SyntaxStyle.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCharFormat \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
+ /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_SyntaxStyle.cpp \
+ /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/../../../SyntaxStyle.h \
  /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_mainwindow.cpp \
  /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/../../../mainwindow.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \

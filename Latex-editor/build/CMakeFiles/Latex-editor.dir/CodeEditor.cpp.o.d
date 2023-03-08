@@ -292,16 +292,26 @@ CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
  /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/LineNumberArea.h \
+ /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCharFormat \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QFontDatabase \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontdatabase.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCursor \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextDocument \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMimeData \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmimedata.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QRect \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QSignalBlocker \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextBlock \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextobject.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextlayout.h \
@@ -315,9 +325,14 @@ CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qglyphrun.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrawfont.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontdatabase.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QRect \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QList \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QMimeData \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qmimedata.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCursor \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextDocument \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QAbstractTextDocumentLayout \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qabstracttextdocumentlayout.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QScrollBar \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qscrollbar.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractslider.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QPalette \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h

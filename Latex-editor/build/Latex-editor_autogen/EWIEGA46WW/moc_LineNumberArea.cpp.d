@@ -1,5 +1,6 @@
 /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp: /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/LineNumberArea.h \
   /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/moc_predefs.h \
+  /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/assert.h \
@@ -235,6 +236,9 @@
   /usr/include/x86_64-linux-gnu/c++/12/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
@@ -259,6 +263,7 @@
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
@@ -288,9 +293,11 @@
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCharFormat \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
@@ -302,12 +309,15 @@
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \

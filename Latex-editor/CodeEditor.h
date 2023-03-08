@@ -137,8 +137,8 @@ private:
   int getIndentationSpaces();
 
   StyleSyntaxHighlighter *m_highlighter;
-  SyntaxStyle *m_syntaxStyle;
-  LineNumberArea *m_lineNumberArea;
+  SyntaxStyle *m_syntax_style;
+  LineNumberArea *m_line_number_area;
   Completer *m_completer;
 
   FramedTextAttribute *m_framedAttribute;

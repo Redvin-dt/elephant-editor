@@ -1,10 +1,12 @@
 #ifndef LINENUMBERAREA_H
 #define LINENUMBERAREA_H
 
+#include "SyntaxStyle.h"
+
 #include <QWidget>
 
 class CodeEditor;
-class SyntaxStyle;
+// class SyntaxStyle;
 
 class LineNumberArea : public QWidget {
   Q_OBJECT
@@ -26,8 +28,8 @@ protected:
   void paintEvent(QPaintEvent *event) override;
 
 private:
-  CodeEditor *code_editor;
-  SyntaxStyle *syntax_style;
+  CodeEditor *m_code_editor;
+  SyntaxStyle *m_syntax_style;
 };
 
 #endif // LINENUMBERAREA_H

@@ -2,10 +2,9 @@ CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o: \
  /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.cpp \
  /usr/include/stdc-predef.h \
  /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
  /usr/include/c++/12/type_traits \
  /usr/include/x86_64-linux-gnu/c++/12/bits/c++config.h \
@@ -101,13 +100,16 @@ CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
  /usr/include/string.h /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
  /usr/include/c++/12/stdlib.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
  /usr/include/c++/12/string /usr/include/c++/12/bits/stringfwd.h \
@@ -183,10 +185,6 @@ CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringliteral.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringview.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h \
  /usr/include/c++/12/numeric /usr/include/c++/12/bits/stl_numeric.h \
  /usr/include/c++/12/bit /usr/include/c++/12/pstl/glue_numeric_defs.h \
@@ -223,21 +221,23 @@ CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h \
+ /usr/include/c++/12/map /usr/include/c++/12/bits/stl_tree.h \
+ /usr/include/c++/12/bits/stl_map.h \
+ /usr/include/c++/12/bits/stl_multimap.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
- /usr/include/c++/12/map /usr/include/c++/12/bits/stl_tree.h \
- /usr/include/c++/12/bits/stl_map.h \
- /usr/include/c++/12/bits/stl_multimap.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h \
  /usr/include/c++/12/chrono /usr/include/c++/12/bits/chrono.h \
  /usr/include/c++/12/ratio /usr/include/c++/12/limits \
  /usr/include/c++/12/ctime /usr/include/c++/12/bits/parse_numbers.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCharFormat \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
@@ -282,18 +282,18 @@ CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QXmlStreamReader \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qxmlstream.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QColor \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QColor \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QFont \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QXmlStreamReader \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qxmlstream.h

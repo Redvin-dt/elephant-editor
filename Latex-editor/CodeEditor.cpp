@@ -1,5 +1,6 @@
 #include "CodeEditor.h"
 #include "LineNumberArea.h"
+#include "SyntaxStyle.h"
 
 // TODO ADD MISSING INCLUDES ASPETIALY FOR MY CLASSES
 
@@ -12,13 +13,16 @@
 #include <QTextCursor>
 #include <QTextDocument>
 #include <QTextEdit>
+#include <QAbstractTextDocumentLayout>
+#include <QScrollBar>
+#include <QPalette>
 
 CodeEditor::CodeEditor(QWidget *parent)
     : QTextEdit(parent),
 
       // m_highlighter(nullptr),
-      // m_syntaxStyle(nullptr),
-      m_lineNumberArea(new LineNumberArea(this)),
+      m_syntax_style(nullptr),
+      m_line_number_area(new LineNumberArea(this)),
       // m_completer(nullptr),
       // m_framedAttribute(new QFramedTextAttribute(this)),
 
@@ -28,18 +32,18 @@ CodeEditor::CodeEditor(QWidget *parent)
   initFont();
   performConnections();
 
-  // setSyntaxStyle(SyntaxStyle::defaultStyle());
+  setSyntaxStyle(SyntaxStyle::defaultStyle());
 }
 
 void CodeEditor::initDocumentLayoutHandlers() {
   // TODO
 
-  // document()
-  //     ->documentLayout()
-  //     ->registerHandler(
-  //         QFramedTextAttribute::type(),
-  //         m_framedAttribute
-  //     );
+//   document()
+//       ->documentLayout()
+//       ->registerHandler(
+//           QFramedTextAttribute::type(),
+//           m_framedAttribute
+//       );
 }
 
 void CodeEditor::initFont() {
@@ -51,24 +55,20 @@ void CodeEditor::initFont() {
 }
 
 void CodeEditor::performConnections() {
-  /* connect(document(), &QTextDocument::blockCountChanged, this,
-          &CodeEditor::updateLineNumberAreaWidth); */
+    connect(document(), &QTextDocument::blockCountChanged, this,
+        &CodeEditor::updateLineNumberAreaWidth);
 
-  // TODO deal with document in TEXT_EDIT
-
-  /* connect(
+    connect(
       verticalScrollBar(),
       &QScrollBar::valueChanged,
       [this](int){ m_line_number_area->update(); }
-  ); */
+    );
 
-  // TODO deal with verticalScrolBar();
+    connect(this, &QTextEdit::cursorPositionChanged, this,
+        &CodeEditor::updateExtraSelection);
 
-  connect(this, &QTextEdit::cursorPositionChanged, this,
-          &CodeEditor::updateExtraSelection);
-
-  connect(this, &QTextEdit::selectionChanged, this,
-          &CodeEditor::onSelectionChanged);
+    connect(this, &QTextEdit::selectionChanged, this,
+        &CodeEditor::onSelectionChanged);
 }
 
 void CodeEditor::setSyntaxHighlighter(StyleSyntaxHighlighter *higlighter) {
@@ -76,11 +76,50 @@ void CodeEditor::setSyntaxHighlighter(StyleSyntaxHighlighter *higlighter) {
 }
 
 void CodeEditor::setSyntaxStyle(SyntaxStyle *style) {
-  // TODO
+    m_syntax_style = style;
+
+    //m_framedAttribute->setSyntaxStyle(m_syntaxStyle);
+    m_line_number_area->setSyntaxStyle(m_syntax_style);
+ 
+    /*if (m_highlighter)
+    {
+        m_highlighter->setSyntaxStyle(m_syntaxStyle);
+    } */
+
+    updateStyle();
 }
 
 void CodeEditor::updateStyle() {
-  // TODO
+
+    /* if (m_highlighter){
+        m_highlighter->rehighlit();
+    } */
+
+    if (m_syntax_style){
+        auto currentPalette = palette();
+
+        // Setting text format/color
+        currentPalette.setColor(
+            QPalette::ColorRole::Text,
+            m_syntax_style->getFormat("Text").foreground().color()
+        );
+
+        // Setting common background
+        currentPalette.setColor(
+            QPalette::Base,
+            m_syntax_style->getFormat("Text").background().color()
+        );
+
+        // Setting selection color
+        currentPalette.setColor(
+            QPalette::Highlight,
+            m_syntax_style->getFormat("Selection").background().color()
+        );
+
+        setPalette(currentPalette);
+    }
+
+    updateExtraSelection();
 }
 
 void CodeEditor::updateExtraSelection() {
@@ -89,7 +128,7 @@ void CodeEditor::updateExtraSelection() {
   highlightCurrentLine(extra);
   highlightParenthesis(extra);
 
-  setExtraSelections(extra);
+  //TODO ADD WHEN TWO UPPER THINGS WILL BE READY setExtraSelections(extra);
 }
 
 void CodeEditor::onSelectionChanged() {
@@ -128,33 +167,32 @@ void CodeEditor::resizeEvent(QResizeEvent *e) {
 }
 
 void CodeEditor::updateLineGeometry() {
-  /* QRect cr = contentsRect();
-  m_lineNumberArea->setGeometry(
-      QRect(cr.left(),
+    QRect cr = contentsRect();
+    m_line_number_area->setGeometry(
+        QRect(cr.left(),
             cr.top(),
-            m_lineNumberArea->sizeHint().width(),
+            m_line_number_area->sizeHint().width(),
             cr.height()
-      )
-  ); UDATE LINE GEOMETRY BUT HOW? */
+        )
+    );
 }
 
 void CodeEditor::updateLineNumberAreaWidth(int) {
-  // setViewportMargins(m_lineNumberArea->sizeHint().width(), 0, 0, 0);
+    setViewportMargins(m_line_number_area->sizeHint().width(), 0, 0, 0);
 }
 
 void CodeEditor::updateLineNumberArea(const QRect &rect) {
-  /* m_lineNumberArea->update(
-      0,
-      rect.y(),
-      m_lineNumberArea->sizeHint().width(),
-      rect.height()
-  );
-  updateLineGeometry();
+    m_line_number_area->update(
+        0,
+        rect.y(),
+        m_line_number_area->sizeHint().width(),
+        rect.height()
+    );
+    updateLineGeometry();
 
-  if (rect.contains(viewport()->rect()))
-  {
-      updateLineNumberAreaWidth(0);
-  } */
+    if (rect.contains(viewport()->rect())){
+        updateLineNumberAreaWidth(0);
+    } 
 }
 
 void CodeEditor::handleSelectionQuery(QTextCursor cursor) {
@@ -181,13 +219,29 @@ void CodeEditor::highlightCurrentLine(
 }
 
 void CodeEditor::paintEvent(QPaintEvent *e) {
-  // updateLineNumberArea(e->rect()); DO THIS
-  QTextEdit::paintEvent(e);
+    updateLineNumberArea(e->rect());
+    QTextEdit::paintEvent(e);
 }
 
 int CodeEditor::getFirstVisibleBlock() {
-  // TODO SOME GEOMETRY MAGICK
-  return 0;
+  
+
+    QTextCursor cursor = QTextCursor(document());
+
+    for (std::size_t index = 0; index < document()->blockCount(); index++){
+        QTextBlock block = cursor.block();
+
+        QRect first = viewport()->geometry();
+        QRect second = document()->documentLayout()->blockBoundingRect(block).translated(viewport()->geometry().x(), viewport()->geometry().y() - verticalScrollBar()->sliderPosition()).toRect();
+
+        if (first.intersects(second)){
+            return index;
+        }
+
+        cursor.movePosition(QTextCursor::NextBlock);
+    }
+
+    return 0;
 }
 
 bool CodeEditor::proceedCompleterBegin(QKeyEvent *e) {

@@ -45,6 +45,7 @@ set(OLD_GLOB
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/LineNumberArea.cpp"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.cpp"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_CodeEditor.cpp"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_SyntaxStyle.cpp"
