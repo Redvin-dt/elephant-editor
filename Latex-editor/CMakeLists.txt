@@ -11,6 +11,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 set(TS_FILES Latex-editor_en_US.ts)
 
@@ -54,6 +56,8 @@ else()
 endif()
 
 target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Gui)
+target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 
 set_target_properties(Latex-editor PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
