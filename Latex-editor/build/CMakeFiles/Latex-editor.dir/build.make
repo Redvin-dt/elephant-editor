@@ -73,18 +73,39 @@ include CMakeFiles/Latex-editor.dir/flags.make
 ../Latex-editor_en_US.ts: ../CodeEditor.h
 ../Latex-editor_en_US.ts: ../LineNumberArea.cpp
 ../Latex-editor_en_US.ts: ../LineNumberArea.h
+../Latex-editor_en_US.ts: ../SyntaxStyle.cpp
+../Latex-editor_en_US.ts: ../SyntaxStyle.h
 ../Latex-editor_en_US.ts: CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp
+../Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_CodeEditor.cpp
+../Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp
+../Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_SyntaxStyle.cpp
+../Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_mainwindow.cpp
+../Latex-editor_en_US.ts: Latex-editor_autogen/include/ui_mainwindow.h
+../Latex-editor_en_US.ts: Latex-editor_autogen/moc_predefs.h
+../Latex-editor_en_US.ts: Latex-editor_autogen/mocs_compilation.cpp
 ../Latex-editor_en_US.ts: ../main.cpp
 ../Latex-editor_en_US.ts: ../mainwindow.cpp
 ../Latex-editor_en_US.ts: ../mainwindow.h
 ../Latex-editor_en_US.ts: ../mainwindow.ui
+../Latex-editor_en_US.ts: ../resources/codeeditor_resources.qrc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating ../Latex-editor_en_US.ts"
 	/usr/lib/qt5/bin/lupdate "@/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/Latex-editor_en_US.ts_lst_file" -ts "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/Latex-editor_en_US.ts"
+
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp: ../resources/codeeditor_resources.qrc
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp: CMakeFiles/Latex-editor_autogen.dir/AutoRcc_codeeditor_resources_3YJK5W5UP7_Info.json
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp: ../resources/default_style.xml
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp: ../resources/languages/python.xml
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp: ../resources/languages/lua.xml
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp: ../resources/languages/cpp.xml
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp: ../resources/languages/glsl.xml
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp: /usr/lib/qt5/bin/rcc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources/codeeditor_resources.qrc"
+	/usr/bin/cmake -E cmake_autorcc /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/Latex-editor_autogen.dir/AutoRcc_codeeditor_resources_3YJK5W5UP7_Info.json Debug
 
 CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o: CMakeFiles/Latex-editor.dir/flags.make
 CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o: Latex-editor_autogen/mocs_compilation.cpp
 CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o: CMakeFiles/Latex-editor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o"
 	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o -MF CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o -c "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/mocs_compilation.cpp"
 
 CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.i: cmake_force
@@ -98,7 +119,7 @@ CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.s: cmake_f
 CMakeFiles/Latex-editor.dir/main.cpp.o: CMakeFiles/Latex-editor.dir/flags.make
 CMakeFiles/Latex-editor.dir/main.cpp.o: ../main.cpp
 CMakeFiles/Latex-editor.dir/main.cpp.o: CMakeFiles/Latex-editor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Latex-editor.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Latex-editor.dir/main.cpp.o"
 	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Latex-editor.dir/main.cpp.o -MF CMakeFiles/Latex-editor.dir/main.cpp.o.d -o CMakeFiles/Latex-editor.dir/main.cpp.o -c "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/main.cpp"
 
 CMakeFiles/Latex-editor.dir/main.cpp.i: cmake_force
@@ -112,7 +133,7 @@ CMakeFiles/Latex-editor.dir/main.cpp.s: cmake_force
 CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: CMakeFiles/Latex-editor.dir/flags.make
 CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: ../mainwindow.cpp
 CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: CMakeFiles/Latex-editor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Latex-editor.dir/mainwindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Latex-editor.dir/mainwindow.cpp.o"
 	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Latex-editor.dir/mainwindow.cpp.o -MF CMakeFiles/Latex-editor.dir/mainwindow.cpp.o.d -o CMakeFiles/Latex-editor.dir/mainwindow.cpp.o -c "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/mainwindow.cpp"
 
 CMakeFiles/Latex-editor.dir/mainwindow.cpp.i: cmake_force
@@ -126,7 +147,7 @@ CMakeFiles/Latex-editor.dir/mainwindow.cpp.s: cmake_force
 CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o: CMakeFiles/Latex-editor.dir/flags.make
 CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o: ../CodeEditor.cpp
 CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o: CMakeFiles/Latex-editor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o"
 	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o -MF CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o.d -o CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o -c "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/CodeEditor.cpp"
 
 CMakeFiles/Latex-editor.dir/CodeEditor.cpp.i: cmake_force
@@ -137,10 +158,24 @@ CMakeFiles/Latex-editor.dir/CodeEditor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Latex-editor.dir/CodeEditor.cpp.s"
 	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/CodeEditor.cpp" -o CMakeFiles/Latex-editor.dir/CodeEditor.cpp.s
 
+CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o: CMakeFiles/Latex-editor.dir/flags.make
+CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o: ../SyntaxStyle.cpp
+CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o: CMakeFiles/Latex-editor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o"
+	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o -MF CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o.d -o CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o -c "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.cpp"
+
+CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.i"
+	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.cpp" > CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.i
+
+CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.s"
+	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.cpp" -o CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.s
+
 CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o: CMakeFiles/Latex-editor.dir/flags.make
 CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o: ../LineNumberArea.cpp
 CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o: CMakeFiles/Latex-editor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o"
 	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o -MF CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o.d -o CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o -c "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/LineNumberArea.cpp"
 
 CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.i: cmake_force
@@ -151,13 +186,29 @@ CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.s"
 	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/LineNumberArea.cpp" -o CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.s
 
+CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o: CMakeFiles/Latex-editor.dir/flags.make
+CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o: Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp
+CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o: CMakeFiles/Latex-editor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o"
+	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o -MF CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o.d -o CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o -c "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp"
+
+CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.i"
+	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp" > CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.i
+
+CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.s"
+	/usr/bin/g++-12 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp" -o CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.s
+
 # Object files for target Latex-editor
 Latex__editor_OBJECTS = \
 "CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/Latex-editor.dir/main.cpp.o" \
 "CMakeFiles/Latex-editor.dir/mainwindow.cpp.o" \
 "CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o" \
-"CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o"
+"CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o" \
+"CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o" \
+"CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o"
 
 # External object files for target Latex-editor
 Latex__editor_EXTERNAL_OBJECTS =
@@ -166,13 +217,15 @@ Latex-editor: CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.
 Latex-editor: CMakeFiles/Latex-editor.dir/main.cpp.o
 Latex-editor: CMakeFiles/Latex-editor.dir/mainwindow.cpp.o
 Latex-editor: CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o
+Latex-editor: CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o
 Latex-editor: CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o
+Latex-editor: CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o
 Latex-editor: CMakeFiles/Latex-editor.dir/build.make
 Latex-editor: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3
 Latex-editor: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.3
 Latex-editor: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.3
 Latex-editor: CMakeFiles/Latex-editor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Latex-editor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Latex-editor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Latex-editor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -184,6 +237,7 @@ CMakeFiles/Latex-editor.dir/clean:
 .PHONY : CMakeFiles/Latex-editor.dir/clean
 
 CMakeFiles/Latex-editor.dir/depend: ../Latex-editor_en_US.ts
+CMakeFiles/Latex-editor.dir/depend: Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp
 	cd "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor" "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor" "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build" "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build" "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/Latex-editor.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Latex-editor.dir/depend
 

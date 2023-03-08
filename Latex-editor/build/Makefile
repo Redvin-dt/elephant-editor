@@ -212,6 +212,30 @@ CodeEditor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/CodeEditor.cpp.s
 .PHONY : CodeEditor.cpp.s
 
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.o: Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o
+.PHONY : Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.o
+
+# target to build an object file
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o
+.PHONY : Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o
+
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.i: Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.i
+.PHONY : Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.i
+
+# target to preprocess a source file
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.i
+.PHONY : Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.i
+
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.s: Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.s
+.PHONY : Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.s
+
+# target to generate assembly for a file
+Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.s
+.PHONY : Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.s
+
 Latex-editor_autogen/mocs_compilation.o: Latex-editor_autogen/mocs_compilation.cpp.o
 .PHONY : Latex-editor_autogen/mocs_compilation.o
 
@@ -259,6 +283,30 @@ LineNumberArea.s: LineNumberArea.cpp.s
 LineNumberArea.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.s
 .PHONY : LineNumberArea.cpp.s
+
+SyntaxStyle.o: SyntaxStyle.cpp.o
+.PHONY : SyntaxStyle.o
+
+# target to build an object file
+SyntaxStyle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o
+.PHONY : SyntaxStyle.cpp.o
+
+SyntaxStyle.i: SyntaxStyle.cpp.i
+.PHONY : SyntaxStyle.i
+
+# target to preprocess a source file
+SyntaxStyle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.i
+.PHONY : SyntaxStyle.cpp.i
+
+SyntaxStyle.s: SyntaxStyle.cpp.s
+.PHONY : SyntaxStyle.s
+
+# target to generate assembly for a file
+SyntaxStyle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.s
+.PHONY : SyntaxStyle.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -325,12 +373,18 @@ help:
 	@echo "... CodeEditor.o"
 	@echo "... CodeEditor.i"
 	@echo "... CodeEditor.s"
+	@echo "... Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.o"
+	@echo "... Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.i"
+	@echo "... Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.s"
 	@echo "... Latex-editor_autogen/mocs_compilation.o"
 	@echo "... Latex-editor_autogen/mocs_compilation.i"
 	@echo "... Latex-editor_autogen/mocs_compilation.s"
 	@echo "... LineNumberArea.o"
 	@echo "... LineNumberArea.i"
 	@echo "... LineNumberArea.s"
+	@echo "... SyntaxStyle.o"
+	@echo "... SyntaxStyle.i"
+	@echo "... SyntaxStyle.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

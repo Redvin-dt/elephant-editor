@@ -1,16 +1,17 @@
 #include "CodeEditor.h"
 #include "LineNumberArea.h"
 
-//TODO ADD MISSING INCLUDES ASPETIALY FOR MY CLASSES
+// TODO ADD MISSING INCLUDES ASPETIALY FOR MY CLASSES
 
 #include <QFontDatabase>
-#include <QTextEdit>
-#include <QTextCursor>
-#include <QTextDocument>
-#include <QSignalBlocker>
-#include <QRect>
 #include <QList>
 #include <QMimeData>
+#include <QRect>
+#include <QSignalBlocker>
+#include <QTextBlock>
+#include <QTextCursor>
+#include <QTextDocument>
+#include <QTextEdit>
 
 CodeEditor::CodeEditor(QWidget *parent)
     : QTextEdit(parent),
@@ -53,240 +54,220 @@ void CodeEditor::performConnections() {
   /* connect(document(), &QTextDocument::blockCountChanged, this,
           &CodeEditor::updateLineNumberAreaWidth); */
 
-    // TODO deal with document in TEXT_EDIT
+  // TODO deal with document in TEXT_EDIT
 
-    /* connect(
-        verticalScrollBar(),
-        &QScrollBar::valueChanged,
-        [this](int){ m_line_number_area->update(); }
-    ); */
+  /* connect(
+      verticalScrollBar(),
+      &QScrollBar::valueChanged,
+      [this](int){ m_line_number_area->update(); }
+  ); */
 
-    //TODO deal with verticalScrolBar();
+  // TODO deal with verticalScrolBar();
 
-    connect(this, &QTextEdit::cursorPositionChanged, this, &CodeEditor::updateExtraSelection);
+  connect(this, &QTextEdit::cursorPositionChanged, this,
+          &CodeEditor::updateExtraSelection);
 
-    connect(this, &QTextEdit::selectionChanged, this, &CodeEditor::onSelectionChanged);
+  connect(this, &QTextEdit::selectionChanged, this,
+          &CodeEditor::onSelectionChanged);
 }
 
-
-void CodeEditor::setSyntaxHighlighter(StyleSyntaxHighlighter *higlighter){
-    //TODO
+void CodeEditor::setSyntaxHighlighter(StyleSyntaxHighlighter *higlighter) {
+  // TODO
 }
 
-void CodeEditor::setSyntaxStyle(SyntaxStyle *style){
-    //TODO
+void CodeEditor::setSyntaxStyle(SyntaxStyle *style) {
+  // TODO
 }
 
-void CodeEditor::updateStyle(){
-    //TODO
+void CodeEditor::updateStyle() {
+  // TODO
 }
 
-void CodeEditor::onSelectionChanged(){
-    auto selected = textCursor().selectedText();
+void CodeEditor::updateExtraSelection() {
+  QList<QTextEdit::ExtraSelection> extra;
 
-    auto cursor = textCursor();
+  highlightCurrentLine(extra);
+  highlightParenthesis(extra);
 
-    // Cursor is null if setPlainText was called. UNDERSTAND THIS
-    if (cursor.isNull()){
-        return;
-    }
-
-    // Move left and select word?
-    cursor.movePosition(QTextCursor::MoveOperation::Left);
-    cursor.select(QTextCursor::SelectionType::WordUnderCursor);
-
-    //block signals
-    QSignalBlocker blocker(this);
-    // m_framedAttribute->clear(cursor); DEAL WITH IT
-
-    // check if we stay on selected text?
-    if (selected.size() > 1 && cursor.selectedText() == selected){
-        auto backup = textCursor();
-
-        // Perform search selecting UNDERSTAND
-        //handleSelectionQuery(cursor);
-
-        //return cursor on firs position
-        setTextCursor(backup);
-    }
+  setExtraSelections(extra);
 }
 
+void CodeEditor::onSelectionChanged() {
+  auto selected = textCursor().selectedText();
 
-void CodeEditor::resizeEvent(QResizeEvent* e)
-{
-    QTextEdit::resizeEvent(e);
-    updateLineGeometry();
+  auto cursor = textCursor();
+
+  // Cursor is null if setPlainText was called. UNDERSTAND THIS
+  if (cursor.isNull()) {
+    return;
+  }
+
+  // Move left and select word?
+  cursor.movePosition(QTextCursor::MoveOperation::Left);
+  cursor.select(QTextCursor::SelectionType::WordUnderCursor);
+
+  // block signals
+  QSignalBlocker blocker(this);
+  // m_framedAttribute->clear(cursor); DEAL WITH IT
+
+  // check if we stay on selected text?
+  if (selected.size() > 1 && cursor.selectedText() == selected) {
+    auto backup = textCursor();
+
+    // Perform search selecting UNDERSTAND
+    // handleSelectionQuery(cursor);
+
+    // return cursor on firs position
+    setTextCursor(backup);
+  }
 }
 
-void CodeEditor::updateLineGeometry()
-{
-    /* QRect cr = contentsRect();
-    m_lineNumberArea->setGeometry(
-        QRect(cr.left(),
-              cr.top(),
-              m_lineNumberArea->sizeHint().width(),
-              cr.height()
-        )
-    ); UDATE LINE GEOMETRY BUT HOW? */
+void CodeEditor::resizeEvent(QResizeEvent *e) {
+  QTextEdit::resizeEvent(e);
+  updateLineGeometry();
 }
 
-void CodeEditor::updateLineNumberAreaWidth(int){
-    //setViewportMargins(m_lineNumberArea->sizeHint().width(), 0, 0, 0);
-} 
-
-void CodeEditor::updateLineNumberArea(const QRect& rect)
-{
-    /* m_lineNumberArea->update(
-        0,
-        rect.y(),
-        m_lineNumberArea->sizeHint().width(),
-        rect.height()
-    );
-    updateLineGeometry();
-
-    if (rect.contains(viewport()->rect()))
-    {
-        updateLineNumberAreaWidth(0);
-    } */
+void CodeEditor::updateLineGeometry() {
+  /* QRect cr = contentsRect();
+  m_lineNumberArea->setGeometry(
+      QRect(cr.left(),
+            cr.top(),
+            m_lineNumberArea->sizeHint().width(),
+            cr.height()
+      )
+  ); UDATE LINE GEOMETRY BUT HOW? */
 }
 
-void CodeEditor::handleSelectionQuery(QTextCursor cursor)
-{
-
-    /*auto searchIterator = cursor;
-    searchIterator.movePosition(QTextCursor::Start);
-    searchIterator = document()->find(cursor.selectedText(), searchIterator);
-    while (searchIterator.hasSelection())
-    {
-        m_framedAttribute->frame(searchIterator);
-
-        searchIterator = document()->find(cursor.selectedText(), searchIterator);
-    } REALIZE FRAMEDATTRIBUTE TO UNDERSTAND FULL CODE*/
-} 
-
-void CodeEditor::highlightParenthesis(QList<QTextEdit::ExtraSelection>& extraSelection){
-    //TODO
+void CodeEditor::updateLineNumberAreaWidth(int) {
+  // setViewportMargins(m_lineNumberArea->sizeHint().width(), 0, 0, 0);
 }
 
-void CodeEditor::highlightCurrentLine(QList<QTextEdit::ExtraSelection>& extraSelection){
-    //TODO
+void CodeEditor::updateLineNumberArea(const QRect &rect) {
+  /* m_lineNumberArea->update(
+      0,
+      rect.y(),
+      m_lineNumberArea->sizeHint().width(),
+      rect.height()
+  );
+  updateLineGeometry();
+
+  if (rect.contains(viewport()->rect()))
+  {
+      updateLineNumberAreaWidth(0);
+  } */
 }
 
-void CodeEditor::paintEvent(QPaintEvent* e)
-{
-    //updateLineNumberArea(e->rect()); DO THIS
-    QTextEdit::paintEvent(e);
+void CodeEditor::handleSelectionQuery(QTextCursor cursor) {
+
+  /*auto searchIterator = cursor;
+  searchIterator.movePosition(QTextCursor::Start);
+  searchIterator = document()->find(cursor.selectedText(), searchIterator);
+  while (searchIterator.hasSelection())
+  {
+      m_framedAttribute->frame(searchIterator);
+
+      searchIterator = document()->find(cursor.selectedText(), searchIterator);
+  } REALIZE FRAMEDATTRIBUTE TO UNDERSTAND FULL CODE*/
 }
 
-int CodeEditor::getFirstVisibleBlock(){
-    //TODO SOME GEOMETRY MAGICK
+void CodeEditor::highlightParenthesis(
+    QList<QTextEdit::ExtraSelection> &extraSelection) {
+  // TODO
 }
 
-bool CodeEditor::proceedCompleterBegin(QKeyEvent *e)
-{
-   //TODO SOMECOMPLETER STUFF
+void CodeEditor::highlightCurrentLine(
+    QList<QTextEdit::ExtraSelection> &extraSelection) {
+  // TODO
 }
 
-void CodeEditor::proceedCompleterEnd(QKeyEvent *e)
-{
-    //TODO SOME COMPLETER STUFF
+void CodeEditor::paintEvent(QPaintEvent *e) {
+  // updateLineNumberArea(e->rect()); DO THIS
+  QTextEdit::paintEvent(e);
 }
 
-void CodeEditor::keyPressEvent(QKeyEvent *e){
-    //TODO TOO MUCH COMPLETER STUFF
+int CodeEditor::getFirstVisibleBlock() {
+  // TODO SOME GEOMETRY MAGICK
+  return 0;
 }
 
-void CodeEditor::setAutoIndentation(bool enabled)
-{
-    m_auto_indentation = enabled;
+bool CodeEditor::proceedCompleterBegin(QKeyEvent *e) {
+  // TODO SOMECOMPLETER STUFF
+  return false;
 }
 
-bool CodeEditor::autoIndentation() const
-{
-    return m_auto_indentation;
+void CodeEditor::proceedCompleterEnd(QKeyEvent *e) {
+  // TODO SOME COMPLETER STUFF
 }
 
-void CodeEditor::setAutoParentheses(bool enabled)
-{
-    m_auto_parentheses = enabled;
+void CodeEditor::keyPressEvent(QKeyEvent *e) {
+  // TODO TOO MUCH COMPLETER STUFF
 }
 
-bool CodeEditor::isAutoParentheses() const
-{
-    return m_auto_parentheses;
+void CodeEditor::setAutoIndentation(bool enabled) {
+  m_auto_indentation = enabled;
 }
 
-void CodeEditor::setTabReplace(bool enabled)
-{
-    m_replace_tab = enabled;
+bool CodeEditor::autoIndentation() const { return m_auto_indentation; }
+
+void CodeEditor::setAutoParentheses(bool enabled) {
+  m_auto_parentheses = enabled;
 }
 
-bool CodeEditor::tabReplace() const
-{
-    return m_replace_tab;
+bool CodeEditor::isAutoParentheses() const { return m_auto_parentheses; }
+
+void CodeEditor::setTabReplace(bool enabled) { m_replace_tab = enabled; }
+
+bool CodeEditor::tabReplace() const { return m_replace_tab; }
+
+void CodeEditor::setTabReplaceSize(int val) {
+  m_tab_replace.clear();
+
+  m_tab_replace.fill(' ', val);
 }
 
-void CodeEditor::setTabReplaceSize(int val)
-{
-    m_tab_replace.clear();
+int CodeEditor::tabReplaceSize() const { return m_tab_replace.size(); }
 
-    m_tab_replace.fill(' ', val);
+void setCompleter(Completer *completer) {
+  // TODO
 }
 
-int CodeEditor::tabReplaceSize() const
-{
-    return m_tab_replace.size();
+void CodeEditor::focusInEvent(QFocusEvent *e) {
+  // TODO COMPLETER
 }
 
-void setCompleter(Completer *completer){
-    //TODO
+void CodeEditor::insertCompletion(QString s) {
+  // TODO COMPLETER
 }
 
-void CodeEditor::focusInEvent(QFocusEvent *e)
-{
-    //TODO COMPLETER
+Completer *CodeEditor::completer() const { return m_completer; }
+
+QChar CodeEditor::charUnderCursor(int offset) const {
+  auto block = textCursor().blockNumber();
+  auto index = textCursor().positionInBlock();
+  auto text = document()->findBlockByNumber(block).text();
+
+  index += offset;
+
+  if (index < 0 || index >= text.size()) {
+    return {};
+  }
+
+  return text[index];
 }
 
-void CodeEditor::insertCompletion(QString s)
-{
-    //TODO COMPLETER
+QString CodeEditor::wordUnderCursor() const {
+  auto tc = textCursor();
+  tc.select(QTextCursor::WordUnderCursor);
+  return tc.selectedText();
 }
 
-Completer *CodeEditor::completer() const
-{
-    return m_completer;
-}
+// DEAL WITH TWO UPPER FUNCTION
 
-QChar CodeEditor::charUnderCursor(int offset) const
-{
-    auto block = textCursor().blockNumber();
-    auto index = textCursor().positionInBlock();
-    auto text = document()->findBlockByNumber(block).text();
-
-    index += offset;
-
-    if (index < 0 || index >= text.size())
-    {
-        return {};
-    }
-
-    return text[index];
-}
-
-QString CodeEditor::wordUnderCursor() const
-{
-    auto tc = textCursor();
-    tc.select(QTextCursor::WordUnderCursor);
-    return tc.selectedText();
-}
-
-//DEAL WITH TWO UPPER FUNCTION
-
-void CodeEditor::insertFromMimeData(const QMimeData* source)
-{
-    insertPlainText(source->text());
+void CodeEditor::insertFromMimeData(const QMimeData *source) {
+  insertPlainText(source->text());
 } // LIKE BUFFER(ctrl+v)?
 
-int CodeEditor::getIndentationSpaces(){
-    //TODO 
+int CodeEditor::getIndentationSpaces() {
+  // TODO
+  return 0;
 }

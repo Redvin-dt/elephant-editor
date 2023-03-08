@@ -79,7 +79,8 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
-		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake"
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/resources/codeeditor_resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor",
 	"DEP_FILE" : "",
@@ -96,6 +97,12 @@
 			"/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/LineNumberArea.h",
 			"MU",
 			"EWIEGA46WW/moc_LineNumberArea.cpp",
+			null
+		],
+		[
+			"/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.h",
+			"MU",
+			"EWIEGA46WW/moc_SyntaxStyle.cpp",
 			null
 		],
 		[
@@ -162,6 +169,11 @@
 		],
 		[
 			"/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/LineNumberArea.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.cpp",
 			"MU",
 			null
 		],

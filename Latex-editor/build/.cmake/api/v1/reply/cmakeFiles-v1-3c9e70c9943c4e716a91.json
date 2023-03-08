@@ -312,6 +312,9 @@
 		{
 			"isExternal" : true,
 			"path" : "/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake"
+		},
+		{
+			"path" : "resources/codeeditor_resources.qrc"
 		}
 	],
 	"kind" : "cmakeFiles",

@@ -43,7 +43,13 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/pavel/HSE project/main_
 set(OLD_GLOB
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/CodeEditor.cpp"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/LineNumberArea.cpp"
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.cpp"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/3.22.1/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_CodeEditor.cpp"
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp"
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_SyntaxStyle.cpp"
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/EWIEGA46WW/moc_mainwindow.cpp"
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/mocs_compilation.cpp"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/main.cpp"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/mainwindow.cpp"
   )
@@ -66,6 +72,9 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/pavel/HSE project/main_
 set(OLD_GLOB
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/CodeEditor.h"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/LineNumberArea.h"
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/SyntaxStyle.h"
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/include/ui_mainwindow.h"
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/Latex-editor_autogen/moc_predefs.h"
   "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/mainwindow.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
@@ -148,6 +157,7 @@ endif()
 # _directory_contents at /usr/lib/x86_64-linux-gnu/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake:78 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/*.qrc")
 set(OLD_GLOB
+  "/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/resources/codeeditor_resources.qrc"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

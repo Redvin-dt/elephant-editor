@@ -23,6 +23,8 @@ set(PROJECT_SOURCES
         mainwindow.ui
         CodeEditor.cpp
         CodeEditor.h
+        SyntaxStyle.cpp
+        SyntaxStyle.h
         LineNumberArea.cpp
         LineNumberArea.h
         ${TS_FILES}
@@ -43,12 +45,14 @@ else()
     if(ANDROID)
         add_library(Latex-editor SHARED
             ${PROJECT_SOURCES}
+            ${RESOURCES_FILE}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(Latex-editor
             ${PROJECT_SOURCES}
+            resources/codeeditor_resources.qrc
         )
     endif()
 
