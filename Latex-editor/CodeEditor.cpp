@@ -1,6 +1,8 @@
 #include "CodeEditor.h"
 #include "LineNumberArea.h"
 
+//TODO ADD MISSING INCLUDES ASPETIALY FOR MY CLASSES
+
 #include <QFontDatabase>
 #include <QTextEdit>
 #include <QTextCursor>
@@ -284,3 +286,7 @@ void CodeEditor::insertFromMimeData(const QMimeData* source)
 {
     insertPlainText(source->text());
 } // LIKE BUFFER(ctrl+v)?
+
+int CodeEditor::getIndentationSpaces(){
+    //TODO 
+}
