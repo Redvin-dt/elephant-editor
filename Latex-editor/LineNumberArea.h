@@ -6,7 +6,6 @@
 #include <QWidget>
 
 class CodeEditor;
-// class SyntaxStyle;
 
 class LineNumberArea : public QWidget {
   Q_OBJECT

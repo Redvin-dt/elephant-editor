@@ -1,11 +1,11 @@
 #ifndef CODEEDITOR_H
 #define CODEEDITOR_H
 
+#include <QCompleter>
 #include <QTextEdit>
 
 class LineNumberArea;
-class Completer;              // TODO
-class SyntaxStyle;            // TODO
+class SyntaxStyle;
 class StyleSyntaxHighlighter; // TODO
 class FramedTextAttribute;    // SEARCH TODO
 
@@ -47,9 +47,9 @@ public:
 
   bool autoIndentation() const;
 
-  void setCompleter(Completer *completer);
+  void setCompleter(QCompleter *completer);
 
-  Completer *completer() const;
+  QCompleter *completer() const;
 
 public
   Q_SLOT :
@@ -112,7 +112,7 @@ private:
   // Method for updating geometry of line number area.
   void updateLineGeometry();
 
-  /*  Method that performs completer processing.
+  /*  Method that performs Completer processing.
       Returns true if event has to be dropped.
       return Shall event be dropped.
   */
@@ -139,7 +139,7 @@ private:
   StyleSyntaxHighlighter *m_highlighter;
   SyntaxStyle *m_syntax_style;
   LineNumberArea *m_line_number_area;
-  Completer *m_completer;
+  QCompleter *m_completer;
 
   FramedTextAttribute *m_framedAttribute;
 

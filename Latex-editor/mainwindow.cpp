@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    CodeEditor *Editor = new CodeEditor();
+    ui->gridLayout->addWidget(Editor, 0, 1);
 }
 
 MainWindow::~MainWindow()

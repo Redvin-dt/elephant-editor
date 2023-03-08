@@ -39,43 +39,52 @@ void LineNumberArea::setSyntaxStyle(SyntaxStyle *style) {
 SyntaxStyle *LineNumberArea::syntaxStyle() const { return m_syntax_style; }
 
 void LineNumberArea::paintEvent(QPaintEvent *event) {
-    QPainter painter(this);
+  QPainter painter(this);
 
-    painter.fillRect(event->rect(), m_syntax_style->getFormat("Text").background().color());
+  painter.fillRect(event->rect(),
+                   m_syntax_style->getFormat("Text").background().color());
 
-    //get possition?
-    auto block_number = m_code_editor->getFirstVisibleBlock();
-    auto block = m_code_editor->document()->findBlockByNumber(block_number);
-    auto top = static_cast<int> (m_code_editor->document()->documentLayout()->blockBoundingRect(block).translated(0, -m_code_editor->verticalScrollBar()->value()).top());
-    auto bottom = top + static_cast<int>(m_code_editor->document()->documentLayout()->blockBoundingRect(block).height());
+  // get possition?
+  auto block_number = m_code_editor->getFirstVisibleBlock();
+  auto block = m_code_editor->document()->findBlockByNumber(block_number);
+  auto top = static_cast<int>(
+      m_code_editor->document()
+          ->documentLayout()
+          ->blockBoundingRect(block)
+          .translated(0, -m_code_editor->verticalScrollBar()->value())
+          .top());
+  auto bottom = top + static_cast<int>(m_code_editor->document()
+                                           ->documentLayout()
+                                           ->blockBoundingRect(block)
+                                           .height());
 
-    //get num color
-    auto currentLine = m_syntax_style->getFormat("CurrentLineNumber").foreground().color();
-    auto otherLines  = m_syntax_style->getFormat("LineNumber").foreground().color();
+  // get num color
+  auto currentLine =
+      m_syntax_style->getFormat("CurrentLineNumber").foreground().color();
+  auto otherLines =
+      m_syntax_style->getFormat("LineNumber").foreground().color();
 
-    painter.setFont(m_code_editor->font());
+  painter.setFont(m_code_editor->font());
 
-    while (block.isValid() && top <= event->rect().bottom()){
-        if (block.isVisible() && bottom >= event->rect().top())
-        {
-            QString number = QString::number(block_number + 1);
+  while (block.isValid() && top <= event->rect().bottom()) {
+    if (block.isVisible() && bottom >= event->rect().top()) {
+      QString number = QString::number(block_number + 1);
 
-            auto isCurrentLine = m_code_editor->textCursor().blockNumber() == block_number;
-            painter.setPen(isCurrentLine ? currentLine : otherLines);
+      auto isCurrentLine =
+          m_code_editor->textCursor().blockNumber() == block_number;
+      painter.setPen(isCurrentLine ? currentLine : otherLines);
 
-            painter.drawText(
-                -5,
-                top,
-                sizeHint().width(),
-                m_code_editor->fontMetrics().height(),
-                Qt::AlignRight,
-                number
-            );
-        }
-
-        block = block.next();
-        top = bottom;
-        bottom = top + static_cast<int>(m_code_editor->document()->documentLayout()->blockBoundingRect(block).height());
-        ++block_number;
+      painter.drawText(-5, top, sizeHint().width(),
+                       m_code_editor->fontMetrics().height(), Qt::AlignRight,
+                       number);
     }
+
+    block = block.next();
+    top = bottom;
+    bottom = top + static_cast<int>(m_code_editor->document()
+                                        ->documentLayout()
+                                        ->blockBoundingRect(block)
+                                        .height());
+    ++block_number;
+  }
 }
