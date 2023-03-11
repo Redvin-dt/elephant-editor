@@ -1,6 +1,7 @@
 #include "CodeEditor.h"
 #include "LineNumberArea.h"
 #include "SyntaxStyle.h"
+#include "LatexCompleter.h"
 
 // TODO ADD MISSING INCLUDES ASPETIALY FOR MY CLASSES
 
@@ -28,7 +29,7 @@ CodeEditor::CodeEditor(QWidget *parent)
 
       // m_highlighter(nullptr),
       m_syntax_style(nullptr), m_line_number_area(new LineNumberArea(this)),
-      m_completer(nullptr),
+      m_completer(new LatexCompleter(this)),
       // m_framedAttribute(new QFramedTextAttribute(this)),
 
       m_auto_indentation(true), m_auto_parentheses(true), m_replace_tab(true),

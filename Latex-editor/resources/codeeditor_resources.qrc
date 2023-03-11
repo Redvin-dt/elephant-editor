@@ -5,5 +5,6 @@
         <file>languages/cpp.xml</file>
         <file>languages/lua.xml</file>
         <file>languages/python.xml</file>
+        <file>languages/latex_all_commands.txt</file>
     </qresource>
 </RCC>

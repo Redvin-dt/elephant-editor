@@ -335,4 +335,7 @@ CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
  /home/pavel/HSE\ project/main_project_folder/elephant-editor/Latex-editor/CodeEditor.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QCompleter \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcompleter.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTextEdit

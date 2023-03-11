@@ -29,6 +29,8 @@ set(PROJECT_SOURCES
         SyntaxStyle.h
         LineNumberArea.cpp
         LineNumberArea.h
+        LatexCompleter.cpp
+        LatexCompleter.h
         ${TS_FILES}
 )
 

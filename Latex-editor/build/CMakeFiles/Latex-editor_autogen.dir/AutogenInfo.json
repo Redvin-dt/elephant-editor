@@ -94,6 +94,12 @@
 			null
 		],
 		[
+			"/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/LatexCompleter.h",
+			"MU",
+			"EWIEGA46WW/moc_LatexCompleter.cpp",
+			null
+		],
+		[
 			"/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/LineNumberArea.h",
 			"MU",
 			"EWIEGA46WW/moc_LineNumberArea.cpp",
@@ -164,6 +170,11 @@
 	[
 		[
 			"/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/CodeEditor.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/LatexCompleter.cpp",
 			"MU",
 			null
 		],

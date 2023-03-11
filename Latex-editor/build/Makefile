@@ -260,6 +260,30 @@ Latex-editor_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.s
 .PHONY : Latex-editor_autogen/mocs_compilation.cpp.s
 
+LatexCompleter.o: LatexCompleter.cpp.o
+.PHONY : LatexCompleter.o
+
+# target to build an object file
+LatexCompleter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/LatexCompleter.cpp.o
+.PHONY : LatexCompleter.cpp.o
+
+LatexCompleter.i: LatexCompleter.cpp.i
+.PHONY : LatexCompleter.i
+
+# target to preprocess a source file
+LatexCompleter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/LatexCompleter.cpp.i
+.PHONY : LatexCompleter.cpp.i
+
+LatexCompleter.s: LatexCompleter.cpp.s
+.PHONY : LatexCompleter.s
+
+# target to generate assembly for a file
+LatexCompleter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/LatexCompleter.cpp.s
+.PHONY : LatexCompleter.cpp.s
+
 LineNumberArea.o: LineNumberArea.cpp.o
 .PHONY : LineNumberArea.o
 
@@ -379,6 +403,9 @@ help:
 	@echo "... Latex-editor_autogen/mocs_compilation.o"
 	@echo "... Latex-editor_autogen/mocs_compilation.i"
 	@echo "... Latex-editor_autogen/mocs_compilation.s"
+	@echo "... LatexCompleter.o"
+	@echo "... LatexCompleter.i"
+	@echo "... LatexCompleter.s"
 	@echo "... LineNumberArea.o"
 	@echo "... LineNumberArea.i"
 	@echo "... LineNumberArea.s"

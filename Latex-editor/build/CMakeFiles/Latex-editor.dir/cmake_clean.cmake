@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o.d"
   "CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/Latex-editor.dir/LatexCompleter.cpp.o"
+  "CMakeFiles/Latex-editor.dir/LatexCompleter.cpp.o.d"
   "CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o"
   "CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o.d"
   "CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o"
