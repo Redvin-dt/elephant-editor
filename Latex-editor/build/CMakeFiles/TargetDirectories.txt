@@ -1,8 +1,0 @@
-/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/Latex-editor.dir
-/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/edit_cache.dir
-/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/rebuild_cache.dir
-/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/list_install_components.dir
-/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/install.dir
-/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/install/local.dir
-/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/install/strip.dir
-/home/pavel/HSE project/main_project_folder/elephant-editor/Latex-editor/build/CMakeFiles/Latex-editor_autogen.dir
