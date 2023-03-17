@@ -139,4 +139,3 @@ void MainWindow::on_actionExampleCPP_Project_triggered()
     Editor->setText(text);
     file.close();
 }
-
