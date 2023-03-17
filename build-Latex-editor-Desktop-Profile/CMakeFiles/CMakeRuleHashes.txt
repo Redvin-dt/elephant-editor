@@ -1,0 +1,5 @@
+# Hashes of file build rules.
+edbc172789cc350088da100f483c1127 /home/roman/PROJECT_CPP/elephant-editor/Latex-editor/Latex-editor_en_US.ts
+975cfb752bf63eca4cb9459ecec7c48e CMakeFiles/Latex-editor_autogen
+184f28713bbece257f066ef4f9b887cb Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp
+4498898374d15bd2400052702d986e67 test_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp

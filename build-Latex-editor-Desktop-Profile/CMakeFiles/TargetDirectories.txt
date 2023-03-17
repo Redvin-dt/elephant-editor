@@ -1,0 +1,8 @@
+/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/CMakeFiles/Latex-editor.dir
+/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/CMakeFiles/edit_cache.dir
+/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/CMakeFiles/rebuild_cache.dir
+/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/CMakeFiles/list_install_components.dir
+/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/CMakeFiles/install.dir
+/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/CMakeFiles/install/local.dir
+/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/CMakeFiles/install/strip.dir
+/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/CMakeFiles/Latex-editor_autogen.dir

@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/test_autogen",
+	"CMAKE_BINARY_DIR" : "/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/roman/PROJECT_CPP/elephant-editor/Latex-editor",
+	"CMAKE_SOURCE_DIR" : "/home/roman/PROJECT_CPP/elephant-editor/Latex-editor",
+	"INCLUDE_DIR" : "/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/test_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/roman/PROJECT_CPP/elephant-editor/Latex-editor/resources/default_style.xml",
+		"/home/roman/PROJECT_CPP/elephant-editor/Latex-editor/resources/languages/python.xml",
+		"/home/roman/PROJECT_CPP/elephant-editor/Latex-editor/resources/languages/lua.xml",
+		"/home/roman/PROJECT_CPP/elephant-editor/Latex-editor/resources/languages/cpp.xml",
+		"/home/roman/PROJECT_CPP/elephant-editor/Latex-editor/resources/languages/glsl.xml"
+	],
+	"LOCK_FILE" : "/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/CMakeFiles/test_autogen.dir/AutoRcc_codeeditor_resources_3YJK5W5UP7_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "codeeditor_resources" ],
+	"OUTPUT_CHECKSUM" : "3YJK5W5UP7",
+	"OUTPUT_NAME" : "qrc_codeeditor_resources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/roman/PROJECT_CPP/elephant-editor/build-Latex-editor-Desktop-Profile/CMakeFiles/test_autogen.dir/AutoRcc_codeeditor_resources_3YJK5W5UP7_Used.txt",
+	"SOURCE" : "/home/roman/PROJECT_CPP/elephant-editor/Latex-editor/resources/codeeditor_resources.qrc",
+	"VERBOSITY" : 0
+}
