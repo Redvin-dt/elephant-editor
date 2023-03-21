@@ -1,0 +1,10 @@
+/snap/clion/229/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/229/bin/ninja/linux/x64/ninja -DCMAKE_CXX_COMPILER=/bin/clang++-14 -G Ninja -S /home/yurafilatov/elephant-editor -B /home/yurafilatov/elephant-editor/cmake-build-debug
+-- The CXX compiler identification is Clang 14.0.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /bin/clang++-14 - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/yurafilatov/elephant-editor/cmake-build-debug

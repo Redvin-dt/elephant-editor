@@ -1,3 +1,0 @@
-# Hashes of file build rules.
-d25a24f4ea8672f4a0a62c5775fe1dfd /home/pavel/HSE project/main_project_folder/Latex-editor/Latex-editor_en_US.ts
-b30e3cc1f9b8bdceaf396118143e92ee CMakeFiles/Latex-editor_autogen

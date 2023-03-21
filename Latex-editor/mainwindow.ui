@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>588</width>
-    <height>481</height>
+    <width>1241</width>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,6 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QPlainTextEdit" name="plainTextEdit"/>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
         <number>0</number>
@@ -59,7 +58,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>588</width>
+     <width>1241</width>
      <height>22</height>
     </rect>
    </property>
@@ -67,17 +66,24 @@
     <property name="title">
      <string>File</string>
     </property>
-    <addaction name="actionNew_file"/>
+    <widget class="QMenu" name="menuNew_File">
+     <property name="title">
+      <string>New File</string>
+     </property>
+     <addaction name="actionBlank_Project"/>
+     <addaction name="actionExampleCPP_Project"/>
+    </widget>
+    <addaction name="menuNew_File"/>
     <addaction name="actionOpen_file"/>
     <addaction name="actionSave"/>
-    <addaction name="actionCopy"/>
+    <addaction name="actionSaveAs"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
      <string>Edit</string>
     </property>
-    <addaction name="actionCopy_2"/>
+    <addaction name="actionCopy"/>
     <addaction name="actionPaste"/>
     <addaction name="actionCut"/>
     <addaction name="actionUndo"/>
@@ -89,17 +95,14 @@
     <property name="title">
      <string>Run</string>
     </property>
+    <addaction name="actionBuild"/>
+    <addaction name="actionRUn"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuRun"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionNew_file">
-   <property name="text">
-    <string>New File</string>
-   </property>
-  </action>
   <action name="actionOpen_file">
    <property name="text">
     <string>Open File </string>
@@ -110,7 +113,7 @@
     <string>Save</string>
    </property>
   </action>
-  <action name="actionCopy">
+  <action name="actionSaveAs">
    <property name="text">
     <string>Save As</string>
    </property>
@@ -120,7 +123,7 @@
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionCopy_2">
+  <action name="actionCopy">
    <property name="text">
     <string>Copy</string>
    </property>
@@ -153,6 +156,26 @@
   <action name="actionFind_and_Replace">
    <property name="text">
     <string>Replace</string>
+   </property>
+  </action>
+  <action name="actionBlank_Project">
+   <property name="text">
+    <string>Blank Project</string>
+   </property>
+  </action>
+  <action name="actionExampleCPP_Project">
+   <property name="text">
+    <string>Example C++ Project</string>
+   </property>
+  </action>
+  <action name="actionBuild">
+   <property name="text">
+    <string>Build</string>
+   </property>
+  </action>
+  <action name="actionRUn">
+   <property name="text">
+    <string>Run</string>
    </property>
   </action>
  </widget>

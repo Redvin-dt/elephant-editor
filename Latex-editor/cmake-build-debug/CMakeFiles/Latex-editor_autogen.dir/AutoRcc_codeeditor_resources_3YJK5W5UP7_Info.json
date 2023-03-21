@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "/home/yurafilatov/elephant-editor/cmake-build-debug/Latex-editor_autogen",
+	"CMAKE_BINARY_DIR" : "/home/yurafilatov/elephant-editor/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/yurafilatov/elephant-editor/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/yurafilatov/elephant-editor",
+	"CMAKE_SOURCE_DIR" : "/home/yurafilatov/elephant-editor",
+	"INCLUDE_DIR" : "/home/yurafilatov/elephant-editor/cmake-build-debug/Latex-editor_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/yurafilatov/elephant-editor/resources/default_style.xml",
+		"/home/yurafilatov/elephant-editor/resources/languages/python.xml",
+		"/home/yurafilatov/elephant-editor/resources/languages/lua.xml",
+		"/home/yurafilatov/elephant-editor/resources/languages/cpp.xml",
+		"/home/yurafilatov/elephant-editor/resources/languages/glsl.xml"
+	],
+	"LOCK_FILE" : "/home/yurafilatov/elephant-editor/cmake-build-debug/CMakeFiles/Latex-editor_autogen.dir/AutoRcc_codeeditor_resources_3YJK5W5UP7_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "codeeditor_resources" ],
+	"OUTPUT_CHECKSUM" : "3YJK5W5UP7",
+	"OUTPUT_NAME" : "qrc_codeeditor_resources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt5/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/yurafilatov/elephant-editor/cmake-build-debug/CMakeFiles/Latex-editor_autogen.dir/AutoRcc_codeeditor_resources_3YJK5W5UP7_Used.txt",
+	"SOURCE" : "/home/yurafilatov/elephant-editor/resources/codeeditor_resources.qrc",
+	"VERBOSITY" : 0
+}
