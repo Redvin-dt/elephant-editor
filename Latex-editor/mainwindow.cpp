@@ -7,8 +7,12 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    CodeEditor *Editor = new CodeEditor();
-    ui->gridLayout->addWidget(Editor, 0, 1);
+    CodeEditor *editor = new CodeEditor();
+    // ui->gridLayout->addWidget(editor, 0, 1);
+    ui->ViewAndCode->addWidget(editor);
+    QWidget* tab_widget = ui->ViewAndCode->widget(0);
+    ui->ViewAndCode->replaceWidget(0, editor);
+    ui->ViewAndCode->addWidget(tab_widget);
 }
 
 MainWindow::~MainWindow()
