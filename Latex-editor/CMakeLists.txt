@@ -9,8 +9,12 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+#add_compile_options(-fsanitize=address)
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 set(TS_FILES Latex-editor_en_US.ts)
 
@@ -19,6 +23,14 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        CodeEditor.cpp
+        CodeEditor.h
+        SyntaxStyle.cpp
+        SyntaxStyle.h
+        LineNumberArea.cpp
+        LineNumberArea.h
+        LatexCompleter.cpp
+        LatexCompleter.h
         ${TS_FILES}
 )
 
@@ -37,12 +49,14 @@ else()
     if(ANDROID)
         add_library(Latex-editor SHARED
             ${PROJECT_SOURCES}
+            ${RESOURCES_FILE}
         )
 # Define properties for Android with Qt 5 after find_package() calls as:
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(Latex-editor
             ${PROJECT_SOURCES}
+            resources/codeeditor_resources.qrc
         )
     endif()
 
@@ -50,6 +64,8 @@ else()
 endif()
 
 target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Gui)
+target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 
 set_target_properties(Latex-editor PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
