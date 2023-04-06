@@ -20,17 +20,17 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QTabWidget" name="tabWidget">
+      <widget class="QTabWidget" name="RightWindow">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
-       <widget class="QWidget" name="tab">
+       <widget class="QWidget" name="PdfView">
         <attribute name="title">
          <string>PDF-View</string>
         </attribute>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="LableForPdf">
            <property name="text">
             <string>TextLabel</string>
            </property>
@@ -38,14 +38,9 @@
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="tab_2">
+       <widget class="QWidget" name="Messages">
         <attribute name="title">
          <string>Messages</string>
-        </attribute>
-       </widget>
-       <widget class="QWidget" name="tab_3">
-        <attribute name="title">
-         <string>Math Input</string>
         </attribute>
        </widget>
       </widget>
