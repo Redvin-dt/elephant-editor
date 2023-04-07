@@ -20,8 +20,11 @@ private:
     Ui::MainWindow *ui;
     CodeEditor *editor;
 
+    //Paint buttons in tab MathInput
     void setButton();
+    //Paint CodeEditor in the left side of mainwindow
     void setCodeEditor();
+    //Function for buttons
     void insertMathInput(QString insertion);
 };
 #endif // MAINWINDOW_H

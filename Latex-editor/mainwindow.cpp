@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    
     setCodeEditor();
     setButton();
     setMinimumSize(1300, 1000);
@@ -26,6 +27,7 @@ void MainWindow::setButton(){
     static QVector <QString> buttons_functions = {"\\int", "\\frac{}{}", "\\cdot", "\\sqrt", "\\textbf"};
     static QVector <QPushButton*> buttons;
 
+    //create table for buttons
     QTableWidget *table_view = new QTableWidget(this);
     const std::size_t max_columns = 4;
     table_view->setRowCount(1 + buttons_names.size() / max_columns + (buttons.size() % max_columns != 0));
@@ -34,24 +36,21 @@ void MainWindow::setButton(){
     table_view->verticalHeader()->hide();
     table_view->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
+    //initialize buttons
     std::size_t row = 0, column = 0;
     for (std::size_t index = 0; index < buttons_names.size(); index++){
         QString button_name = buttons_names[index];
         QString function_input = buttons_functions[index];
         buttons.push_back(new QPushButton());
 
-        
         buttons.back()->setText(button_name);
         connect(buttons.back(), &QPushButton::clicked, [this, function_input](){ insertMathInput(function_input);});
-        //connect(buttons.back(), &QPushButton::Resize, [button = buttons.back()](){});
-
 
         table_view->setCellWidget(row, column, buttons.back());
 
         column++;
         if (column == max_columns){
             row++;
-            
             column = 0;
         }
     } 
