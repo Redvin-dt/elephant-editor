@@ -31,7 +31,7 @@ private:
     void setCodeEditor();
     //Function for buttons
     void insertMathInput(QString insertion);
-    //init start widget
+    //init start image
     void initImage();
 };
 #endif // MAINWINDOW_H

@@ -18,6 +18,7 @@ private:
     QImage m_duplicate;
 
 protected:
+    //Repaint picture when window resized
     void paintEvent(QPaintEvent *event);
 };
 

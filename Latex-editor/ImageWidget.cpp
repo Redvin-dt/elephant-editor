@@ -22,7 +22,9 @@ void ImageWidget::loadImage(QString filename){
 void ImageWidget::paintEvent(QPaintEvent *event){
     QPainter painter(this);
     if (!m_image.isNull()){
+        //reload image to increase quality
         m_image = m_duplicate;
+        //scale to width of parent widget
         m_image = m_image.scaledToWidth(this->size().width(), Qt::SmoothTransformation);
         //m_image = m_image.scaledToHeight(std::max(this->size().height(), m_image.size().height()));
         painter.drawImage(QPoint(0, 0), m_image);
