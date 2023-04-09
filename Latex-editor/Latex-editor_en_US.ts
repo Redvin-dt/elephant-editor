@@ -5,120 +5,103 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="14"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="162"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="138"/>
         <source>MainWindow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="29"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="176"/>
-        <source>PDF-View</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="35"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="175"/>
-        <source>TextLabel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="43"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="177"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="151"/>
         <source>Messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="178"/>
-        <source>Math Input</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="mainwindow.ui" line="62"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="179"/>
+        <location filename="mainwindow.ui" line="48"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="152"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="72"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="180"/>
+        <location filename="mainwindow.ui" line="58"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="153"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="84"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="181"/>
+        <location filename="mainwindow.ui" line="70"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="154"/>
         <source>Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="94"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="163"/>
+        <location filename="mainwindow.ui" line="80"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="139"/>
         <source>New File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="99"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="164"/>
+        <location filename="mainwindow.ui" line="85"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="140"/>
         <source>Open File </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="104"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="165"/>
+        <location filename="mainwindow.ui" line="90"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="141"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="109"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="166"/>
+        <location filename="mainwindow.ui" line="95"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="142"/>
         <source>Save As</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="114"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="167"/>
+        <location filename="mainwindow.ui" line="100"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="143"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="119"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="168"/>
+        <location filename="mainwindow.ui" line="105"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="144"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="124"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="169"/>
+        <location filename="mainwindow.ui" line="110"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="145"/>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="129"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="170"/>
+        <location filename="mainwindow.ui" line="115"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="146"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="134"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="171"/>
+        <location filename="mainwindow.ui" line="120"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="147"/>
         <source>Undo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="139"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="172"/>
+        <location filename="mainwindow.ui" line="125"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="148"/>
         <source>Redo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="144"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="173"/>
+        <location filename="mainwindow.ui" line="130"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="149"/>
         <source>Find</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="149"/>
-        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="174"/>
+        <location filename="mainwindow.ui" line="135"/>
+        <location filename="build/Latex-editor_autogen/include/ui_mainwindow.h" line="150"/>
         <source>Replace</source>
         <translation type="unfinished"></translation>
     </message>

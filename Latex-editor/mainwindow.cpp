@@ -6,9 +6,11 @@
 #include <QScrollArea>
 #include <QTableWidget>
 #include <QHeaderView>
+#include <QScrollArea>
 #include <QDebug>
 #include <QFormLayout>
 #include <QtGui>
+#include <QSize>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCodeEditor();
     setButton();
     setMinimumSize(1300, 1000);
+    initImage();
 }
 
 void MainWindow::setButton(){
@@ -67,6 +70,19 @@ void MainWindow::setCodeEditor(){
 
 void MainWindow::insertMathInput(QString insertion){
     editor->insertPlainText(insertion);
+}
+
+void MainWindow::initImage(){
+    //TODO
+    Q_INIT_RESOURCE(codeeditor_resources);
+    scroll_area = new QScrollArea(this);
+    scroll_area->setWidgetResizable(true);
+
+    m_image = new ImageWidget(this);
+    m_image->loadImage(":/photo_2022-10-09_23-28-33.jpg");
+    scroll_area->setWidget(m_image);
+
+    ui->RightWindow->insertTab(0, scroll_area, "PDF-View");
 }
 
 MainWindow::~MainWindow()

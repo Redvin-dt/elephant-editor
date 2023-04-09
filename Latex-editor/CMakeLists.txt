@@ -27,6 +27,8 @@ set(PROJECT_SOURCES
         CodeEditor.h
         SyntaxStyle.cpp
         SyntaxStyle.h
+        ImageWidget.h
+        ImageWidget.cpp
         LineNumberArea.cpp
         LineNumberArea.h
         LatexCompleter.cpp

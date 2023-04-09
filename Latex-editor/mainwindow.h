@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "CodeEditor.h"
+#include "ImageWidget.h"
+#include <QScrollArea>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +21,9 @@ public:
 private:
     Ui::MainWindow *ui;
     CodeEditor *editor;
+    QScrollArea *scroll_area;
+    ImageWidget *m_image;
+
 
     //Paint buttons in tab MathInput
     void setButton();
@@ -26,5 +31,7 @@ private:
     void setCodeEditor();
     //Function for buttons
     void insertMathInput(QString insertion);
+    //init start widget
+    void initImage();
 };
 #endif // MAINWINDOW_H
