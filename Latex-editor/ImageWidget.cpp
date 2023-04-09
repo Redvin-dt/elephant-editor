@@ -30,3 +30,10 @@ void ImageWidget::paintEvent(QPaintEvent *event){
         painter.drawImage(QPoint(0, 0), m_image);
     }
 }
+
+void ImageWidget::setImage(QImage new_image){
+    m_image = new_image;
+    m_duplicate = m_image;
+    setMinimumSize(m_image.size());
+    this->update();
+}

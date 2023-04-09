@@ -7,6 +7,7 @@
 #include <QTableWidget>
 #include <QHeaderView>
 #include <QScrollArea>
+#include <QImage>
 #include <QDebug>
 #include <QFormLayout>
 #include <QtGui>
