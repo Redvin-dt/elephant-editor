@@ -12,6 +12,7 @@
 #include <QFormLayout>
 #include <QtGui>
 #include <QSize>
+#include <poppler/qt5/poppler-qt5.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -84,6 +85,11 @@ void MainWindow::initImage(){
     scroll_area->setWidget(m_image);
 
     ui->RightWindow->insertTab(0, scroll_area, "PDF-View");
+}
+
+void MainWindow::setPDF(){
+
+    m_image->loadImage(/* add your image */)
 }
 
 MainWindow::~MainWindow()

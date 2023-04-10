@@ -9,6 +9,9 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+include(FindPkgConfig)
+pkg_check_modules(POPPLER_QT5 REQUIRED IMPORTED_TARGET poppler-qt5)
+
 #add_compile_options(-fsanitize=address)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
@@ -68,6 +71,8 @@ endif()
 target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Gui)
 target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(Latex-editor PRIVATE PkgConfig::POPPLER_QT5)
+
 
 set_target_properties(Latex-editor PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

@@ -33,5 +33,7 @@ private:
     void insertMathInput(QString insertion);
     //init start image
     void initImage();
+    //print pdf
+    void setPDF();
 };
 #endif // MAINWINDOW_H
