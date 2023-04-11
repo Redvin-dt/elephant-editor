@@ -7,31 +7,31 @@
 #include <QTextCharFormat>
 
 class SyntaxStyle : public QObject {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  // Constructor
-  explicit SyntaxStyle(QObject *parent = nullptr);
+    // Constructor
+    explicit SyntaxStyle(QObject *parent = nullptr);
 
-  // Method for load style
-  bool load(QString file_name);
+    // Method for load style
+    bool load(QString file_name);
 
-  // Method for getting style name
-  QString name() const;
+    // Method for getting style name
+    QString name() const;
 
-  // Method for check is any syle loaded
-  bool isLoaded() const;
+    // Method for check is any syle loaded
+    bool isLoaded() const;
 
-  // Method to geting format by name
-  QTextCharFormat getFormat(QString name) const;
+    // Method to geting format by name
+    QTextCharFormat getFormat(QString name) const;
 
-  static SyntaxStyle *defaultStyle();
+    static SyntaxStyle *defaultStyle();
 
 private:
-  QString m_name;
+    QString m_name;
 
-  QMap<QString, QTextCharFormat> m_data;
+    QMap<QString, QTextCharFormat> m_data;
 
-  bool m_loaded;
+    bool m_loaded;
 };
 
 #endif // SYNTAXSTYLE_H

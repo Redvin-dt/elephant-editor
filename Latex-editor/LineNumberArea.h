@@ -8,27 +8,27 @@
 class CodeEditor;
 
 class LineNumberArea : public QWidget {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  // set code editor as parent
-  explicit LineNumberArea(CodeEditor *parent = nullptr);
+    // set code editor as parent
+    explicit LineNumberArea(CodeEditor *parent = nullptr);
 
-  // Disable copying
-  LineNumberArea(const LineNumberArea &) = delete;
-  LineNumberArea &operator=(const LineNumberArea &) = delete;
+    // Disable copying
+    LineNumberArea(const LineNumberArea &) = delete;
+    LineNumberArea &operator=(const LineNumberArea &) = delete;
 
-  QSize sizeHint() const override;
+    QSize sizeHint() const override;
 
-  void setSyntaxStyle(SyntaxStyle *style);
+    void setSyntaxStyle(SyntaxStyle *style);
 
-  SyntaxStyle *syntaxStyle() const;
+    SyntaxStyle *syntaxStyle() const;
 
 protected:
-  void paintEvent(QPaintEvent *event) override;
+    void paintEvent(QPaintEvent *event) override;
 
 private:
-  CodeEditor *m_code_editor;
-  SyntaxStyle *m_syntax_style;
+    CodeEditor *m_code_editor;
+    SyntaxStyle *m_syntax_style;
 };
 
 #endif // LINENUMBERAREA_H

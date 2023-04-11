@@ -4,7 +4,6 @@
 #include <QSize>
 #include <QRect>
 #include <QDebug>
-
 ImageWidget::ImageWidget(QWidget *parent)
     : QWidget{parent}
 {

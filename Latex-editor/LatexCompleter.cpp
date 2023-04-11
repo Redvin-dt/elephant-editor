@@ -18,13 +18,13 @@ LatexCompleter::LatexCompleter(QObject *parent)
     QStringList list;
     while (!file.atEnd()){
         list.append(file.readLine());
-        list.back().resize(list.back().size() - 1); 
+        list.back().resize(list.back().size() - 1);
         //list.back().replace(0, 2, '/');
         list.back().remove(0, 2);
     }
 
 
-    //qDebug() << list << '\n'; 
+    //qDebug() << list << '\n';
 
     setModel(new QStringListModel(list, this));
     setCompletionColumn(0);
