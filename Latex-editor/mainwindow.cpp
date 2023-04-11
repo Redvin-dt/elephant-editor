@@ -68,26 +68,6 @@ void MainWindow::setButton(){
         }
     }
 
-  // initialize buttons
-  std::size_t row = 0, column = 0;
-  for (std::size_t index = 0; index < buttons_names.size(); index++) {
-    QString button_name = buttons_names[index];
-    QString function_input = buttons_functions[index];
-    buttons.push_back(new QPushButton());
-
-    buttons.back()->setText(button_name);
-    connect(buttons.back(), &QPushButton::clicked,
-            [this, function_input]() { insertMathInput(function_input); });
-
-    table_view->setCellWidget(row, column, buttons.back());
-
-    column++;
-    if (column == MAX_TABLE_COLUMNS) {
-      row++;
-      column = 0;
-    }
-  }
-
   ui->RightWindow->addTab(table_view, "MathInput");
 }
 
