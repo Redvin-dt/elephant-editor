@@ -82,7 +82,7 @@ void MainWindow::setButton(){
     table_view->setCellWidget(row, column, buttons.back());
 
     column++;
-    if (column == max_columns) {
+    if (column == MAX_TABLE_COLUMNS) {
       row++;
       column = 0;
     }
