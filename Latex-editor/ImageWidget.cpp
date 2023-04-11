@@ -1,24 +1,22 @@
 #include "ImageWidget.h"
+#include <QDebug>
 #include <QPainter>
 #include <QPoint>
-#include <QSize>
 #include <QRect>
-#include <QDebug>
+#include <QSize>
 
 const QPoint ZERO_POINT = QPoint(0, 0);
 
 ImageWidget::ImageWidget(QWidget *parent)
     : QWidget{parent}
-{
+{}
 
-}
-
-void ImageWidget::loadImage(QString filename){
-    Q_INIT_RESOURCE(codeeditor_resources);
-    m_image.load(filename);
-    m_duplicate = m_image;
-    setMinimumSize(m_image.size());
-    this->update();
+void ImageWidget::loadImage(QString filename) {
+  Q_INIT_RESOURCE(codeeditor_resources);
+  m_image.load(filename);
+  m_duplicate = m_image;
+  setMinimumSize(m_image.size());
+  this->update();
 }
 
 void ImageWidget::paintEvent(QPaintEvent *event){
@@ -33,9 +31,9 @@ void ImageWidget::paintEvent(QPaintEvent *event){
     }
 }
 
-void ImageWidget::setImage(QImage new_image){
-    m_image = new_image;
-    m_duplicate = m_image;
-    setMinimumSize(m_image.size());
-    this->update();
+void ImageWidget::setImage(QImage new_image) {
+  m_image = new_image;
+  m_duplicate = m_image;
+  setMinimumSize(m_image.size());
+  this->update();
 }
