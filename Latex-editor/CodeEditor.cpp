@@ -479,12 +479,11 @@ QString CodeEditor::wordUnderCursor() const {
 }
 
 void CodeEditor::insertFromMimeData(const QMimeData *source) {
-  insertPlainText(source->text());
-} // LIKE BUFFER(ctrl+v)?
+    insertPlainText(source->text());
+}
 
 int CodeEditor::getIndentationSpaces() { // Check how many space will be added
-  // by tab?
-  auto blockText = textCursor().block().text();
+    auto blockText = textCursor().block().text();
 
   int indentationLevel = 0;
 

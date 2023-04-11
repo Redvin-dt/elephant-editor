@@ -15,34 +15,58 @@
 #include <cstddef>
 #include <memory>
 #include <poppler/qt5/poppler-qt5.h>
+#include <QMessageBox>
+#include <QFileDialog>
+#include <unistd.h>
+
+const QSize MINIMAL_WINDOW_SIZE = QSize(1300, 1000);
+const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
+const std::size_t MAX_TABLE_COLUMNS = 4;
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow) {
-  ui->setupUi(this);
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
 
-  setCodeEditor();
-  setButton();
-  setMinimumSize(1300, 1000);
-  initImage();
+    setCodeEditor();
+    setButton();
+    setMinimumSize(MINIMAL_WINDOW_SIZE);
+    initImage();
 }
 
-void MainWindow::setButton() {
+void MainWindow::setButton(){
 
-  static QVector<QString> buttons_names = {"int", "frac", "cdot", "sqrt",
-                                           "textbf"};
-  static QVector<QString> buttons_functions = {"\\int", "\\frac{}{}", "\\cdot",
-                                               "\\sqrt", "\\textbf"};
-  static QVector<QPushButton *> buttons;
+    static QVector <QString> buttons_names = {"int", "frac", "cdot", "sqrt", "textbf"};
+    static QVector <QString> buttons_functions = {"\\int", "\\frac{}{}", "\\cdot", "\\sqrt", "\\textbf"};
+    static QVector <QPushButton*> buttons;
 
-  // create table for buttons
-  QTableWidget *table_view = new QTableWidget(this);
-  const std::size_t max_columns = 4;
-  table_view->setRowCount(1 + buttons_names.size() / max_columns +
-                          (buttons.size() % max_columns != 0));
-  table_view->setColumnCount(max_columns);
-  table_view->horizontalHeader()->hide();
-  table_view->verticalHeader()->hide();
-  table_view->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    //create table for buttons
+    QTableWidget *table_view = new QTableWidget(this);
+    table_view->setRowCount(1 + buttons_names.size() / MAX_TABLE_COLUMNS + (buttons.size() % MAX_TABLE_COLUMNS != 0));
+    table_view->setColumnCount(MAX_TABLE_COLUMNS);
+    table_view->horizontalHeader()->hide();
+    table_view->verticalHeader()->hide();
+    table_view->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    //initialize buttons
+    std::size_t row = 0, column = 0;
+    for (std::size_t index = 0; index < buttons_names.size(); index++){
+        QString button_name = buttons_names[index];
+        QString function_input = buttons_functions[index];
+        buttons.push_back(new QPushButton());
+
+        buttons.back()->setText(button_name);
+        connect(buttons.back(), &QPushButton::clicked, [this, function_input](){ insertMathInput(function_input);});
+
+        table_view->setCellWidget(row, column, buttons.back());
+
+        column++;
+        if (column == MAX_TABLE_COLUMNS){
+            row++;
+            column = 0;
+        }
+    }
 
   // initialize buttons
   std::size_t row = 0, column = 0;
@@ -67,19 +91,21 @@ void MainWindow::setButton() {
   ui->RightWindow->addTab(table_view, "MathInput");
 }
 
-void MainWindow::setCodeEditor() {
-  editor = new CodeEditor();
-  ui->ViewAndCode->insertWidget(0, editor);
+void MainWindow::setCodeEditor(){
+    editor = new CodeEditor();
+    editor->setMinimumSize(MINIMAL_CODE_EDITOR_SIZE);
+    ui->ViewAndCode->setChildrenCollapsible(false);
+    ui->ViewAndCode->insertWidget(0, editor);
 }
 
 void MainWindow::insertMathInput(QString insertion) {
   editor->insertPlainText(insertion);
 }
 
-void MainWindow::initImage() {
-  Q_INIT_RESOURCE(codeeditor_resources);
-  scroll_area = new QScrollArea(this);
-  scroll_area->setWidgetResizable(true);
+void MainWindow::initImage(){
+    Q_INIT_RESOURCE(codeeditor_resources);
+    scroll_area = new QScrollArea(this);
+    scroll_area->setWidgetResizable(true);
 
   m_image = new ImageWidget(this);
   m_image->loadImage(":/photo_2022-10-09_23-28-33.jpg");
