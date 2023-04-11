@@ -1,0 +1,9 @@
+/home/yurafilatov/elephant-editor-compl+viewer/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/Latex-editor.dir
+/home/yurafilatov/elephant-editor-compl+viewer/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/yurafilatov/elephant-editor-compl+viewer/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yurafilatov/elephant-editor-compl+viewer/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/list_install_components.dir
+/home/yurafilatov/elephant-editor-compl+viewer/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/install.dir
+/home/yurafilatov/elephant-editor-compl+viewer/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/install/local.dir
+/home/yurafilatov/elephant-editor-compl+viewer/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/install/strip.dir
+/home/yurafilatov/elephant-editor-compl+viewer/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/Latex-editor_autogen_timestamp_deps.dir
+/home/yurafilatov/elephant-editor-compl+viewer/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/Latex-editor_autogen.dir
