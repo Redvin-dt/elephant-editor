@@ -34,14 +34,19 @@ private:
     ImageWidget *m_image;
     QString current_file = "";
     QStringList compile_errors;
+    
     //Paint buttons in tab MathInput
     void setButton();
+
     //Paint CodeEditor in the left side of mainwindow
     void setCodeEditor();
+
     //Function for buttons
     void insertMathInput(QString insertion);
+
     //init start image
     void initImage();
+
     //print pdf
     void setPDF();
 };

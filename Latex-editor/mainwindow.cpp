@@ -16,6 +16,11 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <unistd.h>
+
+const QSize MINIMAL_WINDOW_SIZE = QSize(1300, 1000);
+const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
+const std::size_t MAX_TABLE_COLUMNS = 4;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -24,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     setCodeEditor();
     setButton();
-    setMinimumSize(1300, 1000);
+    setMinimumSize(MINIMAL_WINDOW_SIZE);
     initImage();
 }
 
@@ -36,9 +41,8 @@ void MainWindow::setButton(){
 
     //create table for buttons
     QTableWidget *table_view = new QTableWidget(this);
-    const std::size_t max_columns = 4;
-    table_view->setRowCount(1 + buttons_names.size() / max_columns + (buttons.size() % max_columns != 0));
-    table_view->setColumnCount(max_columns);
+    table_view->setRowCount(1 + buttons_names.size() / MAX_TABLE_COLUMNS + (buttons.size() % MAX_TABLE_COLUMNS != 0));
+    table_view->setColumnCount(MAX_TABLE_COLUMNS);
     table_view->horizontalHeader()->hide();
     table_view->verticalHeader()->hide();
     table_view->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
@@ -56,7 +60,7 @@ void MainWindow::setButton(){
         table_view->setCellWidget(row, column, buttons.back());
 
         column++;
-        if (column == max_columns){
+        if (column == MAX_TABLE_COLUMNS){
             row++;
             column = 0;
         }
@@ -69,6 +73,8 @@ void MainWindow::setButton(){
 
 void MainWindow::setCodeEditor(){
     editor = new CodeEditor();
+    editor->setMinimumSize(MINIMAL_CODE_EDITOR_SIZE);
+    ui->ViewAndCode->setChildrenCollapsible(false);
     ui->ViewAndCode->insertWidget(0, editor);
 }
 
@@ -77,7 +83,6 @@ void MainWindow::insertMathInput(QString insertion){
 }
 
 void MainWindow::initImage(){
-    //TODO
     Q_INIT_RESOURCE(codeeditor_resources);
     scroll_area = new QScrollArea(this);
     scroll_area->setWidgetResizable(true);

@@ -4,6 +4,9 @@
 #include <QSize>
 #include <QRect>
 #include <QDebug>
+
+const QPoint ZERO_POINT = QPoint(0, 0);
+
 ImageWidget::ImageWidget(QWidget *parent)
     : QWidget{parent}
 {
@@ -26,7 +29,7 @@ void ImageWidget::paintEvent(QPaintEvent *event){
         //scale to width of parent widget
         m_image = m_image.scaledToWidth(this->size().width(), Qt::SmoothTransformation);
         //m_image = m_image.scaledToHeight(std::max(this->size().height(), m_image.size().height()));
-        painter.drawImage(QPoint(0, 0), m_image);
+        painter.drawImage(ZERO_POINT, m_image);
     }
 }
 
