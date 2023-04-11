@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "CodeEditor.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,5 +18,13 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    CodeEditor *editor;
+
+    //Paint buttons in tab MathInput
+    void setButton();
+    //Paint CodeEditor in the left side of mainwindow
+    void setCodeEditor();
+    //Function for buttons
+    void insertMathInput(QString insertion);
 };
 #endif // MAINWINDOW_H

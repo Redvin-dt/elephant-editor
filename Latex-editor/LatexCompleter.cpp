@@ -24,7 +24,7 @@ LatexCompleter::LatexCompleter(QObject *parent)
     }
 
 
-    qDebug() << list << '\n'; 
+    //qDebug() << list << '\n'; 
 
     setModel(new QStringListModel(list, this));
     setCompletionColumn(0);
