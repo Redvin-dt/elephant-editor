@@ -225,10 +225,10 @@ void MainWindow::on_actionRun_triggered() {
   QProcess installing(this);
   QProcess compiling(this);
 
-  installing.start(INSTALLING_OPTIONS + current_file);
+  installing.start(INSTALLING_OPTIONS + "\"" + current_file + "\"");
   installing.waitForFinished(-1);
 
-  compiling.start(COMPILE_OPTIONS + current_file);
+  compiling.start(COMPILE_OPTIONS + "\"" + current_file + "\"");
   compiling.waitForFinished(-1);
 
   QString extrafiles = current_file;
