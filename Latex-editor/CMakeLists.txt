@@ -36,6 +36,8 @@ set(PROJECT_SOURCES
         LineNumberArea.h
         LatexCompleter.cpp
         LatexCompleter.h
+        SyntaxHighlighter.cpp
+        SyntaxHighlighter.h
         ${TS_FILES}
 )
 

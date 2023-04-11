@@ -16,6 +16,8 @@
 #include <QMessageBox>
 #include <QFileDialog>
 #include <unistd.h>
+#include <QInputDialog>
+#include "SyntaxHighlighter.h"
 
 const QSize MINIMAL_WINDOW_SIZE = QSize(1300, 1000);
 const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
@@ -31,6 +33,8 @@ MainWindow::MainWindow(QWidget *parent)
     setButton();
     setMinimumSize(MINIMAL_WINDOW_SIZE);
     initImage();
+    initErrorMessage();
+    syntax_highlighter = new SyntaxHighlighter(editor->document());
 }
 
 void MainWindow::setButton(){
@@ -221,6 +225,7 @@ void MainWindow::on_actionRun_triggered()
     QProcess installing(this);
     installing.start(installing_comm + current_file);
     installing.waitForFinished(-1);
+    qDebug() << current_file;
     compiling.start(compile_options + current_file);
     compiling.waitForFinished(-1);
     QString extrafiles = current_file;
@@ -250,13 +255,87 @@ void MainWindow::on_actionRun_triggered()
             line_block.clear();
         }
     }
-    setPDF();
-    QFile::remove(extrafiles);
+    if (compile_errors.isEmpty()){
+        setPDF();
+    }
+    //QFile::remove(extrafiles);
     extrafiles.replace(".log", ".aux");
     QFile::remove(extrafiles);
     extrafiles.replace(".aux", ".out");
     QFile::remove(extrafiles);
     extrafiles.replace(".out", ".synctex.gz");
     QFile::remove(extrafiles);
+    if (compile_errors.isEmpty()){
+        compile_errors.append("Compilation completed successfully");
+    }
+    error_message->setText(compile_errors.join("\n"));
+}
+
+
+void MainWindow::on_actionExit_triggered()
+{
+    QApplication::quit();
+}
+
+void MainWindow::on_actionCopy_triggered()
+{
+    editor->copy();
+}
+
+void MainWindow::on_actionPaste_triggered()
+{
+    editor->paste();
+}
+
+void MainWindow::on_actionCut_triggered()
+{
+    editor->cut();
+}
+
+void MainWindow::on_actionUndo_triggered()
+{
+    editor->undo();
+}
+
+void MainWindow::on_actionRedo_triggered()
+{
+    editor->redo();
+}
+
+
+void MainWindow::on_actionFind_triggered()
+{
+
+}
+
+
+void MainWindow::on_actionFind_and_Replace_triggered()
+{
+    bool ok_find;
+    QString find = QInputDialog::getText(0, "Find and Replace",
+                                             "Find:", QLineEdit::Normal,
+                                             "", &ok_find);
+    bool ok_replace;
+    QString replace = QInputDialog::getText(0, "Find and Replace",
+                                             "Replace:", QLineEdit::Normal,
+                                             "", &ok_replace);
+
+    if (!ok_replace || !ok_find) {
+        return;
+    }
+
+    editor->moveCursor(QTextCursor::Start);
+
+    while(editor->find(find)){
+        editor->textCursor().insertText(replace);
+    }
+}
+
+void MainWindow::initErrorMessage(){
+    QGridLayout *layout = new QGridLayout(ui->Messages);
+    error_message = new CodeEditor(ui->Messages);
+    layout->addWidget(error_message);
+    ui->Messages->setLayout(layout);
+    error_message->setReadOnly(true);
 }
 
