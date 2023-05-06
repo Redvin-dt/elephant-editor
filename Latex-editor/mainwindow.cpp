@@ -62,7 +62,7 @@ void MainWindow::setButton(){
         }
 
         buttons_names.append(list[1]);
-        buttons_functions.append(list[3]);
+        buttons_functions.append(list[2]);
     }
 
     /* static QVector <QString> buttons_names = {"int", "frac", "cdot", "sqrt", "textbf"};
@@ -252,10 +252,10 @@ void MainWindow::on_actionRun_triggered()
     QString compile_options = "pdflatex --file-line-error -halt-on-error -interaction=nonstopmode ";
     QString installing_comm = "texliveonfly --arguments=\"--file-line-error -halt-on-error -interaction=nonstopmode\" ";
     QProcess installing(this);
-    installing.start(installing_comm + current_file);
+    installing.start(installing_comm + "\"" + current_file + "\"");
     installing.waitForFinished(-1);
     qDebug() << current_file;
-    compiling.start(compile_options + current_file);
+    compiling.start(compile_options + "\"" + current_file + "\"");
     compiling.waitForFinished(-1);
     QString extrafiles = current_file;
     QStringList dirs = extrafiles.split("/");
