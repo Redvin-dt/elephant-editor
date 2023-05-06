@@ -6,6 +6,8 @@
 #include <QScrollArea>
 #include <QTableWidget>
 #include <QHeaderView>
+#include <QTextStream>
+#include <memory>
 #include <QScrollArea>
 #include <QImage>
 #include <QDebug>
@@ -21,6 +23,7 @@
 
 const QSize MINIMAL_WINDOW_SIZE = QSize(1300, 1000);
 const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
+const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
 const std::size_t MAX_TABLE_COLUMNS = 4;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -38,10 +41,33 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 void MainWindow::setButton(){
+    Q_INIT_RESOURCE(codeeditor_resources);
+    QFile file(":/mathSymbols.txt");
 
-    static QVector <QString> buttons_names = {"int", "frac", "cdot", "sqrt", "textbf"};
-    static QVector <QString> buttons_functions = {"\\int", "\\frac{}{}", "\\cdot", "\\sqrt", "\\textbf"};
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+        qDebug() << "can not load buttons (file not found)" << '\n';
+        return;
+    }
+
+    static QVector <QString> buttons_names;
+    static QVector <QString> buttons_functions;
     static QVector <QPushButton*> buttons;
+
+    QTextStream in(&file);
+    while (!in.atEnd()){
+        QString line = in.readLine();
+        QStringList list = line.split("^");
+        if (list.size() < 4|| list[3].size() == 0 || list[3][0] != '\\'){
+            continue;
+        }
+
+        buttons_names.append(list[1]);
+        buttons_functions.append(list[3]);
+    }
+
+    /* static QVector <QString> buttons_names = {"int", "frac", "cdot", "sqrt", "textbf"};
+    static QVector <QString> buttons_functions = {"\\int", "\\frac{}{}", "\\cdot", "\\sqrt", "\\textbf"};
+    static QVector <QPushButton*> buttons; */
 
     //create table for buttons
     QTableWidget *table_view = new QTableWidget(this);
@@ -90,12 +116,15 @@ void MainWindow::initImage(){
     Q_INIT_RESOURCE(codeeditor_resources);
     scroll_area = new QScrollArea(this);
     scroll_area->setWidgetResizable(true);
-
+    Poppler::Document* document = Poppler::Document::load("../Latex-editor/resources/start_project_pdf.pdf");
+    Poppler::Page* pdfFirstPage = document->page(0);
+    QImage first_image = pdfFirstPage->renderToImage(150, 150, 0, 0, 1260, 1450);
     m_image = new ImageWidget(this);
-    m_image->loadImage(":/photo_2022-10-09_23-28-33.jpg");
+    m_image->setImage(first_image);
     scroll_area->setWidget(m_image);
-
     ui->RightWindow->insertTab(0, scroll_area, "PDF-View");
+    delete pdfFirstPage;
+    delete document;
 }
 
 void MainWindow::setPDF(){

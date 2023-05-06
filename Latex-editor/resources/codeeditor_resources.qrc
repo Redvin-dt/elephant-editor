@@ -6,7 +6,7 @@
         <file>languages/lua.xml</file>
         <file>languages/python.xml</file>
         <file>languages/latex_all_commands.txt</file>
-        <file>startimage.png</file>
-        <file>photo_2022-10-09_23-28-33.jpg</file>
+        <file>mathSymbols.txt</file>
+        <file>start_project_pdf.pdf</file>
     </qresource>
 </RCC>
