@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "CodeEditor.h"
 #include "ImageWidget.h"
+#include "MathButtons.h"
 #include <QScrollArea>
 
 QT_BEGIN_NAMESPACE
@@ -56,15 +57,16 @@ private:
     QString current_file = "";
     QStringList compile_errors;
     CodeEditor *error_message;
+    MathButtons *buttons;
     
     //Paint buttons in tab MathInput
-    void setButton();
+    void initButtons();
 
     //Paint CodeEditor in the left side of mainwindow
     void setCodeEditor();
 
     //Function for buttons
-    void insertMathInput(QString insertion);
+    void insertMathInput(const QString &insertion);
 
     //initialize start image
     void initImage();

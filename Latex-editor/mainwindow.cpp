@@ -1,14 +1,10 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include <QPushButton>
 #include <QVector>
-#include <cstddef>
 #include <QScrollArea>
-#include <QTableWidget>
 #include <QHeaderView>
 #include <QTextStream>
-#include <memory>
-#include <QScrollArea>
+#include <functional>
 #include <QImage>
 #include <QDebug>
 #include <QFormLayout>
@@ -21,10 +17,9 @@
 #include <QInputDialog>
 #include "SyntaxHighlighter.h"
 
-const QSize MINIMAL_WINDOW_SIZE = QSize(1300, 1000);
+const QSize MINIMAL_WINDOW_SIZE = QSize(1000, 500);
 const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
 const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
-const std::size_t MAX_TABLE_COLUMNS = 4;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -33,72 +28,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     setCodeEditor();
-    setButton();
     setMinimumSize(MINIMAL_WINDOW_SIZE);
     initImage();
     initErrorMessage();
+    initButtons();
     syntax_highlighter = new SyntaxHighlighter(editor->document());
 }
 
-void MainWindow::setButton(){
-    Q_INIT_RESOURCE(codeeditor_resources);
-    QFile file(":/mathSymbols.txt");
-
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-        qDebug() << "can not load buttons (file not found)" << '\n';
-        return;
-    }
-
-    static QVector <QString> buttons_names;
-    static QVector <QString> buttons_functions;
-    static QVector <QPushButton*> buttons;
-
-    QTextStream in(&file);
-    while (!in.atEnd()){
-        QString line = in.readLine();
-        QStringList list = line.split("^");
-        if (list.size() < 4|| list[3].size() == 0 || list[3][0] != '\\'){
-            continue;
-        }
-
-        buttons_names.append(list[1]);
-        buttons_functions.append(list[2]);
-    }
-
-    /* static QVector <QString> buttons_names = {"int", "frac", "cdot", "sqrt", "textbf"};
-    static QVector <QString> buttons_functions = {"\\int", "\\frac{}{}", "\\cdot", "\\sqrt", "\\textbf"};
-    static QVector <QPushButton*> buttons; */
-
-    //create table for buttons
-    QTableWidget *table_view = new QTableWidget(this);
-    table_view->setRowCount(1 + buttons_names.size() / MAX_TABLE_COLUMNS + (buttons.size() % MAX_TABLE_COLUMNS != 0));
-    table_view->setColumnCount(MAX_TABLE_COLUMNS);
-    table_view->horizontalHeader()->hide();
-    table_view->verticalHeader()->hide();
-    table_view->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
-    //initialize buttons
-    std::size_t row = 0, column = 0;
-    for (std::size_t index = 0; index < buttons_names.size(); index++){
-        QString button_name = buttons_names[index];
-        QString function_input = buttons_functions[index];
-        buttons.push_back(new QPushButton());
-
-        buttons.back()->setText(button_name);
-        connect(buttons.back(), &QPushButton::clicked, [this, function_input](){ insertMathInput(function_input);});
-
-        table_view->setCellWidget(row, column, buttons.back());
-
-        column++;
-        if (column == MAX_TABLE_COLUMNS){
-            row++;
-            column = 0;
-        }
-    }
-
-
-    ui->RightWindow->addTab(table_view, "MathInput");
-
+void MainWindow::initButtons() {
+    std::function<void(QString)> func = [this](const QString &input) {insertMathInput(input);};
+    buttons = new MathButtons(this, func);
+    ui->RightWindow->addTab(buttons, "MathInput");
 }
 
 void MainWindow::setCodeEditor(){
@@ -108,7 +48,7 @@ void MainWindow::setCodeEditor(){
     ui->ViewAndCode->insertWidget(0, editor);
 }
 
-void MainWindow::insertMathInput(QString insertion){
+void MainWindow::insertMathInput(const QString &insertion){
     editor->insertPlainText(insertion);
 }
 
@@ -116,7 +56,7 @@ void MainWindow::initImage(){
     Q_INIT_RESOURCE(codeeditor_resources);
     scroll_area = new QScrollArea(this);
     scroll_area->setWidgetResizable(true);
-    Poppler::Document* document = Poppler::Document::load("../Latex-editor/resources/start_project_pdf.pdf");
+    Poppler::Document* document = Poppler::Document::load("/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/resources/start_project_pdf.pdf");
     Poppler::Page* pdfFirstPage = document->page(0);
     QImage first_image = pdfFirstPage->renderToImage(150, 150, 0, 0, 1260, 1450);
     m_image = new ImageWidget(this);
