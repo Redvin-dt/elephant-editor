@@ -1,5 +1,4 @@
 #include "ImageWidget.h"
-
 #include <QDebug>
 #include <QPainter>
 #include <QPoint>

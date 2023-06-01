@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QScrollArea>
-
 #include "CodeEditor.h"
 #include "ImageWidget.h"
 #include "MathButtons.h"
@@ -26,11 +25,12 @@ class MainWindow : public QMainWindow {
   private slots:
     void on_actionSave_triggered();
 
-    void on_actionSave_As_triggered();
 
-    void on_actionOpen_file_triggered();
+  void on_actionSave_As_triggered();
 
-    void on_actionRun_triggered();
+  void on_actionOpen_file_triggered();
+
+  void on_actionRun_triggered();
 
     void on_actionExit_triggered();
 

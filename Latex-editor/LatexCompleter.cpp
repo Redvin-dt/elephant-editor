@@ -1,7 +1,5 @@
 #include "LatexCompleter.h"
-
 #include <assert.h>
-
 #include <QDebug>
 #include <QFile>
 #include <QStringListModel>
@@ -24,9 +22,9 @@ LatexCompleter::LatexCompleter(QObject *parent) : QCompleter{parent} {
 
     // qDebug() << list << '\n';
 
-    setModel(new QStringListModel(list, this));
-    setCompletionColumn(0);
-    setModelSorting(QCompleter::CaseInsensitivelySortedModel);
-    setCaseSensitivity(Qt::CaseSensitive);
-    setWrapAround(true);
+  setModel(new QStringListModel(list, this));
+  setCompletionColumn(0);
+  setModelSorting(QCompleter::CaseInsensitivelySortedModel);
+  setCaseSensitivity(Qt::CaseSensitive);
+  setWrapAround(true);
 }
