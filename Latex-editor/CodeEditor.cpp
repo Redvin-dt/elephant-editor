@@ -1,7 +1,8 @@
 #include "CodeEditor.h"
+
+#include "LatexCompleter.h"
 #include "LineNumberArea.h"
 #include "SyntaxStyle.h"
-#include "LatexCompleter.h"
 
 // TODO ADD MISSING INCLUDES ASPETIALY FOR MY CLASSES
 
@@ -27,13 +28,13 @@ static QVector<QPair<QString, QString>> parentheses = {
 CodeEditor::CodeEditor(QWidget *parent)
     : QTextEdit(parent),
 
-    // m_highlighter(nullptr),
-    m_syntax_style(nullptr), m_line_number_area(new LineNumberArea(this)),
-    m_completer(new LatexCompleter(this)),
-    // m_framedAttribute(new QFramedTextAttribute(this)),
+      // m_highlighter(nullptr),
+      m_syntax_style(nullptr), m_line_number_area(new LineNumberArea(this)),
+      m_completer(new LatexCompleter(this)),
+      // m_framedAttribute(new QFramedTextAttribute(this)),
 
-    m_auto_indentation(true), m_auto_parentheses(true), m_replace_tab(true),
-    m_tab_replace(QString(4, ' ')) {
+      m_auto_indentation(true), m_auto_parentheses(true), m_replace_tab(true),
+      m_tab_replace(QString(4, ' ')) {
     initDocumentLayoutHandlers();
     initFont();
     performConnections();
@@ -74,7 +75,8 @@ void CodeEditor::performConnections() {
             &CodeEditor::onSelectionChanged);
 }
 
-void CodeEditor::setSyntaxHighlighter([[maybe_unused]]StyleSyntaxHighlighter *higlighter) {
+void CodeEditor::setSyntaxHighlighter(
+    [[maybe_unused]] StyleSyntaxHighlighter *higlighter) {
     // TODO
 }
 
@@ -93,7 +95,6 @@ void CodeEditor::setSyntaxStyle(SyntaxStyle *style) {
 }
 
 void CodeEditor::updateStyle() {
-
     /* if (m_highlighter){
       m_highlighter->rehighlit();
   } */
@@ -108,7 +109,8 @@ void CodeEditor::updateStyle() {
 
         // Setting common background
         currentPalette.setColor(
-            QPalette::Base, m_syntax_style->getFormat("Text").background().color());
+            QPalette::Base,
+            m_syntax_style->getFormat("Text").background().color());
 
         // Setting selection color
         currentPalette.setColor(
@@ -167,9 +169,9 @@ void CodeEditor::resizeEvent(QResizeEvent *e) {
 
 void CodeEditor::updateLineGeometry() {
     QRect cr = contentsRect();
-    m_line_number_area->setGeometry(QRect(cr.left(), cr.top(),
-                                          m_line_number_area->sizeHint().width(),
-                                          cr.height()));
+    m_line_number_area->setGeometry(
+        QRect(cr.left(), cr.top(), m_line_number_area->sizeHint().width(),
+              cr.height()));
 }
 
 void CodeEditor::updateLineNumberAreaWidth(int) {
@@ -187,7 +189,6 @@ void CodeEditor::updateLineNumberArea(const QRect &rect) {
 }
 
 void CodeEditor::handleSelectionQuery([[maybe_unused]] QTextCursor cursor) {
-
     /*auto searchIterator = cursor;
   searchIterator.movePosition(QTextCursor::Start);
   searchIterator = document()->find(cursor.selectedText(), searchIterator);
@@ -198,13 +199,13 @@ void CodeEditor::handleSelectionQuery([[maybe_unused]] QTextCursor cursor) {
   } REALIZE FRAMEDATTRIBUTE TO UNDERSTAND FULL CODE*/
 }
 
-void CodeEditor::highlightParenthesis([[maybe_unused]]
-                                      QList<QTextEdit::ExtraSelection> &extraSelection) {
+void CodeEditor::highlightParenthesis(
+    [[maybe_unused]] QList<QTextEdit::ExtraSelection> &extraSelection) {
     // TODO
 }
 
-void CodeEditor::highlightCurrentLine([[maybe_unused]]
-                                      QList<QTextEdit::ExtraSelection> &extraSelection) {
+void CodeEditor::highlightCurrentLine(
+    [[maybe_unused]] QList<QTextEdit::ExtraSelection> &extraSelection) {
     // TODO
 }
 
@@ -214,20 +215,20 @@ void CodeEditor::paintEvent(QPaintEvent *e) {
 }
 
 int CodeEditor::getFirstVisibleBlock() {
-
     QTextCursor cursor = QTextCursor(document());
 
     for (int index = 0; index < document()->blockCount(); index++) {
         QTextBlock block = cursor.block();
 
         QRect first = viewport()->geometry();
-        QRect second = document()
-                           ->documentLayout()
-                           ->blockBoundingRect(block)
-                           .translated(viewport()->geometry().x(),
-                                       viewport()->geometry().y() -
-                                           verticalScrollBar()->sliderPosition())
-                           .toRect();
+        QRect second =
+            document()
+                ->documentLayout()
+                ->blockBoundingRect(block)
+                .translated(viewport()->geometry().x(),
+                            viewport()->geometry().y() -
+                                verticalScrollBar()->sliderPosition())
+                .toRect();
 
         if (first.intersects(second)) {
             return index;
@@ -311,8 +312,8 @@ void CodeEditor::keyPressEvent(QKeyEvent *e) {
 
     int indentation_level = getIndentationSpaces();
 
-    int tab_count =
-        indentation_level * fontMetrics().averageCharWidth() / tabStopDistance();
+    int tab_count = indentation_level * fontMetrics().averageCharWidth() /
+                    tabStopDistance();
 
     // Have Qt Edior like behaviour, if {|} and enter is pressed indent the two
     // parenthesis
@@ -351,7 +352,8 @@ void CodeEditor::keyPressEvent(QKeyEvent *e) {
 
         cursor.movePosition(QTextCursor::MoveOperation::StartOfLine);
         cursor.movePosition(QTextCursor::MoveOperation::Right,
-                            QTextCursor::MoveMode::KeepAnchor, indentation_level);
+                            QTextCursor::MoveMode::KeepAnchor,
+                            indentation_level);
 
         cursor.removeSelectedText();
         return;
@@ -418,7 +420,6 @@ void CodeEditor::setTabReplaceSize(int val) {
 int CodeEditor::tabReplaceSize() const { return m_tab_replace.size(); }
 
 void CodeEditor::setCompleter(QCompleter *completer) {
-
     if (m_completer) {
         disconnect(m_completer, nullptr, this, nullptr);
     }
@@ -491,7 +492,8 @@ int CodeEditor::getIndentationSpaces() { // Check how many space will be added
         if (blockText[i] == ' ') {
             indentationLevel++;
         } else {
-            indentationLevel += tabStopDistance() / fontMetrics().averageCharWidth();
+            indentationLevel +=
+                tabStopDistance() / fontMetrics().averageCharWidth();
         }
     }
 

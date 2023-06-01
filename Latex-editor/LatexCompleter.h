@@ -3,10 +3,9 @@
 
 #include <QCompleter>
 
-class LatexCompleter : public QCompleter
-{
+class LatexCompleter : public QCompleter {
     Q_OBJECT
-public:
+  public:
     explicit LatexCompleter(QObject *parent = nullptr);
 };
 

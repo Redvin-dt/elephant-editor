@@ -18,13 +18,11 @@ bool SyntaxStyle::load(QString file_name) {
 
         if (item == QXmlStreamReader::StartElement) {
             if (reader.name() == "style-scheme") {
-
                 if (reader.attributes().hasAttribute("name")) {
                     m_name = reader.attributes().value("name").toString();
                 }
 
             } else if (reader.name() == "style") {
-
                 auto attributes = reader.attributes();
 
                 auto name = attributes.value("name");

@@ -8,7 +8,7 @@
 
 class SyntaxStyle : public QObject {
     Q_OBJECT
-public:
+  public:
     // Constructor
     explicit SyntaxStyle(QObject *parent = nullptr);
 
@@ -26,7 +26,7 @@ public:
 
     static SyntaxStyle *defaultStyle();
 
-private:
+  private:
     QString m_name;
 
     QMap<QString, QTextCharFormat> m_data;

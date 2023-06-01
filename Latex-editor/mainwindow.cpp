@@ -1,20 +1,23 @@
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
-#include <QVector>
-#include <QScrollArea>
-#include <QHeaderView>
-#include <QTextStream>
-#include <functional>
-#include <QImage>
-#include <QDebug>
-#include <QFormLayout>
-#include <QtGui>
-#include <QSize>
+
 #include <poppler/qt5/poppler-qt5.h>
-#include <QMessageBox>
-#include <QFileDialog>
 #include <unistd.h>
+
+#include <QDebug>
+#include <QFileDialog>
+#include <QFormLayout>
+#include <QHeaderView>
+#include <QImage>
 #include <QInputDialog>
+#include <QMessageBox>
+#include <QScrollArea>
+#include <QSize>
+#include <QTextStream>
+#include <QVector>
+#include <QtGui>
+#include <functional>
+
+#include "./ui_mainwindow.h"
 #include "SyntaxHighlighter.h"
 
 const QSize MINIMAL_WINDOW_SIZE = QSize(1000, 500);
@@ -22,9 +25,7 @@ const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
 const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-{
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
     setCodeEditor();
@@ -36,29 +37,34 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 void MainWindow::initButtons() {
-    std::function<void(QString)> func = [this](const QString &input) {insertMathInput(input);};
+    std::function<void(QString)> func = [this](const QString &input) {
+        insertMathInput(input);
+    };
     buttons = new MathButtons(this, func);
     ui->RightWindow->addTab(buttons, "MathInput");
 }
 
-void MainWindow::setCodeEditor(){
+void MainWindow::setCodeEditor() {
     editor = new CodeEditor();
     editor->setMinimumSize(MINIMAL_CODE_EDITOR_SIZE);
     ui->ViewAndCode->setChildrenCollapsible(false);
     ui->ViewAndCode->insertWidget(0, editor);
 }
 
-void MainWindow::insertMathInput(const QString &insertion){
+void MainWindow::insertMathInput(const QString &insertion) {
     editor->insertPlainText(insertion);
 }
 
-void MainWindow::initImage(){
+void MainWindow::initImage() {
     Q_INIT_RESOURCE(codeeditor_resources);
     scroll_area = new QScrollArea(this);
     scroll_area->setWidgetResizable(true);
-    Poppler::Document* document = Poppler::Document::load("/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/resources/start_project_pdf.pdf");
-    Poppler::Page* pdfFirstPage = document->page(0);
-    QImage first_image = pdfFirstPage->renderToImage(150, 150, 0, 0, 1260, 1450);
+    Poppler::Document *document = Poppler::Document::load(
+        "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/"
+        "resources/start_project_pdf.pdf");
+    Poppler::Page *pdfFirstPage = document->page(0);
+    QImage first_image =
+        pdfFirstPage->renderToImage(150, 150, 0, 0, 1260, 1450);
     m_image = new ImageWidget(this);
     m_image->setImage(first_image);
     scroll_area->setWidget(m_image);
@@ -67,15 +73,15 @@ void MainWindow::initImage(){
     delete document;
 }
 
-void MainWindow::setPDF(){
+void MainWindow::setPDF() {
     QString filename = current_file;
     filename.replace(".tex", ".pdf");
     QStringList dirs = filename.split("/");
     filename = dirs.back();
-    if (current_file.isEmpty()){
+    if (current_file.isEmpty()) {
         return;
     }
-    Poppler::Document* document = Poppler::Document::load(filename);
+    Poppler::Document *document = Poppler::Document::load(filename);
     if (!document || document->isLocked()) {
         delete document;
         return;
@@ -84,26 +90,29 @@ void MainWindow::setPDF(){
         delete document;
         return;
     }
-    Poppler::Page* pdfFirstPage = document->page(0);
+    Poppler::Page *pdfFirstPage = document->page(0);
     if (pdfFirstPage == 0) {
         delete pdfFirstPage;
         delete document;
         return;
     }
-    QImage first_image = pdfFirstPage->renderToImage(150, 150, 0, 0, 1260, 1800);
+    QImage first_image =
+        pdfFirstPage->renderToImage(150, 150, 0, 0, 1260, 1800);
     if (first_image.isNull()) {
         delete pdfFirstPage;
         delete document;
         return;
     }
-    for (int page_num = 1; page_num < document->numPages(); page_num++){
-        Poppler::Page* pdfPage = document->page(page_num);
+    for (int page_num = 1; page_num < document->numPages(); page_num++) {
+        Poppler::Page *pdfPage = document->page(page_num);
         QImage image = pdfPage->renderToImage(150, 150, 0, 0, 1260, 1800);
-        QImage image_sum( qMax( first_image.width(), image.width() ), first_image.height() + image.height(), first_image.format() );
-        image_sum.fill( 0 );
-        QPainter p( &image_sum );
-        p.drawImage( 0, 0, first_image );
-        p.drawImage( 0, first_image.height(), image );
+        QImage image_sum(qMax(first_image.width(), image.width()),
+                         first_image.height() + image.height(),
+                         first_image.format());
+        image_sum.fill(0);
+        QPainter p(&image_sum);
+        p.drawImage(0, 0, first_image);
+        p.drawImage(0, first_image.height(), image);
         p.end();
         first_image = image_sum;
     }
@@ -112,17 +121,14 @@ void MainWindow::setPDF(){
     delete document;
 }
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
+MainWindow::~MainWindow() { delete ui; }
 
-void MainWindow::on_actionSave_As_triggered()
-{
+void MainWindow::on_actionSave_As_triggered() {
     QString filename = QFileDialog::getSaveFileName(this, "Save as");
     QFile file(filename);
-    if(!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        QMessageBox::warning(this, "Warning", "Cannot save file : " + file.errorString());
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "Warning",
+                             "Cannot save file : " + file.errorString());
         return;
     }
     qDebug() << filename << '\n';
@@ -134,19 +140,17 @@ void MainWindow::on_actionSave_As_triggered()
     file.close();
 }
 
-
-void MainWindow::on_actionSave_triggered()
-{
+void MainWindow::on_actionSave_triggered() {
     QString filename;
-    if (current_file.isEmpty()){
+    if (current_file.isEmpty()) {
         filename = QFileDialog::getSaveFileName(this, "Save as");
-    }
-    else {
+    } else {
         filename = current_file;
     }
     QFile file(filename);
-    if(!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        QMessageBox::warning(this, "Warning", "Cannot save file : " + file.errorString());
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "Warning",
+                             "Cannot save file : " + file.errorString());
         return;
     }
     qDebug() << filename << '\n';
@@ -158,20 +162,21 @@ void MainWindow::on_actionSave_triggered()
     file.close();
 }
 
-void MainWindow::on_actionOpen_file_triggered()
-{
+void MainWindow::on_actionOpen_file_triggered() {
     QString filename = QFileDialog::getOpenFileName(this, "Open file");
     QFile file(filename);
     qDebug() << filename << '\n';
-    if(!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QMessageBox::warning(this, "Warning", "Cannot open file : " + file.errorString());
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::warning(this, "Warning",
+                             "Cannot open file : " + file.errorString());
         return;
     }
 
     current_file = filename;
     int size = (int)current_file.size();
-    if (size < 5 || current_file[size - 4] != '.' || current_file[size - 3] != 't'
-        || current_file[size - 2] != 'e' || current_file[size - 1] != 'x') {
+    if (size < 5 || current_file[size - 4] != '.' ||
+        current_file[size - 3] != 't' || current_file[size - 2] != 'e' ||
+        current_file[size - 1] != 'x') {
         QMessageBox::warning(this, "Warning", "File extension is not '.tex'");
         return;
     } // как минимум a.tex
@@ -183,14 +188,14 @@ void MainWindow::on_actionOpen_file_triggered()
     file.close();
 }
 
-
-void MainWindow::on_actionRun_triggered()
-{
+void MainWindow::on_actionRun_triggered() {
     on_actionSave_triggered();
     compile_errors.clear();
     QProcess compiling(this);
-    QString compile_options = "pdflatex --file-line-error -halt-on-error -interaction=nonstopmode ";
-    QString installing_comm = "texliveonfly --arguments=\"--file-line-error -halt-on-error -interaction=nonstopmode\" ";
+    QString compile_options =
+        "pdflatex --file-line-error -halt-on-error -interaction=nonstopmode ";
+    QString installing_comm = "texliveonfly --arguments=\"--file-line-error "
+                              "-halt-on-error -interaction=nonstopmode\" ";
     QProcess installing(this);
     installing.start(installing_comm + "\"" + current_file + "\"");
     installing.waitForFinished(-1);
@@ -202,92 +207,65 @@ void MainWindow::on_actionRun_triggered()
     extrafiles = dirs.back();
     extrafiles.replace(".tex", ".log");
     QFile file_log(extrafiles);
-    if (file_log.open(QIODevice::ReadOnly)){
+    if (file_log.open(QIODevice::ReadOnly)) {
         QTextStream in(&file_log);
         QString line_block;
-        while(!in.atEnd()){
+        while (!in.atEnd()) {
             QString line = in.readLine();
-            if (line.isEmpty()){
-                if (line_block.indexOf("LaTeX Error:") != -1 || line_block.indexOf("Emergency stop.") != -1){
+            if (line.isEmpty()) {
+                if (line_block.indexOf("LaTeX Error:") != -1 ||
+                    line_block.indexOf("Emergency stop.") != -1) {
                     compile_errors.append(line_block);
                 }
                 line_block.clear();
-            }
-            else {
+            } else {
                 line_block += line + "\n";
             }
         }
-        if (!line_block.isEmpty()){
-            if (line_block.indexOf("LaTeX Error:") != -1){
+        if (!line_block.isEmpty()) {
+            if (line_block.indexOf("LaTeX Error:") != -1) {
                 compile_errors.append(line_block);
             }
             line_block.clear();
         }
     }
-    if (compile_errors.isEmpty()){
+    if (compile_errors.isEmpty()) {
         setPDF();
     }
-    //QFile::remove(extrafiles);
+    // QFile::remove(extrafiles);
     extrafiles.replace(".log", ".aux");
     QFile::remove(extrafiles);
     extrafiles.replace(".aux", ".out");
     QFile::remove(extrafiles);
     extrafiles.replace(".out", ".synctex.gz");
     QFile::remove(extrafiles);
-    if (compile_errors.isEmpty()){
+    if (compile_errors.isEmpty()) {
         compile_errors.append("Compilation completed successfully");
     }
     error_message->setText(compile_errors.join("\n"));
 }
 
+void MainWindow::on_actionExit_triggered() { QApplication::quit(); }
 
-void MainWindow::on_actionExit_triggered()
-{
-    QApplication::quit();
-}
+void MainWindow::on_actionCopy_triggered() { editor->copy(); }
 
-void MainWindow::on_actionCopy_triggered()
-{
-    editor->copy();
-}
+void MainWindow::on_actionPaste_triggered() { editor->paste(); }
 
-void MainWindow::on_actionPaste_triggered()
-{
-    editor->paste();
-}
+void MainWindow::on_actionCut_triggered() { editor->cut(); }
 
-void MainWindow::on_actionCut_triggered()
-{
-    editor->cut();
-}
+void MainWindow::on_actionUndo_triggered() { editor->undo(); }
 
-void MainWindow::on_actionUndo_triggered()
-{
-    editor->undo();
-}
+void MainWindow::on_actionRedo_triggered() { editor->redo(); }
 
-void MainWindow::on_actionRedo_triggered()
-{
-    editor->redo();
-}
+void MainWindow::on_actionFind_triggered() {}
 
-
-void MainWindow::on_actionFind_triggered()
-{
-
-}
-
-
-void MainWindow::on_actionFind_and_Replace_triggered()
-{
+void MainWindow::on_actionFind_and_Replace_triggered() {
     bool ok_find;
-    QString find = QInputDialog::getText(0, "Find and Replace",
-                                             "Find:", QLineEdit::Normal,
-                                             "", &ok_find);
+    QString find = QInputDialog::getText(
+        0, "Find and Replace", "Find:", QLineEdit::Normal, "", &ok_find);
     bool ok_replace;
-    QString replace = QInputDialog::getText(0, "Find and Replace",
-                                             "Replace:", QLineEdit::Normal,
-                                             "", &ok_replace);
+    QString replace = QInputDialog::getText(
+        0, "Find and Replace", "Replace:", QLineEdit::Normal, "", &ok_replace);
 
     if (!ok_replace || !ok_find) {
         return;
@@ -295,16 +273,15 @@ void MainWindow::on_actionFind_and_Replace_triggered()
 
     editor->moveCursor(QTextCursor::Start);
 
-    while(editor->find(find)){
+    while (editor->find(find)) {
         editor->textCursor().insertText(replace);
     }
 }
 
-void MainWindow::initErrorMessage(){
+void MainWindow::initErrorMessage() {
     QGridLayout *layout = new QGridLayout(ui->Messages);
     error_message = new CodeEditor(ui->Messages);
     layout->addWidget(error_message);
     ui->Messages->setLayout(layout);
     error_message->setReadOnly(true);
 }
-

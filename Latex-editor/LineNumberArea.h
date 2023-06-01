@@ -1,15 +1,15 @@
 #ifndef LINENUMBERAREA_H
 #define LINENUMBERAREA_H
 
-#include "SyntaxStyle.h"
-
 #include <QWidget>
+
+#include "SyntaxStyle.h"
 
 class CodeEditor;
 
 class LineNumberArea : public QWidget {
     Q_OBJECT
-public:
+  public:
     // set code editor as parent
     explicit LineNumberArea(CodeEditor *parent = nullptr);
 
@@ -23,10 +23,10 @@ public:
 
     SyntaxStyle *syntaxStyle() const;
 
-protected:
+  protected:
     void paintEvent(QPaintEvent *event) override;
 
-private:
+  private:
     CodeEditor *m_code_editor;
     SyntaxStyle *m_syntax_style;
 };

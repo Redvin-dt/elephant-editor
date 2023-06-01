@@ -2,29 +2,29 @@
 #define SYNTAXHIGHLIGHTER_H
 
 #include <QObject>
+#include <QRegularExpression>
 #include <QSyntaxHighlighter>
 #include <QTextCharFormat>
-#include <QRegularExpression>
 
 class QTextDocument;
 
 class SyntaxHighlighter : public QSyntaxHighlighter {
-Q_OBJECT
-public:
+    Q_OBJECT
+  public:
     explicit SyntaxHighlighter(QTextDocument *parent = nullptr);
     ~SyntaxHighlighter() override {}
 
-protected:
+  protected:
     void highlightBlock(const QString &text) override;
 
-private:
+  private:
     struct HighlightingRule {
         QRegularExpression pattern;
         QTextCharFormat format;
     };
 
-    struct OptionPatterns{
-        OptionPatterns(const QRegularExpression& begin_, int length_);
+    struct OptionPatterns {
+        OptionPatterns(const QRegularExpression &begin_, int length_);
 
         QRegularExpression begin;
         QRegularExpression end;
@@ -44,7 +44,7 @@ private:
     QTextCharFormat escaping_format;
     QTextCharFormat comment_format;
 
-    void addRule(QTextCharFormat *format, const QColor& foreground, int font,
+    void addRule(QTextCharFormat *format, const QColor &foreground, int font,
                  QRegularExpression pattern);
 };
 

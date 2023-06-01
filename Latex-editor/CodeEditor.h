@@ -11,7 +11,7 @@ class FramedTextAttribute;    // SEARCH TODO
 
 class CodeEditor : public QTextEdit {
     Q_OBJECT
-public:
+  public:
     // just constructor
     explicit CodeEditor(QWidget *parent = nullptr);
 
@@ -51,12 +51,12 @@ public:
 
     QCompleter *completer() const;
 
-    public
+  public
     Q_SLOT :
 
-             // Slot that performs insertion of comletion
-             void
-             insertCompletion(QString s);
+        // Slot that performs insertion of comletion
+        void
+        insertCompletion(QString s);
 
     // Slot that that performs update LineNumberArea Width
     void updateLineNumberAreaWidth(int);
@@ -73,7 +73,7 @@ public:
     // Slot that will be called on selection change.
     void onSelectionChanged();
 
-protected:
+  protected:
     // overrided methods
 
     // insert text as plain text
@@ -96,7 +96,7 @@ protected:
     // called on focus in widget, override for set comleter
     void focusInEvent(QFocusEvent *e) override;
 
-private:
+  private:
     // Method for initializing document layout
     void initDocumentLayoutHandlers();
 
@@ -125,15 +125,15 @@ private:
     // Method for getting word under cursor.
     QString wordUnderCursor() const;
 
-    // Method that adds highlighting of currently selected line to extra selection
-    // list.
+    // Method that adds highlighting of currently selected line to extra
+    // selection list.
     void highlightCurrentLine(QList<QTextEdit::ExtraSelection> &extraSelection);
 
     // Method, that adds highlighting of parenthesis if available.
     void highlightParenthesis(QList<QTextEdit::ExtraSelection> &extraSelection);
 
-    // Method for getting number of indentation spaces in current line. Tabs will
-    // be treated as `tabWidth / spaceWidth`
+    // Method for getting number of indentation spaces in current line. Tabs
+    // will be treated as `tabWidth / spaceWidth`
     int getIndentationSpaces();
 
     StyleSyntaxHighlighter *m_highlighter;

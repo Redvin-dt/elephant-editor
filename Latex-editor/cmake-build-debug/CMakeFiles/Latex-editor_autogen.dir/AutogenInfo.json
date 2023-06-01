@@ -1,0 +1,250 @@
+{
+	"BUILD_DIR" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen",
+	"CMAKE_BINARY_DIR" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor",
+	"CMAKE_EXECUTABLE" : "/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/CMakeLists.txt",
+		"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/3.25.2/CMakeSystem.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake",
+		"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/3.25.2/CMakeCXXCompiler.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/UnixPaths.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux-GNU-CXX.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/Platform/Linux-GNU.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPkgConfig.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/FindPackageMessage.cmake",
+		"/usr/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/usr/lib/cmake/Qt5/Qt5Config.cmake",
+		"/usr/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/usr/lib/cmake/Qt5/Qt5Config.cmake",
+		"/usr/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/usr/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"/usr/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"/usr/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/usr/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/usr/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"/usr/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"/usr/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeParseArguments.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QGtk3ThemePlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QTsLibPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"/usr/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"/usr/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeParseArguments.cmake",
+		"/usr/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsConfigVersion.cmake",
+		"/usr/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsConfig.cmake",
+		"/usr/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeParseArguments.cmake",
+		"/usr/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/usr/lib/cmake/Qt5/Qt5Config.cmake",
+		"/usr/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"/usr/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"/usr/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/usr/lib/cmake/Qt5/Qt5Config.cmake",
+		"/usr/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/usr/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/usr/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/resources/codeeditor_resources.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor",
+	"DEP_FILE" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "Latex-editor_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/CodeEditor.h",
+			"MU",
+			"EWIEGA46WW/moc_CodeEditor.cpp",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/ImageWidget.h",
+			"MU",
+			"EWIEGA46WW/moc_ImageWidget.cpp",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/LatexCompleter.h",
+			"MU",
+			"EWIEGA46WW/moc_LatexCompleter.cpp",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/LineNumberArea.h",
+			"MU",
+			"EWIEGA46WW/moc_LineNumberArea.cpp",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/MathButtons.h",
+			"MU",
+			"EWIEGA46WW/moc_MathButtons.cpp",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/SyntaxHighlighter.h",
+			"MU",
+			"EWIEGA46WW/moc_SyntaxHighlighter.cpp",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/SyntaxStyle.h",
+			"MU",
+			"EWIEGA46WW/moc_SyntaxStyle.cpp",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/usr/include/qt",
+		"/usr/include/qt/QtWidgets",
+		"/usr/include/qt/QtGui",
+		"/usr/include/qt/QtCore",
+		"/usr/lib/qt/mkspecs/linux-g++",
+		"/usr/include/poppler/qt5",
+		"/usr/include/poppler",
+		"/usr/include/c++/12.2.1",
+		"/usr/include/c++/12.2.1/x86_64-pc-linux-gnu",
+		"/usr/include/c++/12.2.1/backward",
+		"/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include",
+		"/usr/local/include",
+		"/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.1/include-fixed",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/var/lib/snapd/snap/clion/237/bin/cmake/linux/x64/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/Latex-editor_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/Latex-editor_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/CodeEditor.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/ImageWidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/LatexCompleter.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/LineNumberArea.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/MathButtons.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/SyntaxHighlighter.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/SyntaxStyle.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/mainwindow.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

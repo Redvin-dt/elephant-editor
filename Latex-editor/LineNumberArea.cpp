@@ -1,6 +1,4 @@
 #include "LineNumberArea.h"
-#include "CodeEditor.h"
-#include "SyntaxStyle.h"
 
 #include <QAbstractTextDocumentLayout>
 #include <QPaintEvent>
@@ -8,6 +6,9 @@
 #include <QScrollBar>
 #include <QTextBlock>
 #include <QTextEdit>
+
+#include "CodeEditor.h"
+#include "SyntaxStyle.h"
 
 LineNumberArea::LineNumberArea(CodeEditor *parent)
     : QWidget(parent), m_syntax_style(nullptr), m_code_editor(parent) {}
@@ -26,8 +27,8 @@ QSize LineNumberArea::sizeHint() const {
     }
 
     int space =
-        13 +
-        m_code_editor->fontMetrics().horizontalAdvance(QLatin1Char('9')) * digits;
+        13 + m_code_editor->fontMetrics().horizontalAdvance(QLatin1Char('9')) *
+                 digits;
 
     return QSize(space, 0);
 }
@@ -75,8 +76,8 @@ void LineNumberArea::paintEvent(QPaintEvent *event) {
             painter.setPen(isCurrentLine ? currentLine : otherLines);
 
             painter.drawText(-5, top, sizeHint().width(),
-                             m_code_editor->fontMetrics().height(), Qt::AlignRight,
-                             number);
+                             m_code_editor->fontMetrics().height(),
+                             Qt::AlignRight, number);
         }
 
         block = block.next();
