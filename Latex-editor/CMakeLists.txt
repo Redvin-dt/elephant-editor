@@ -13,6 +13,7 @@ include(FindPkgConfig)
 pkg_check_modules(POPPLER_QT5 REQUIRED IMPORTED_TARGET poppler-qt5)
 
 #add_compile_options(-fsanitize=address)
+#add_compile_options(-fsanitize=undefined)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
@@ -36,8 +37,10 @@ set(PROJECT_SOURCES
         LineNumberArea.h
         LatexCompleter.cpp
         LatexCompleter.h
+        SyntaxHighlighter.cpp
+        SyntaxHighlighter.h
         ${TS_FILES}
-)
+        MathButtons.cpp MathButtons.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Latex-editor

@@ -1,6 +1,5 @@
 #ifndef IMAGEWIDGET_H
 #define IMAGEWIDGET_H
-
 // NOLINTNEXTLINE [clang-diagnostic-error]
 #include <QImage>
 #include <QObject>
@@ -13,10 +12,10 @@ class ImageWidget : public QWidget {
 public:
     explicit ImageWidget(QWidget *parent = nullptr);
 
-    //load image with current filename
+    // load image with current filename
     void loadImage(QString filename);
 
-    //set image from Qimage
+    // set image from Qimage
     void setImage(QImage new_image);
 private:
   QImage m_image;

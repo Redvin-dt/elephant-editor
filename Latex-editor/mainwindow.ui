@@ -57,7 +57,7 @@
     <property name="title">
      <string>Edit</string>
     </property>
-    <addaction name="actionCopy_2"/>
+    <addaction name="actionCopy"/>
     <addaction name="actionPaste"/>
     <addaction name="actionCut"/>
     <addaction name="actionUndo"/>
@@ -101,7 +101,7 @@
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionCopy_2">
+  <action name="actionCopy">
    <property name="text">
     <string>Copy</string>
    </property>

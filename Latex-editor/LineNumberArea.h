@@ -1,10 +1,10 @@
 #ifndef LINENUMBERAREA_H
 #define LINENUMBERAREA_H
 
-#include "SyntaxStyle.h"
-
 #include <QObject>
 #include <QWidget>
+
+#include "SyntaxStyle.h"
 
 class CodeEditor;
 

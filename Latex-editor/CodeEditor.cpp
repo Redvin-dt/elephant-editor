@@ -34,11 +34,12 @@ CodeEditor::CodeEditor(QWidget *parent)
 
       m_auto_indentation(true), m_auto_parentheses(true), m_replace_tab(true),
       m_tab_replace(QString(4, ' ')) {
-  initDocumentLayoutHandlers();
-  initFont();
-  performConnections();
+    initDocumentLayoutHandlers();
+    initFont();
+    performConnections();
 
-  setSyntaxStyle(SyntaxStyle::defaultStyle());
+
+    setSyntaxStyle(SyntaxStyle::defaultStyle());
 }
 
 void CodeEditor::initDocumentLayoutHandlers() {
@@ -76,7 +77,7 @@ void CodeEditor::performConnections() {
 
 void CodeEditor::setSyntaxHighlighter(
     [[maybe_unused]] StyleSyntaxHighlighter *higlighter) {
-  // TODO
+
 }
 
 void CodeEditor::setSyntaxStyle(SyntaxStyle *style) {
@@ -95,10 +96,6 @@ void CodeEditor::setSyntaxStyle(SyntaxStyle *style) {
 
 void CodeEditor::updateStyle() {
 
-  /* if (m_highlighter){
-    m_highlighter->rehighlit();
-} */
-
   if (m_syntax_style) {
     auto currentPalette = palette();
 
@@ -107,9 +104,12 @@ void CodeEditor::updateStyle() {
         QPalette::ColorRole::Text,
         m_syntax_style->getFormat("Text").foreground().color());
 
+
     // Setting common background
     currentPalette.setColor(
-        QPalette::Base, m_syntax_style->getFormat("Text").background().color());
+        QPalette::Base,
+        m_syntax_style->getFormat("Text").background().color());
+
 
     // Setting selection color
     currentPalette.setColor(
@@ -167,10 +167,10 @@ void CodeEditor::resizeEvent(QResizeEvent *e) {
 }
 
 void CodeEditor::updateLineGeometry() {
-  QRect cr = contentsRect();
-  m_line_number_area->setGeometry(QRect(cr.left(), cr.top(),
-                                        m_line_number_area->sizeHint().width(),
-                                        cr.height()));
+    QRect cr = contentsRect();
+    m_line_number_area->setGeometry(
+        QRect(cr.left(), cr.top(), m_line_number_area->sizeHint().width(),
+              cr.height()));
 }
 
 void CodeEditor::updateLineNumberAreaWidth(int) {
@@ -188,7 +188,6 @@ void CodeEditor::updateLineNumberArea(const QRect &rect) {
 }
 
 void CodeEditor::handleSelectionQuery([[maybe_unused]] QTextCursor cursor) {
-
   /*auto searchIterator = cursor;
 searchIterator.movePosition(QTextCursor::Start);
 searchIterator = document()->find(cursor.selectedText(), searchIterator);
@@ -201,12 +200,12 @@ while (searchIterator.hasSelection())
 
 void CodeEditor::highlightParenthesis(
     [[maybe_unused]] QList<QTextEdit::ExtraSelection> &extraSelection) {
-  // TODO
+    // TODO
 }
 
 void CodeEditor::highlightCurrentLine(
     [[maybe_unused]] QList<QTextEdit::ExtraSelection> &extraSelection) {
-  // TODO
+    // TODO
 }
 
 void CodeEditor::paintEvent(QPaintEvent *e) {
@@ -215,7 +214,6 @@ void CodeEditor::paintEvent(QPaintEvent *e) {
 }
 
 int CodeEditor::getFirstVisibleBlock() {
-
   QTextCursor cursor = QTextCursor(document());
 
   for (int index = 0; index < document()->blockCount(); index++) {
@@ -418,6 +416,7 @@ void CodeEditor::keyPressEvent(QKeyEvent *e) {
 
 [[maybe_unused]] int CodeEditor::tabReplaceSize() const { return m_tab_replace.size(); }
 
+
 [[maybe_unused]] void CodeEditor::setCompleter(QCompleter *completer) {
 
   if (m_completer) {
@@ -489,11 +488,11 @@ int CodeEditor::getIndentationSpaces() { // Check how many space will be added
 
   for (auto i = 0;
        i < blockText.size() && QString("\t ").contains(blockText[i]); ++i) {
-    if (blockText[i] == ' ') {
-      indentationLevel++;
-    } else {
-      indentationLevel += tabStopDistance() / fontMetrics().averageCharWidth();
-    }
+      if (blockText[i] == ' ') {
+        indentationLevel++;
+      } else {
+        indentationLevel += tabStopDistance() / fontMetrics().averageCharWidth();
+      }
   }
 
   return indentationLevel;

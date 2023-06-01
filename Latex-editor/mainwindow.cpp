@@ -1,10 +1,12 @@
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
+#include <poppler/qt5/poppler-qt5.h>
+#include <unistd.h>
 #include <QDebug>
 #include <QFileDialog>
 #include <QFormLayout>
 #include <QHeaderView>
 #include <QImage>
+#include <QInputDialog>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QScrollArea>
@@ -14,75 +16,50 @@
 #include <QtGui>
 #include <cstddef>
 #include <memory>
-#include <poppler/qt5/poppler-qt5.h>
-#include <QMessageBox>
-#include <QFileDialog>
-#include <unistd.h>
+#include <QScrollArea>
+#include <QTextStream>
+#include <QVector>
+#include <functional>
 
-const QSize MINIMAL_WINDOW_SIZE = QSize(1300, 1000);
+#include "./ui_mainwindow.h"
+#include "SyntaxHighlighter.h"
+
+const QSize MINIMAL_WINDOW_SIZE = QSize(1000, 500);
 const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
-const std::size_t MAX_TABLE_COLUMNS = 4;
+const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-{
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
     setCodeEditor();
-    setButton();
     setMinimumSize(MINIMAL_WINDOW_SIZE);
     initImage();
+    initErrorMessage();
+    initButtons();
+    syntax_highlighter = new SyntaxHighlighter(editor->document());
 }
 
-void MainWindow::setButton(){
-
-    static QVector <QString> buttons_names = {"int", "frac", "cdot", "sqrt", "textbf"};
-    static QVector <QString> buttons_functions = {"\\int", "\\frac{}{}", "\\cdot", "\\sqrt", "\\textbf"};
-    static QVector <QPushButton*> buttons;
-
-    //create table for buttons
-    QTableWidget *table_view = new QTableWidget(this);
-    table_view->setRowCount(1 + buttons_names.size() / MAX_TABLE_COLUMNS + (buttons.size() % MAX_TABLE_COLUMNS != 0));
-    table_view->setColumnCount(MAX_TABLE_COLUMNS);
-    table_view->horizontalHeader()->hide();
-    table_view->verticalHeader()->hide();
-    table_view->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
-    //initialize buttons
-    std::size_t row = 0, column = 0;
-    for (std::size_t index = 0; index < buttons_names.size(); index++){
-        QString button_name = buttons_names[index];
-        QString function_input = buttons_functions[index];
-        buttons.push_back(new QPushButton());
-
-        buttons.back()->setText(button_name);
-        connect(buttons.back(), &QPushButton::clicked, [this, function_input](){ insertMathInput(function_input);});
-
-        table_view->setCellWidget(row, column, buttons.back());
-
-        column++;
-        if (column == MAX_TABLE_COLUMNS){
-            row++;
-            column = 0;
-        }
-    }
-
-  ui->RightWindow->addTab(table_view, "MathInput");
+void MainWindow::initButtons() {
+    std::function<void(QString)> func = [this](const QString &input) {
+        insertMathInput(input);
+    };
+    buttons = new MathButtons(this, func);
+    ui->RightWindow->addTab(buttons, "MathInput");
 }
 
-void MainWindow::setCodeEditor(){
+void MainWindow::setCodeEditor() {
     editor = new CodeEditor();
     editor->setMinimumSize(MINIMAL_CODE_EDITOR_SIZE);
     ui->ViewAndCode->setChildrenCollapsible(false);
     ui->ViewAndCode->insertWidget(0, editor);
 }
 
-void MainWindow::insertMathInput(QString insertion) {
-  editor->insertPlainText(insertion);
+void MainWindow::insertMathInput(const QString &insertion) {
+    editor->insertPlainText(insertion);
 }
 
-void MainWindow::initImage(){
+void MainWindow::initImage() {
     Q_INIT_RESOURCE(codeeditor_resources);
     scroll_area = new QScrollArea(this);
     scroll_area->setWidgetResizable(true);
