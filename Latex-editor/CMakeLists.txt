@@ -15,10 +15,11 @@ pkg_check_modules(POPPLER_QT5 REQUIRED IMPORTED_TARGET poppler-qt5)
 #add_compile_options(-fsanitize=address)
 #add_compile_options(-fsanitize=undefined)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets LinguistTools)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Gui)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
+
+find_package(QT NAMES Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
+find_package(Qt5 REQUIRED COMPONENTS Gui)
+find_package(Qt5 REQUIRED COMPONENTS Core)
 
 set(TS_FILES Latex-editor_en_US.ts)
 

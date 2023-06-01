@@ -22,7 +22,7 @@ void SyntaxHighlighter::addRule(QTextCharFormat *format,
 }
 
 SyntaxHighlighter::SyntaxHighlighter(QTextDocument *parent)
-    : QSyntaxHighlighter(parent) {
+        : QSyntaxHighlighter(parent) {
     QColor function_color = BLUE;
     addRule(&command_format, function_color, BOLD_FONT,
             QRegularExpression(QStringLiteral("\\\\[A-Za-z]+")));
@@ -41,20 +41,20 @@ SyntaxHighlighter::SyntaxHighlighter(QTextDocument *parent)
 
     QColor options_color = MAGENTA;
     options = {
-        OptionPatterns(QRegularExpression(QStringLiteral("\\\\begin{")), 7),
-        OptionPatterns(QRegularExpression(QStringLiteral("\\\\end{")), 5),
-        OptionPatterns(QRegularExpression(QStringLiteral("\\\\usepackage{")),
-                       12),
-        OptionPatterns(QRegularExpression(QStringLiteral("\\\\documentclass{")),
-                       15),
+            OptionPatterns(QRegularExpression(QStringLiteral("\\\\begin{")), 7),
+            OptionPatterns(QRegularExpression(QStringLiteral("\\\\end{")), 5),
+            OptionPatterns(QRegularExpression(QStringLiteral("\\\\usepackage{")),
+                           12),
+            OptionPatterns(QRegularExpression(QStringLiteral("\\\\documentclass{")),
+                           15),
     };
     options_format.setForeground(options_color);
 }
 
 void SyntaxHighlighter::highlightBlock(const QString &text) {
-    for (const HighlightingRule &rule : highlighting_rules) {
+    for (const HighlightingRule &rule: highlighting_rules) {
         QRegularExpressionMatchIterator matchIterator =
-            rule.pattern.globalMatch(text);
+                rule.pattern.globalMatch(text);
         while (matchIterator.hasNext()) {
             QRegularExpressionMatch match = matchIterator.next();
             setFormat(match.capturedStart(), match.capturedLength(),
@@ -62,7 +62,7 @@ void SyntaxHighlighter::highlightBlock(const QString &text) {
         }
     }
 
-    for (auto &option : options) {
+    for (auto &option: options) {
         setCurrentBlockState(0);
 
         int startIndex = 0;
@@ -87,6 +87,6 @@ void SyntaxHighlighter::highlightBlock(const QString &text) {
 }
 
 SyntaxHighlighter::OptionPatterns::OptionPatterns(
-    const QRegularExpression &begin_, int length_)
-    : begin(begin_), end(QRegularExpression(QStringLiteral("}"))),
-      length(length_) {}
+        const QRegularExpression &begin_, int length_)
+        : begin(begin_), end(QRegularExpression(QStringLiteral("}"))),
+          length(length_) {}

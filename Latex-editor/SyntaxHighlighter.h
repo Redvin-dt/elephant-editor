@@ -9,15 +9,16 @@
 class QTextDocument;
 
 class SyntaxHighlighter : public QSyntaxHighlighter {
-    Q_OBJECT
-  public:
+Q_OBJECT
+public:
     explicit SyntaxHighlighter(QTextDocument *parent = nullptr);
+
     ~SyntaxHighlighter() override {}
 
-  protected:
+protected:
     void highlightBlock(const QString &text) override;
 
-  private:
+private:
     struct HighlightingRule {
         QRegularExpression pattern;
         QTextCharFormat format;
@@ -30,6 +31,7 @@ class SyntaxHighlighter : public QSyntaxHighlighter {
         QRegularExpression end;
         int length;
     };
+
     QVector<OptionPatterns> options;
     QTextCharFormat options_format;
 

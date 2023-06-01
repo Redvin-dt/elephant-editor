@@ -1,9 +1,8 @@
-/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/Latex-editor.dir
-/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/list_install_components.dir
-/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/install.dir
-/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/install/local.dir
-/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/install/strip.dir
-/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/Latex-editor_autogen_timestamp_deps.dir
-/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/Latex-editor_autogen.dir
+/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/Latex-editor.dir
+/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/list_install_components.dir
+/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/install.dir
+/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/install/local.dir
+/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/install/strip.dir
+/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/Latex-editor_autogen.dir

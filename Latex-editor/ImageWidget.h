@@ -8,7 +8,7 @@
 #include <QWidget>
 
 class ImageWidget : public QWidget {
-  Q_OBJECT
+Q_OBJECT
 public:
     explicit ImageWidget(QWidget *parent = nullptr);
 
@@ -17,13 +17,14 @@ public:
 
     // set image from Qimage
     void setImage(QImage new_image);
+
 private:
-  QImage m_image;
-  QImage m_duplicate;
+    QImage m_image;
+    QImage m_duplicate;
 
 protected:
-  // Repaint picture when window resized
-  void paintEvent(QPaintEvent *event);
+    // Repaint picture when window resized
+    void paintEvent(QPaintEvent *event);
 };
 
 #endif // IMAGEWIDGET_H

@@ -36,12 +36,13 @@ void MathButtons::init_buttons() {
         }
 
         description.back().sort();
+        description.back().append(list[COMMAND_COLUMN]);
         description.back().removeDuplicates();
         if (!description.back().isEmpty() && description.back()[0].isEmpty()) {
             description.back().erase(description.back().begin());
         }
 
-        for (auto &item : description.back()) {
+        for (auto &item: description.back()) {
             item = item.toLower();
         }
     }
@@ -84,8 +85,8 @@ void MathButtons::connect_buttons() {
     for (std::size_t index = 0; index < buttons.size(); index++) {
         QString function_output = buttons_functions[index];
         connect(
-            buttons[index], &QPushButton::clicked,
-            [function_output, this]() { button_function(function_output); });
+                buttons[index], &QPushButton::clicked,
+                [function_output, this]() { button_function(function_output); });
     }
 }
 
@@ -108,7 +109,7 @@ void MathButtons::print_matching_buttons(const QString &pattern) {
         bool is_continued = false;
         if (!pattern_lowercase.isEmpty()) {
             is_continued = true;
-            for (const auto &item : description[index]) {
+            for (const auto &item: description[index]) {
                 if (item.contains(pattern_lowercase)) {
                     is_continued = false;
                     break;

@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-000062ed2d675a1a5a68.json",
+					"jsonFile" : "directory-.-Debug-5c1be059e796b9b9908d.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.5"
@@ -17,8 +17,7 @@
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						2
+						1
 					]
 				}
 			],
@@ -34,8 +33,7 @@
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						2
+						1
 					]
 				}
 			],
@@ -44,22 +42,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Latex-editor::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Latex-editor-Debug-2d90e8a8db64ebb3d0f8.json",
+					"jsonFile" : "target-Latex-editor-Debug-0cbb97c4bd70e570fb7a.json",
 					"name" : "Latex-editor",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "Latex-editor_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Latex-editor_autogen-Debug-1e6fc30d51aa71a5edf9.json",
+					"jsonFile" : "target-Latex-editor_autogen-Debug-a6172fec0459aee26ed2.json",
 					"name" : "Latex-editor_autogen",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "Latex-editor_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Latex-editor_autogen_timestamp_deps-Debug-0dc7592bc9489edc2ce8.json",
-					"name" : "Latex-editor_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
 			]
@@ -68,8 +59,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor/cmake-build-debug",
-		"source" : "/home/pavel/c++_projects/HSE_project/elephant-editor/Latex-editor"
+		"build" : "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug",
+		"source" : "/home/roman/project_server/elephant-editor/Latex-editor"
 	},
 	"version" : 
 	{

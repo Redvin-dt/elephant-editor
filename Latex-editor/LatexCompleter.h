@@ -6,9 +6,9 @@
 #include <QObject>
 
 class LatexCompleter : public QCompleter {
-  Q_OBJECT
+Q_OBJECT
 public:
-  explicit LatexCompleter(QObject *parent = nullptr);
+    explicit LatexCompleter(QObject *parent = nullptr);
 };
 
 #endif // LATEXCOMPLETER_H
