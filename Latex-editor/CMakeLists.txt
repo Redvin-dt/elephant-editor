@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 
+add_compile_options(-Wall -Wextra -fsanitize=undefined -fsanitize=address)
+add_link_options(-Wall -Wextra -fsanitize=undefined -fsanitize=address)
+
 project(Latex-editor VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOUIC ON)
@@ -21,6 +24,8 @@ find_package(Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt5 REQUIRED COMPONENTS Gui)
 find_package(Qt5 REQUIRED COMPONENTS Core)
 
+find_package(cpprestsdk REQUIRED NAMES cpprestsdk cpprest)
+
 set(TS_FILES Latex-editor_en_US.ts)
 
 set(PROJECT_SOURCES
@@ -40,8 +45,13 @@ set(PROJECT_SOURCES
         LatexCompleter.h
         SyntaxHighlighter.cpp
         SyntaxHighlighter.h
+        MathButtons.cpp
+        MathButtons.h
+        FindWidget.cpp
+        FindWidget.h
+        FindWidget.ui
         ${TS_FILES}
-        MathButtons.cpp MathButtons.h)
+        )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Latex-editor
@@ -76,6 +86,7 @@ target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Gui)
 target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(Latex-editor PRIVATE PkgConfig::POPPLER_QT5)
+target_link_libraries(Latex-editor PRIVATE cpprestsdk::cpprest OpenSSL::Crypto)
 
 
 set_target_properties(Latex-editor PROPERTIES

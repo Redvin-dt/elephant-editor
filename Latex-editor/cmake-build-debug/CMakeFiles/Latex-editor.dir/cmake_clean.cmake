@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "Latex-editor_autogen"
   "CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o"
   "CMakeFiles/Latex-editor.dir/CodeEditor.cpp.o.d"
+  "CMakeFiles/Latex-editor.dir/FindWidget.cpp.o"
+  "CMakeFiles/Latex-editor.dir/FindWidget.cpp.o.d"
   "CMakeFiles/Latex-editor.dir/ImageWidget.cpp.o"
   "CMakeFiles/Latex-editor.dir/ImageWidget.cpp.o.d"
   "CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o"

@@ -212,6 +212,30 @@ CodeEditor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/CodeEditor.cpp.s
 .PHONY : CodeEditor.cpp.s
 
+FindWidget.o: FindWidget.cpp.o
+.PHONY : FindWidget.o
+
+# target to build an object file
+FindWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/FindWidget.cpp.o
+.PHONY : FindWidget.cpp.o
+
+FindWidget.i: FindWidget.cpp.i
+.PHONY : FindWidget.i
+
+# target to preprocess a source file
+FindWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/FindWidget.cpp.i
+.PHONY : FindWidget.cpp.i
+
+FindWidget.s: FindWidget.cpp.s
+.PHONY : FindWidget.s
+
+# target to generate assembly for a file
+FindWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/FindWidget.cpp.s
+.PHONY : FindWidget.cpp.s
+
 ImageWidget.o: ImageWidget.cpp.o
 .PHONY : ImageWidget.o
 
@@ -469,6 +493,9 @@ help:
 	@echo "... CodeEditor.o"
 	@echo "... CodeEditor.i"
 	@echo "... CodeEditor.s"
+	@echo "... FindWidget.o"
+	@echo "... FindWidget.i"
+	@echo "... FindWidget.s"
 	@echo "... ImageWidget.o"
 	@echo "... ImageWidget.i"
 	@echo "... ImageWidget.s"

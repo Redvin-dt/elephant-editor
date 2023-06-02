@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "FindWidget.h"
 #include <poppler/qt5/poppler-qt5.h>
 #include <unistd.h>
 #include <QDebug>
@@ -274,11 +275,10 @@ void MainWindow::on_actionRedo_triggered() {
     editor->redo();
 }
 
-
 void MainWindow::on_actionFind_triggered() {
-
+    FindWidget *w = new FindWidget(this, editor);
+    w->show();
 }
-
 
 void MainWindow::on_actionFind_and_Replace_triggered() {
     bool ok_find;

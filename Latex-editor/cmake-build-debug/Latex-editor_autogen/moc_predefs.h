@@ -114,6 +114,7 @@
 #define __gnu_linux__ 1
 #define __INT16_MAX__ 0x7fff
 #define __FLT64_MIN_EXP__ (-1021)
+#define CPPREST_NO_SSL_LEAK_SUPPRESS 1
 #define __FLT64X_MIN_10_EXP__ (-4931)
 #define __LDBL_HAS_QUIET_NAN__ 1
 #define __FLT64_MANT_DIG__ 53
@@ -303,6 +304,7 @@
 #define __cpp_nontype_template_args 201411L
 #define __DEC32_MANT_DIG__ 7
 #define __cpp_return_type_deduction 201304L
+#define CPPREST_FORCE_HTTP_LISTENER_ASIO 1
 #define __k8__ 1
 #define __INTPTR_TYPE__ long int
 #define __UINT16_TYPE__ short unsigned int
@@ -362,6 +364,7 @@
 #define __STDCPP_THREADS__ 1
 #define __GNUC_STDC_INLINE__ 1
 #define __FLT64_HAS_DENORM__ 1
+#define CPPREST_FORCE_HTTP_CLIENT_ASIO 1
 #define __FLT32_EPSILON__ 1.19209289550781250000000000000000000e-7F32
 #define __DBL_DECIMAL_DIG__ 17
 #define __STDC_UTF_32__ 1

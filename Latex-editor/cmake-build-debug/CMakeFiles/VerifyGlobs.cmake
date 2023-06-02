@@ -42,6 +42,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/roman/project_server/elephant-editor/Latex-editor/*.cpp")
 set(OLD_GLOB
   "/home/roman/project_server/elephant-editor/Latex-editor/CodeEditor.cpp"
+  "/home/roman/project_server/elephant-editor/Latex-editor/FindWidget.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/ImageWidget.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/LatexCompleter.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/LineNumberArea.cpp"
@@ -51,6 +52,7 @@ set(OLD_GLOB
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_CodeEditor.cpp"
+  "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_FindWidget.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_ImageWidget.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_LatexCompleter.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp"
@@ -80,12 +82,14 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/roman/project_server/elephant-editor/Latex-editor/*.h")
 set(OLD_GLOB
   "/home/roman/project_server/elephant-editor/Latex-editor/CodeEditor.h"
+  "/home/roman/project_server/elephant-editor/Latex-editor/FindWidget.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/ImageWidget.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/LatexCompleter.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/LineNumberArea.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/MathButtons.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/SyntaxHighlighter.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/SyntaxStyle.h"
+  "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/include/ui_FindWidget.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/moc_predefs.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/mainwindow.h"
@@ -189,6 +193,7 @@ endif()
 # _directory_contents at /usr/lib/x86_64-linux-gnu/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake:78 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/roman/project_server/elephant-editor/Latex-editor/*.ui")
 set(OLD_GLOB
+  "/home/roman/project_server/elephant-editor/Latex-editor/FindWidget.ui"
   "/home/roman/project_server/elephant-editor/Latex-editor/mainwindow.ui"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

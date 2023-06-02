@@ -2,6 +2,21 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
+    <name>FindWidget</name>
+    <message>
+        <location filename="FindWidget.ui" line="14"/>
+        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_FindWidget.h" line="45"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="FindWidget.ui" line="36"/>
+        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_FindWidget.h" line="46"/>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="14"/>

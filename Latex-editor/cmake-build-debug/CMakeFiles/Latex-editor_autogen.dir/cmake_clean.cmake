@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Latex-editor_autogen"
+  "Latex-editor_autogen/include/ui_FindWidget.h"
   "Latex-editor_autogen/include/ui_mainwindow.h"
   "Latex-editor_autogen/mocs_compilation.cpp"
 )

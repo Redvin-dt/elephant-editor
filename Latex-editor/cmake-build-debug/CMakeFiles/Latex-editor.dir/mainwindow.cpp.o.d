@@ -351,6 +351,18 @@ CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVector \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
+ /home/roman/project_server/elephant-editor/Latex-editor/FindWidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QWindow \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindow.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QRect \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qsurface.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qsurfaceformat.h \
  /usr/local/include/poppler/qt5/poppler-qt5.h \
  /usr/local/include/poppler/qt5/poppler-annotation.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDateTime \
@@ -364,7 +376,6 @@ CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QPointF \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QRectF \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QScopedPointer \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVector \
@@ -469,7 +480,6 @@ CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcryptographichash.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdeadlinetimer.h \
@@ -488,7 +498,6 @@ CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileselector.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfilesystemwatcher.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfinalstate.h \
@@ -530,7 +539,6 @@ CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlockfile.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qloggingcategory.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmath.h \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -673,11 +681,6 @@ CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qaccessibleplugin.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbackingstore.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindow.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QRect \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qsurface.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qsurfaceformat.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbitmap.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qclipboard.h \
@@ -745,7 +748,6 @@ CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPaintDeviceWindow \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevicewindow.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QWindow \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindow.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QPaintDevice \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QOpenGLContext \
@@ -829,6 +831,6 @@ CMakeFiles/Latex-editor.dir/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /home/roman/project_server/elephant-editor/Latex-editor/SyntaxHighlighter.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QRegularExpression \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QSyntaxHighlighter \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCharFormat
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCharFormat \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QRegularExpression

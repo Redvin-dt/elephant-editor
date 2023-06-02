@@ -295,7 +295,27 @@ CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_ImageWidget.cpp \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_FindWidget.cpp \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../FindWidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QWindow \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindow.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMargins \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QRect \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qsurface.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qsurfaceformat.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../CodeEditor.h \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../mainwindow.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QScrollArea \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qscrollarea.h \
  /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../ImageWidget.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h \
@@ -311,16 +331,6 @@ CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_LatexCompleter.cpp \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../LatexCompleter.h \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../LineNumberArea.h \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../SyntaxStyle.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCharFormat \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_MathButtons.cpp \
  /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../MathButtons.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QBoxLayout \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h \
@@ -337,7 +347,6 @@ CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
- /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QStringList \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTableWidget \
@@ -355,14 +364,24 @@ CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractslider.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstyle.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabbar.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVector \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_ImageWidget.cpp \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../ImageWidget.h \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_LatexCompleter.cpp \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../LatexCompleter.h \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../LineNumberArea.h \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../SyntaxStyle.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QTextCharFormat \
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_MathButtons.cpp \
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../MathButtons.h \
  /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_SyntaxHighlighter.cpp \
  /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../SyntaxHighlighter.h \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/QRegularExpression \
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QSyntaxHighlighter \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qsyntaxhighlighter.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextobject.h \
@@ -371,14 +390,9 @@ CMakeFiles/Latex-editor.dir/Latex-editor_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qglyphrun.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrawfont.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontdatabase.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QRegularExpression \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
  /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_SyntaxStyle.cpp \
  /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../SyntaxStyle.h \
  /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_mainwindow.cpp \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../mainwindow.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QScrollArea \
- /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qscrollarea.h \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../CodeEditor.h \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../ImageWidget.h \
- /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../MathButtons.h
+ /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/../../../mainwindow.h
