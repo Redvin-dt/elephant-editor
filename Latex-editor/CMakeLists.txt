@@ -50,6 +50,8 @@ set(PROJECT_SOURCES
         FindWidget.cpp
         FindWidget.h
         FindWidget.ui
+        TableWidget.h
+        TableWidget.cpp
         ${TS_FILES}
         )
 
