@@ -34,6 +34,9 @@ int main(int argc, char *argv[]) {
     MainWindow w;
     w.show();
 
+    TableWidget test_window(&w);
+    test_window.show();
+
     std::cerr << "ok\n";
     return a.exec();
 }
