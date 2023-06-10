@@ -1,8 +1,10 @@
 #include "TableWidget.h"
 #include <QCloseEvent>
+#include <QDebug>
 #include <QIntValidator>
 #include <QLabel>
 #include <QStringList>
+#include <map>
 
 const int LAYOUT_SPACING = 25;
 
@@ -10,13 +12,106 @@ void TableWidget::closeEvent(QCloseEvent *event) {
     main_window->setEnabled(true);
 }
 
-void TableWidget::on_create_button_click() {
-    /* TODO */
+void TableWidget::on_cancel_button_click() {
     main_window->setEnabled(true);
     close();
 }
 
-TableWidget::TableWidget(QMainWindow *main_window)
+void TableWidget::on_create_button_click() {
+
+    static const QString table_open =
+        "%Please add following package to your "
+        "document:\n%\\usepackage{tabularray}\n\\begin{tblr}";
+    static const QString table_close = "\\end{tblr}\n";
+    static const std::map<QString, QString> convert_separator = {
+        {"line", "|"},
+        {"empty", ""},
+        {"dotted", "|[dotted]"},
+        {"dashed", "|[dashed]"}};
+
+    static const std::map<QString, QString> convert_alignment = {
+        {"center", "c"}, {"left", "l"}, {"right", "r"}};
+
+    QString alignment =
+        convert_alignment.at(alignment_combo_box->currentText());
+    QString separator =
+        convert_separator.at(separator_combo_box->currentText());
+    QString border = convert_separator.at(border_combo_box->currentText());
+    QString columns_type = "{" + border;
+    for (int i = 0; i < column_line_edit->text().toInt(); i++) {
+        if (i != 0) {
+            columns_type += separator;
+        }
+        columns_type += alignment;
+    }
+    columns_type += border + "}";
+
+    if (!separator.isEmpty()) {
+        separator.remove(0, 1);
+    }
+
+    if (!border.isEmpty()) {
+        border.remove(0, 1);
+    }
+
+    QString item;
+
+    int closed_bracket_counter = 0;
+
+    if (underline_check_box->isChecked()) {
+        item += "\\underline{";
+        closed_bracket_counter++;
+    }
+
+    if (bold_check_box->isChecked()) {
+        item += "\\textbf{";
+        closed_bracket_counter++;
+    }
+
+    if (italic_check_box->isChecked()) {
+        item += "\\textit{";
+        closed_bracket_counter++;
+    }
+
+    item += default_text_line_edit->text();
+
+    for (int i = 0; i < closed_bracket_counter; i++) {
+        item += "}";
+    }
+
+    QString line;
+    for (int i = 0; i < column_line_edit->text().toInt(); i++) {
+        if (i != 0) {
+            line += " & ";
+        }
+        line += item;
+    }
+    line += "\\\\\n";
+
+    QString table = table_open + columns_type;
+    if (!(border_combo_box->currentText() == "empty")) {
+        table += "\n\\hline" + border + "\n";
+    }
+    for (int i = 0; i < row_line_edit->text().toInt(); i++) {
+        if (i != 0 && !(separator_combo_box->currentText() == "empty")) {
+            table += "\\hline" + separator + "\n";
+        }
+        table += line;
+    }
+    if (!(border_combo_box->currentText() == "empty")) {
+        table += "\\hline" + border + "\n";
+    }
+    table += table_close;
+
+    insert_function(table);
+
+    main_window->setEnabled(true);
+    close();
+}
+
+TableWidget::TableWidget(
+    const std::function<void(const QString &)> &insert_function_,
+    QMainWindow *main_window)
     : QWidget(), main_window(main_window), layout(new QGridLayout(this)),
       row_line_edit(new QLineEdit(this)), column_line_edit(new QLineEdit(this)),
       separator_combo_box(new QComboBox(this)),
@@ -27,7 +122,7 @@ TableWidget::TableWidget(QMainWindow *main_window)
       underline_check_box(new QCheckBox(this)),
       alignment_combo_box(new QComboBox(this)),
       cancel_button(new QPushButton(this)),
-      create_button(new QPushButton(this)) {
+      create_button(new QPushButton(this)), insert_function(insert_function_) {
     main_window->setEnabled(false);
 
     this->setFixedSize(QSize(500, 400));
@@ -60,8 +155,6 @@ TableWidget::TableWidget(QMainWindow *main_window)
                      &TableWidget::on_create_button_click);
 
     layout->setSpacing(LAYOUT_SPACING);
-
-    /* TODO add validator for border and separator */
 
     // first row
     layout->addWidget(new QLabel("row:", this), 0, 0);

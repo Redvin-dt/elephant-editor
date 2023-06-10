@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "FindWidget.h"
-#include <poppler/qt5/poppler-qt5.h>
-#include <unistd.h>
+#include "TableWidget.h"
 #include <QDebug>
 #include <QFileDialog>
 #include <QFormLayout>
@@ -13,14 +12,14 @@
 #include <QScrollArea>
 #include <QSize>
 #include <QTableWidget>
+#include <QTextStream>
 #include <QVector>
 #include <QtGui>
 #include <cstddef>
-#include <memory>
-#include <QScrollArea>
-#include <QTextStream>
-#include <QVector>
 #include <functional>
+#include <memory>
+#include <poppler/qt5/poppler-qt5.h>
+#include <unistd.h>
 
 #include "./ui_mainwindow.h"
 #include "SyntaxHighlighter.h"
@@ -30,7 +29,7 @@ const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
 const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
 
 MainWindow::MainWindow(QWidget *parent)
-        : QMainWindow(parent), ui(new Ui::MainWindow) {
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
     setCodeEditor();
@@ -82,7 +81,7 @@ void MainWindow::setPDF() {
         return;
     }
     std::unique_ptr<Poppler::Document> document(
-            Poppler::Document::load(filename));
+        Poppler::Document::load(filename));
     if (!document || document->isLocked()) {
         return;
     }
@@ -98,8 +97,8 @@ void MainWindow::setPDF() {
     const int WIDTH = 1260;
     const int HEIGHT = 1800;
 
-    QImage first_image =
-            pdfFirstPage->renderToImage(X_ZOOM, Y_ZOOM, PDF_X, PDF_Y, WIDTH, HEIGHT);
+    QImage first_image = pdfFirstPage->renderToImage(X_ZOOM, Y_ZOOM, PDF_X,
+                                                     PDF_Y, WIDTH, HEIGHT);
     if (first_image.isNull()) {
         return;
     }
@@ -107,7 +106,7 @@ void MainWindow::setPDF() {
     for (int page_num = 1; page_num < document->numPages(); page_num++) {
         std::unique_ptr<Poppler::Page> pdfPage(document->page(page_num));
         QImage image =
-                pdfPage->renderToImage(X_ZOOM, Y_ZOOM, PDF_X, PDF_Y, WIDTH, HEIGHT);
+            pdfPage->renderToImage(X_ZOOM, Y_ZOOM, PDF_X, PDF_Y, WIDTH, HEIGHT);
 
         QImage image_sum(qMax(first_image.width(), image.width()),
                          first_image.height() + image.height(),
@@ -177,7 +176,7 @@ void MainWindow::on_actionOpen_file_triggered() {
     }
 
     current_file = filename;
-    int size = (int) current_file.size();
+    int size = (int)current_file.size();
     if (size < 5 || current_file[size - 4] != '.' ||
         current_file[size - 3] != 't' || current_file[size - 2] != 'e' ||
         current_file[size - 1] != 'x') {
@@ -196,10 +195,10 @@ void MainWindow::on_actionRun_triggered() {
     on_actionSave_triggered();
     compile_errors.clear();
     const QString COMPILE_OPTIONS =
-            "pdflatex --file-line-error -halt-on-error -interaction=nonstopmode ";
+        "pdflatex --file-line-error -halt-on-error -interaction=nonstopmode ";
     const QString INSTALLING_OPTIONS =
-            "texliveonfly --arguments=\"--file-line-error -halt-on-error "
-            "-interaction=nonstopmode\" ";
+        "texliveonfly --arguments=\"--file-line-error -halt-on-error "
+        "-interaction=nonstopmode\" ";
     QProcess installing(this);
     QProcess compiling(this);
 
@@ -250,30 +249,23 @@ void MainWindow::on_actionRun_triggered() {
     setPDF();
 }
 
+void MainWindow::on_actionExit_triggered() { QApplication::quit(); }
 
-void MainWindow::on_actionExit_triggered() {
-    QApplication::quit();
+void MainWindow::on_actionPaste_Table_triggered() {
+    TableWidget *table_window = new TableWidget(
+        [this](const QString &input) { insertMathInput(input); }, this);
+    table_window->show();
 }
 
-void MainWindow::on_actionCopy_triggered() {
-    editor->copy();
-}
+void MainWindow::on_actionCopy_triggered() { editor->copy(); }
 
-void MainWindow::on_actionPaste_triggered() {
-    editor->paste();
-}
+void MainWindow::on_actionPaste_triggered() { editor->paste(); }
 
-void MainWindow::on_actionCut_triggered() {
-    editor->cut();
-}
+void MainWindow::on_actionCut_triggered() { editor->cut(); }
 
-void MainWindow::on_actionUndo_triggered() {
-    editor->undo();
-}
+void MainWindow::on_actionUndo_triggered() { editor->undo(); }
 
-void MainWindow::on_actionRedo_triggered() {
-    editor->redo();
-}
+void MainWindow::on_actionRedo_triggered() { editor->redo(); }
 
 void MainWindow::on_actionFind_triggered() {
     FindWidget *w = new FindWidget(this, editor);
@@ -282,13 +274,11 @@ void MainWindow::on_actionFind_triggered() {
 
 void MainWindow::on_actionFind_and_Replace_triggered() {
     bool ok_find;
-    QString find = QInputDialog::getText(0, "Find and Replace",
-                                         "Find:", QLineEdit::Normal,
-                                         "", &ok_find);
+    QString find = QInputDialog::getText(
+        0, "Find and Replace", "Find:", QLineEdit::Normal, "", &ok_find);
     bool ok_replace;
-    QString replace = QInputDialog::getText(0, "Find and Replace",
-                                            "Replace:", QLineEdit::Normal,
-                                            "", &ok_replace);
+    QString replace = QInputDialog::getText(
+        0, "Find and Replace", "Replace:", QLineEdit::Normal, "", &ok_replace);
 
     if (!ok_replace || !ok_find) {
         return;
@@ -300,7 +290,6 @@ void MainWindow::on_actionFind_and_Replace_triggered() {
         editor->textCursor().insertText(replace);
     }
 }
-
 
 void MainWindow::initErrorMessage() {
     QGridLayout *layout = new QGridLayout(ui->Messages);

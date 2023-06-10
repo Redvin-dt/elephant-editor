@@ -1,32 +1,33 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QScrollArea>
 #include "CodeEditor.h"
 #include "ImageWidget.h"
 #include "MathButtons.h"
+#include <QMainWindow>
+#include <QScrollArea>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-    class MainWindow;
+class MainWindow;
 }
 QT_END_NAMESPACE
 
 class SyntaxHighlighter;
 
 class MainWindow : public QMainWindow {
-Q_OBJECT
+    Q_OBJECT
 
-public:
+  public:
     MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow();
 
-private slots:
+  private slots:
 
     void on_actionSave_triggered();
 
+    void on_actionPaste_Table_triggered();
 
     void on_actionSave_As_triggered();
 
@@ -50,10 +51,10 @@ private slots:
 
     void on_actionFind_and_Replace_triggered();
 
-protected:
+  protected:
     SyntaxHighlighter *syntax_highlighter;
 
-private:
+  private:
     Ui::MainWindow *ui;
     CodeEditor *editor;
     QScrollArea *scroll_area;

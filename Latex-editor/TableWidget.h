@@ -7,7 +7,9 @@
 #include <QLineEdit>
 #include <QMainWindow>
 #include <QPushButton>
+#include <QString>
 #include <QWidget>
+#include <functional>
 
 class TableWidget : public QWidget {
     Q_OBJECT
@@ -21,6 +23,8 @@ class TableWidget : public QWidget {
     QComboBox *alignment_combo_box;
     QPushButton *cancel_button, *create_button;
 
+    std::function<void(const QString &)> insert_function;
+
     /**
      * @brief
      * on X button presed
@@ -29,7 +33,16 @@ class TableWidget : public QWidget {
     void closeEvent(QCloseEvent *event);
 
   public slots:
+    /**
+     * @brief Construct table
+     *
+     */
     void on_create_button_click();
+    /**
+     * @brief Cancle table construct
+     *
+     */
+    void on_cancel_button_click();
 
   public:
     /**
@@ -37,7 +50,8 @@ class TableWidget : public QWidget {
      *
      * @param main_window
      */
-    TableWidget(QMainWindow *main_window = nullptr);
+    TableWidget(const std::function<void(const QString &)> &insert_function_,
+                QMainWindow *main_window = nullptr);
 
     ~TableWidget();
 };
