@@ -220,6 +220,18 @@
 			null
 		],
 		[
+			"/home/roman/project_server/elephant-editor/Latex-editor/Server.h",
+			"MU",
+			"EWIEGA46WW/moc_Server.cpp",
+			null
+		],
+		[
+			"/home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.h",
+			"MU",
+			"EWIEGA46WW/moc_ShowInfoWidget.cpp",
+			null
+		],
+		[
 			"/home/roman/project_server/elephant-editor/Latex-editor/SyntaxHighlighter.h",
 			"MU",
 			"EWIEGA46WW/moc_SyntaxHighlighter.cpp",
@@ -325,6 +337,16 @@
 		],
 		[
 			"/home/roman/project_server/elephant-editor/Latex-editor/MathButtons.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/roman/project_server/elephant-editor/Latex-editor/Server.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.cpp",
 			"MU",
 			null
 		],

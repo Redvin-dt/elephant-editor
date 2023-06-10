@@ -5,6 +5,7 @@
 #include "EWIEGA46WW/moc_LatexCompleter.cpp"
 #include "EWIEGA46WW/moc_LineNumberArea.cpp"
 #include "EWIEGA46WW/moc_MathButtons.cpp"
+#include "EWIEGA46WW/moc_ShowInfoWidget.cpp"
 #include "EWIEGA46WW/moc_SyntaxHighlighter.cpp"
 #include "EWIEGA46WW/moc_SyntaxStyle.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"

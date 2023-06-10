@@ -6,5 +6,5 @@ CXX_DEFINES = -DCPPREST_FORCE_HTTP_CLIENT_ASIO -DCPPREST_FORCE_HTTP_LISTENER_ASI
 
 CXX_INCLUDES = -I/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/include -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/local/include/poppler/qt5 -isystem /usr/local/include/poppler
 
-CXX_FLAGS = -g -fdiagnostics-color=always -Wall -Wextra -fsanitize=undefined -fsanitize=address -fPIC -std=gnu++17
+CXX_FLAGS = -g -fdiagnostics-color=always -fPIC -std=gnu++17
 

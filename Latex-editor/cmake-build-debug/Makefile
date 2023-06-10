@@ -380,6 +380,54 @@ MathButtons.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/MathButtons.cpp.s
 .PHONY : MathButtons.cpp.s
 
+Server.o: Server.cpp.o
+.PHONY : Server.o
+
+# target to build an object file
+Server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/Server.cpp.o
+.PHONY : Server.cpp.o
+
+Server.i: Server.cpp.i
+.PHONY : Server.i
+
+# target to preprocess a source file
+Server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/Server.cpp.i
+.PHONY : Server.cpp.i
+
+Server.s: Server.cpp.s
+.PHONY : Server.s
+
+# target to generate assembly for a file
+Server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/Server.cpp.s
+.PHONY : Server.cpp.s
+
+ShowInfoWidget.o: ShowInfoWidget.cpp.o
+.PHONY : ShowInfoWidget.o
+
+# target to build an object file
+ShowInfoWidget.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o
+.PHONY : ShowInfoWidget.cpp.o
+
+ShowInfoWidget.i: ShowInfoWidget.cpp.i
+.PHONY : ShowInfoWidget.i
+
+# target to preprocess a source file
+ShowInfoWidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.i
+.PHONY : ShowInfoWidget.cpp.i
+
+ShowInfoWidget.s: ShowInfoWidget.cpp.s
+.PHONY : ShowInfoWidget.s
+
+# target to generate assembly for a file
+ShowInfoWidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Latex-editor.dir/build.make CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.s
+.PHONY : ShowInfoWidget.cpp.s
+
 SyntaxHighlighter.o: SyntaxHighlighter.cpp.o
 .PHONY : SyntaxHighlighter.o
 
@@ -514,6 +562,12 @@ help:
 	@echo "... MathButtons.o"
 	@echo "... MathButtons.i"
 	@echo "... MathButtons.s"
+	@echo "... Server.o"
+	@echo "... Server.i"
+	@echo "... Server.s"
+	@echo "... ShowInfoWidget.o"
+	@echo "... ShowInfoWidget.i"
+	@echo "... ShowInfoWidget.s"
 	@echo "... SyntaxHighlighter.o"
 	@echo "... SyntaxHighlighter.i"
 	@echo "... SyntaxHighlighter.s"

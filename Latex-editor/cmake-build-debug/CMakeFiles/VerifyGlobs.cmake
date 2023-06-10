@@ -47,6 +47,8 @@ set(OLD_GLOB
   "/home/roman/project_server/elephant-editor/Latex-editor/LatexCompleter.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/LineNumberArea.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/MathButtons.cpp"
+  "/home/roman/project_server/elephant-editor/Latex-editor/Server.cpp"
+  "/home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/SyntaxHighlighter.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/SyntaxStyle.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
@@ -57,6 +59,7 @@ set(OLD_GLOB
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_LatexCompleter.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_MathButtons.cpp"
+  "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_ShowInfoWidget.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_SyntaxHighlighter.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_SyntaxStyle.cpp"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/EWIEGA46WW/moc_mainwindow.cpp"
@@ -87,9 +90,12 @@ set(OLD_GLOB
   "/home/roman/project_server/elephant-editor/Latex-editor/LatexCompleter.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/LineNumberArea.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/MathButtons.h"
+  "/home/roman/project_server/elephant-editor/Latex-editor/Server.h"
+  "/home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/SyntaxHighlighter.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/SyntaxStyle.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/include/ui_FindWidget.h"
+  "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/include/ui_ShowInfoWidget.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/moc_predefs.h"
   "/home/roman/project_server/elephant-editor/Latex-editor/mainwindow.h"
@@ -194,6 +200,7 @@ endif()
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/roman/project_server/elephant-editor/Latex-editor/*.ui")
 set(OLD_GLOB
   "/home/roman/project_server/elephant-editor/Latex-editor/FindWidget.ui"
+  "/home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.ui"
   "/home/roman/project_server/elephant-editor/Latex-editor/mainwindow.ui"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

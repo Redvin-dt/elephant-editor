@@ -16,6 +16,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/roman/project_server/elephant-editor/Latex-editor/LatexCompleter.cpp" "CMakeFiles/Latex-editor.dir/LatexCompleter.cpp.o" "gcc" "CMakeFiles/Latex-editor.dir/LatexCompleter.cpp.o.d"
   "/home/roman/project_server/elephant-editor/Latex-editor/LineNumberArea.cpp" "CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o" "gcc" "CMakeFiles/Latex-editor.dir/LineNumberArea.cpp.o.d"
   "/home/roman/project_server/elephant-editor/Latex-editor/MathButtons.cpp" "CMakeFiles/Latex-editor.dir/MathButtons.cpp.o" "gcc" "CMakeFiles/Latex-editor.dir/MathButtons.cpp.o.d"
+  "/home/roman/project_server/elephant-editor/Latex-editor/Server.cpp" "CMakeFiles/Latex-editor.dir/Server.cpp.o" "gcc" "CMakeFiles/Latex-editor.dir/Server.cpp.o.d"
+  "/home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.cpp" "CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o" "gcc" "CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o.d"
   "/home/roman/project_server/elephant-editor/Latex-editor/SyntaxHighlighter.cpp" "CMakeFiles/Latex-editor.dir/SyntaxHighlighter.cpp.o" "gcc" "CMakeFiles/Latex-editor.dir/SyntaxHighlighter.cpp.o.d"
   "/home/roman/project_server/elephant-editor/Latex-editor/SyntaxStyle.cpp" "CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o" "gcc" "CMakeFiles/Latex-editor.dir/SyntaxStyle.cpp.o.d"
   "/home/roman/project_server/elephant-editor/Latex-editor/main.cpp" "CMakeFiles/Latex-editor.dir/main.cpp.o" "gcc" "CMakeFiles/Latex-editor.dir/main.cpp.o.d"

@@ -82,6 +82,11 @@ include CMakeFiles/Latex-editor.dir/flags.make
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/LineNumberArea.h
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/MathButtons.cpp
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/MathButtons.h
+/home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/Server.cpp
+/home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/Server.h
+/home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.cpp
+/home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.h
+/home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.ui
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/SyntaxHighlighter.cpp
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/SyntaxHighlighter.h
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: /home/roman/project_server/elephant-editor/Latex-editor/SyntaxStyle.cpp
@@ -94,10 +99,12 @@ include CMakeFiles/Latex-editor.dir/flags.make
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_LatexCompleter.cpp
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_LineNumberArea.cpp
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_MathButtons.cpp
+/home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_ShowInfoWidget.cpp
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_SyntaxHighlighter.cpp
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_SyntaxStyle.cpp
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/EWIEGA46WW/moc_mainwindow.cpp
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/include/ui_FindWidget.h
+/home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/include/ui_ShowInfoWidget.h
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/include/ui_mainwindow.h
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/moc_predefs.h
 /home/roman/project_server/elephant-editor/Latex-editor/Latex-editor_en_US.ts: Latex-editor_autogen/mocs_compilation.cpp
@@ -277,10 +284,38 @@ CMakeFiles/Latex-editor.dir/FindWidget.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Latex-editor.dir/FindWidget.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roman/project_server/elephant-editor/Latex-editor/FindWidget.cpp -o CMakeFiles/Latex-editor.dir/FindWidget.cpp.s
 
+CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o: CMakeFiles/Latex-editor.dir/flags.make
+CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o: /home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.cpp
+CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o: CMakeFiles/Latex-editor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o -MF CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o.d -o CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o -c /home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.cpp
+
+CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.cpp > CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.i
+
+CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.cpp -o CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.s
+
+CMakeFiles/Latex-editor.dir/Server.cpp.o: CMakeFiles/Latex-editor.dir/flags.make
+CMakeFiles/Latex-editor.dir/Server.cpp.o: /home/roman/project_server/elephant-editor/Latex-editor/Server.cpp
+CMakeFiles/Latex-editor.dir/Server.cpp.o: CMakeFiles/Latex-editor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Latex-editor.dir/Server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Latex-editor.dir/Server.cpp.o -MF CMakeFiles/Latex-editor.dir/Server.cpp.o.d -o CMakeFiles/Latex-editor.dir/Server.cpp.o -c /home/roman/project_server/elephant-editor/Latex-editor/Server.cpp
+
+CMakeFiles/Latex-editor.dir/Server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Latex-editor.dir/Server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/roman/project_server/elephant-editor/Latex-editor/Server.cpp > CMakeFiles/Latex-editor.dir/Server.cpp.i
+
+CMakeFiles/Latex-editor.dir/Server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Latex-editor.dir/Server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/roman/project_server/elephant-editor/Latex-editor/Server.cpp -o CMakeFiles/Latex-editor.dir/Server.cpp.s
+
 CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o: CMakeFiles/Latex-editor.dir/flags.make
 CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o: Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp
 CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o: CMakeFiles/Latex-editor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o -MF CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o.d -o CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o -c /home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp
 
 CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.i: cmake_force
@@ -304,6 +339,8 @@ Latex__editor_OBJECTS = \
 "CMakeFiles/Latex-editor.dir/SyntaxHighlighter.cpp.o" \
 "CMakeFiles/Latex-editor.dir/MathButtons.cpp.o" \
 "CMakeFiles/Latex-editor.dir/FindWidget.cpp.o" \
+"CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o" \
+"CMakeFiles/Latex-editor.dir/Server.cpp.o" \
 "CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o"
 
 # External object files for target Latex-editor
@@ -320,6 +357,8 @@ Latex-editor: CMakeFiles/Latex-editor.dir/LatexCompleter.cpp.o
 Latex-editor: CMakeFiles/Latex-editor.dir/SyntaxHighlighter.cpp.o
 Latex-editor: CMakeFiles/Latex-editor.dir/MathButtons.cpp.o
 Latex-editor: CMakeFiles/Latex-editor.dir/FindWidget.cpp.o
+Latex-editor: CMakeFiles/Latex-editor.dir/ShowInfoWidget.cpp.o
+Latex-editor: CMakeFiles/Latex-editor.dir/Server.cpp.o
 Latex-editor: CMakeFiles/Latex-editor.dir/Latex-editor_autogen/3YJK5W5UP7/qrc_codeeditor_resources.cpp.o
 Latex-editor: CMakeFiles/Latex-editor.dir/build.make
 Latex-editor: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.3
@@ -329,7 +368,7 @@ Latex-editor: /usr/lib/x86_64-linux-gnu/libcpprest.so.2.10
 Latex-editor: /usr/lib/x86_64-linux-gnu/libcrypto.so
 Latex-editor: /usr/local/lib/libpoppler-qt5.so
 Latex-editor: CMakeFiles/Latex-editor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable Latex-editor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Latex-editor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Latex-editor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

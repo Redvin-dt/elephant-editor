@@ -205,6 +205,21 @@
 		<Unit filename="/home/roman/project_server/elephant-editor/Latex-editor/MathButtons.h">
 			<Option target="Latex-editor"/>
 		</Unit>
+		<Unit filename="/home/roman/project_server/elephant-editor/Latex-editor/Server.cpp">
+			<Option target="Latex-editor"/>
+		</Unit>
+		<Unit filename="/home/roman/project_server/elephant-editor/Latex-editor/Server.h">
+			<Option target="Latex-editor"/>
+		</Unit>
+		<Unit filename="/home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.cpp">
+			<Option target="Latex-editor"/>
+		</Unit>
+		<Unit filename="/home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.h">
+			<Option target="Latex-editor"/>
+		</Unit>
+		<Unit filename="/home/roman/project_server/elephant-editor/Latex-editor/ShowInfoWidget.ui">
+			<Option target="Latex-editor"/>
+		</Unit>
 		<Unit filename="/home/roman/project_server/elephant-editor/Latex-editor/SyntaxHighlighter.cpp">
 			<Option target="Latex-editor"/>
 		</Unit>
@@ -224,6 +239,9 @@
 			<Option target="Latex-editor"/>
 		</Unit>
 		<Unit filename="/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/include/ui_FindWidget.h">
+			<Option target="Latex-editor"/>
+		</Unit>
+		<Unit filename="/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/include/ui_ShowInfoWidget.h">
 			<Option target="Latex-editor"/>
 		</Unit>
 		<Unit filename="/home/roman/project_server/elephant-editor/Latex-editor/cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h">

@@ -276,7 +276,7 @@ void MainWindow::on_actionRedo_triggered() {
 }
 
 void MainWindow::on_actionFind_triggered() {
-    FindWidget *w = new FindWidget(this, editor);
+    auto *w = new FindWidget(this, editor);
     w->show();
 }
 
@@ -309,3 +309,22 @@ void MainWindow::initErrorMessage() {
     ui->Messages->setLayout(layout);
     error_message->setReadOnly(true);
 }
+
+std::pair<QString, bool> MainWindow::getText() {
+    if (editor->document()->isModified()) {
+        editor->document()->setModified(false);
+        return {editor->toPlainText(), 1};
+    }
+    return {"", 0};
+}
+void MainWindow::on_actionShow_user_info_triggered()
+{
+    //взять из бд
+
+}
+
+void MainWindow::on_actionChange_documet_triggered()
+{
+
+}
+

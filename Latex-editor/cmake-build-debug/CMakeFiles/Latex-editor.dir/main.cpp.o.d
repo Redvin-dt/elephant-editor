@@ -255,6 +255,19 @@ CMakeFiles/Latex-editor.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlocale.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTranslator \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtranslator.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h \
+ /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
+ /usr/include/c++/11/ios /usr/include/c++/11/bits/basic_ios.h \
+ /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
+ /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
+ /usr/include/c++/11/bits/locale_facets.tcc \
+ /usr/include/c++/11/bits/basic_ios.tcc \
+ /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
+ /usr/include/c++/11/bits/istream.tcc \
  /home/roman/project_server/elephant-editor/Latex-editor/mainwindow.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h \
@@ -361,25 +374,16 @@ CMakeFiles/Latex-editor.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVector \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
- /usr/include/cpprest/http_listener.h /usr/include/cpprest/http_msg.h \
- /usr/include/cpprest/asyncrt_utils.h \
+ /home/roman/project_server/elephant-editor/Latex-editor/Server.h \
+ /usr/include/cpprest/http_client.h /usr/include/cpprest/asyncrt_utils.h \
  /usr/include/cpprest/details/basic_types.h \
  /usr/include/cpprest/details/cpprest_compat.h \
  /usr/include/cpprest/details/nosal.h /usr/include/c++/11/fstream \
- /usr/include/c++/11/istream /usr/include/c++/11/ios \
- /usr/include/c++/11/bits/basic_ios.h \
- /usr/include/c++/11/bits/locale_facets.h /usr/include/c++/11/cwctype \
- /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h \
- /usr/include/c++/11/bits/locale_facets.tcc \
- /usr/include/c++/11/bits/basic_ios.tcc /usr/include/c++/11/ostream \
- /usr/include/c++/11/bits/ostream.tcc \
- /usr/include/c++/11/bits/istream.tcc /usr/include/c++/11/bits/codecvt.h \
+ /usr/include/c++/11/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
- /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/iostream \
- /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
+ /usr/include/c++/11/bits/fstream.tcc /usr/include/c++/11/sstream \
+ /usr/include/c++/11/bits/sstream.tcc \
  /usr/include/cpprest/details/SafeInt3.hpp /usr/include/pplx/pplxtasks.h \
  /usr/include/pplx/pplx.h /usr/include/pplx/pplxlinux.h \
  /usr/include/signal.h \
@@ -442,16 +446,18 @@ CMakeFiles/Latex-editor.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/opt_random.h \
  /usr/include/c++/11/bits/random.tcc \
  /usr/include/x86_64-linux-gnu/sys/time.h \
- /usr/include/cpprest/containerstream.h /usr/include/cpprest/astreambuf.h \
- /usr/include/c++/11/cstring /usr/include/c++/11/math.h \
- /usr/include/cpprest/streams.h /usr/include/c++/11/queue \
- /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
- /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/bits/stl_queue.h \
+ /usr/include/cpprest/details/web_utilities.h /usr/include/cpprest/uri.h \
+ /usr/include/cpprest/base_uri.h /usr/include/cpprest/uri_builder.h \
+ /usr/include/cpprest/http_msg.h /usr/include/cpprest/containerstream.h \
+ /usr/include/cpprest/astreambuf.h /usr/include/c++/11/cstring \
+ /usr/include/c++/11/math.h /usr/include/cpprest/streams.h \
+ /usr/include/c++/11/queue /usr/include/c++/11/deque \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/c++/11/bits/stl_queue.h \
  /usr/include/cpprest/http_compression.h \
  /usr/include/cpprest/http_headers.h /usr/include/cpprest/json.h \
- /usr/include/cpprest/uri.h /usr/include/cpprest/base_uri.h \
- /usr/include/cpprest/uri_builder.h \
  /usr/include/cpprest/details/http_constants.dat \
+ /usr/include/cpprest/oauth1.h /usr/include/cpprest/oauth2.h \
  /usr/include/boost/asio/ssl.hpp /usr/include/boost/asio/ssl/context.hpp \
  /usr/include/boost/asio/detail/config.hpp /usr/include/boost/config.hpp \
  /usr/include/boost/config/user.hpp \

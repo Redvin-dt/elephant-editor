@@ -39,6 +39,10 @@ public:
     QAction *actionFind;
     QAction *actionFind_and_Replace;
     QAction *actionRun;
+    QAction *actionShow_user_info;
+    QAction *actionChange_documet;
+    QAction *actionShow_info;
+    QAction *actionSelec_document;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QSplitter *ViewAndCode;
@@ -48,6 +52,7 @@ public:
     QMenu *menuFile;
     QMenu *menuEdit;
     QMenu *menuRun;
+    QMenu *menuShow_user_info;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -81,6 +86,14 @@ public:
         actionFind_and_Replace->setObjectName(QString::fromUtf8("actionFind_and_Replace"));
         actionRun = new QAction(MainWindow);
         actionRun->setObjectName(QString::fromUtf8("actionRun"));
+        actionShow_user_info = new QAction(MainWindow);
+        actionShow_user_info->setObjectName(QString::fromUtf8("actionShow_user_info"));
+        actionChange_documet = new QAction(MainWindow);
+        actionChange_documet->setObjectName(QString::fromUtf8("actionChange_documet"));
+        actionShow_info = new QAction(MainWindow);
+        actionShow_info->setObjectName(QString::fromUtf8("actionShow_info"));
+        actionSelec_document = new QAction(MainWindow);
+        actionSelec_document->setObjectName(QString::fromUtf8("actionSelec_document"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
@@ -107,6 +120,8 @@ public:
         menuEdit->setObjectName(QString::fromUtf8("menuEdit"));
         menuRun = new QMenu(menubar);
         menuRun->setObjectName(QString::fromUtf8("menuRun"));
+        menuShow_user_info = new QMenu(menubar);
+        menuShow_user_info->setObjectName(QString::fromUtf8("menuShow_user_info"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -115,6 +130,7 @@ public:
         menubar->addAction(menuFile->menuAction());
         menubar->addAction(menuEdit->menuAction());
         menubar->addAction(menuRun->menuAction());
+        menubar->addAction(menuShow_user_info->menuAction());
         menuFile->addAction(actionNew_file);
         menuFile->addAction(actionOpen_file);
         menuFile->addAction(actionSave);
@@ -128,6 +144,8 @@ public:
         menuEdit->addAction(actionFind);
         menuEdit->addAction(actionFind_and_Replace);
         menuRun->addAction(actionRun);
+        menuShow_user_info->addAction(actionShow_info);
+        menuShow_user_info->addAction(actionSelec_document);
 
         retranslateUi(MainWindow);
 
@@ -153,10 +171,15 @@ public:
         actionFind->setText(QCoreApplication::translate("MainWindow", "Find", nullptr));
         actionFind_and_Replace->setText(QCoreApplication::translate("MainWindow", "Replace", nullptr));
         actionRun->setText(QCoreApplication::translate("MainWindow", "Run", nullptr));
+        actionShow_user_info->setText(QCoreApplication::translate("MainWindow", "Show info", nullptr));
+        actionChange_documet->setText(QCoreApplication::translate("MainWindow", "Change documet", nullptr));
+        actionShow_info->setText(QCoreApplication::translate("MainWindow", "Show info", nullptr));
+        actionSelec_document->setText(QCoreApplication::translate("MainWindow", "Select document", nullptr));
         RightWindow->setTabText(RightWindow->indexOf(Messages), QCoreApplication::translate("MainWindow", "Messages", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuEdit->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
         menuRun->setTitle(QCoreApplication::translate("MainWindow", "Run", nullptr));
+        menuShow_user_info->setTitle(QCoreApplication::translate("MainWindow", "Info", nullptr));
     } // retranslateUi
 
 };
