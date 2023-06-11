@@ -22,7 +22,7 @@ void TableWidget::on_create_button_click() {
     static const QString table_open =
         "%Please add following package to your "
         "document:\n%\\usepackage{tabularray}\n\\begin{tblr}";
-    static const QString table_close = "\\end{tblr}\n";
+    static const QString table_close = "\\end{tblr}\n\\\\\n";
     static const std::map<QString, QString> convert_separator = {
         {"line", "|"},
         {"empty", ""},
