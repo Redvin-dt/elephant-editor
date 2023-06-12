@@ -27,6 +27,9 @@ public:
     // return current editor text;
     std::pair<QString, bool> getText();
 
+    // edit current editor text;
+    void replaceText(json::value &response);
+
 private slots:
 
     void on_actionSave_triggered();

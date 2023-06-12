@@ -23,6 +23,7 @@
 #include <functional>
 
 #include "./ui_mainwindow.h"
+#include "Server.h"
 #include "SyntaxHighlighter.h"
 
 const QSize MINIMAL_WINDOW_SIZE = QSize(1000, 500);
@@ -317,14 +318,26 @@ std::pair<QString, bool> MainWindow::getText() {
     }
     return {"", 0};
 }
-void MainWindow::on_actionShow_user_info_triggered()
-{
+
+void MainWindow::replaceText(json::value &response) {
+    QString new_text = "";
+    int response_size = static_cast<int>(response.size());
+    for (int position_in_json = 1; position_in_json < response_size; position_in_json++) {
+        if (!response[position_in_json].is_string()) {
+            std::cerr << "WTF??? " << "in get-text i = " << position_in_json << " isnt string" << std::endl;
+        }
+        new_text += QString::fromStdString(response[position_in_json].as_string());
+    }
+    //std::cerr << new_text.toStdString() << std::endl;
+    editor->setText(new_text);
+}
+
+void MainWindow::on_actionShow_user_info_triggered() {
     //взять из бд
 
 }
 
-void MainWindow::on_actionChange_documet_triggered()
-{
+void MainWindow::on_actionChange_documet_triggered() {
 
 }
 
