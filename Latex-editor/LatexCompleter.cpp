@@ -1,8 +1,8 @@
 #include "LatexCompleter.h"
-#include <assert.h>
 #include <QDebug>
 #include <QFile>
 #include <QStringListModel>
+#include <assert.h>
 
 LatexCompleter::LatexCompleter(QObject *parent) : QCompleter{parent} {
     Q_INIT_RESOURCE(codeeditor_resources);
@@ -16,11 +16,8 @@ LatexCompleter::LatexCompleter(QObject *parent) : QCompleter{parent} {
     while (!file.atEnd()) {
         list.append(file.readLine());
         list.back().resize(list.back().size() - 1);
-        // list.back().replace(0, 2, '/');
         list.back().remove(0, 2);
     }
-
-    // qDebug() << list << '\n';
 
     setModel(new QStringListModel(list, this));
     setCompletionColumn(0);

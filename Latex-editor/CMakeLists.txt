@@ -45,6 +45,8 @@ set(PROJECT_SOURCES
         MathButtons.cpp
         MathButtons.h
         FindWidget.cpp
+        FramedText.h
+        FramedText.cpp
         FindWidget.h
         FindWidget.ui
         ShowInfoWidget.cpp
