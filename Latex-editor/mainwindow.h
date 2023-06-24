@@ -34,6 +34,8 @@ private slots:
 
     void on_actionSave_triggered();
 
+    void on_actionPaste_Table_triggered();
+
     void on_actionSave_As_triggered();
 
     void on_actionOpen_file_triggered();
