@@ -14,7 +14,7 @@
 #include <functional>
 
 class MathButtons : public QWidget {
-Q_OBJECT
+    Q_OBJECT
 
     QVector<QString> buttons_names;
     QVector<QString> buttons_functions;
@@ -34,14 +34,14 @@ Q_OBJECT
 
     void init_buttons();
 
-public:
+  public:
     explicit MathButtons(QWidget *parrent,
                          const std::function<void(QString)> &function)
-            : QWidget(parrent),
-            // view(new QTableWidget(this)),
-              buttons_group(new QGroupBox(this)), view(new QGridLayout()),
-              search_box(new QLineEdit(this)), button_function(function),
-              layout(new QBoxLayout(QBoxLayout::Down)) {
+        : QWidget(parrent),
+          // view(new QTableWidget(this)),
+          buttons_group(new QGroupBox(this)), view(new QGridLayout()),
+          search_box(new QLineEdit(this)),
+          layout(new QBoxLayout(QBoxLayout::Down)), button_function(function) {
         layout->addWidget(search_box);
         setLayout(layout);
         init_buttons();

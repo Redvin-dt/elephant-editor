@@ -4,3 +4,5 @@ build
 build-Latex-editor-Desktop-Debug
 build-Latex-editor-Desktop-Release
 CMakeLists.txt.user
+.idea/
+cmake-build-debug/
