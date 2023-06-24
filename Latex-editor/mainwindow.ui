@@ -153,6 +153,8 @@
   <action name="actionPaste_Table">
    <property name="text">
     <string>Paste Table</string>
+   </property>
+  </action> 
   <action name="actionShow_user_info">
    <property name="text">
     <string>Show info</string>
