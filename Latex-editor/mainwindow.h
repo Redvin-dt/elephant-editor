@@ -6,6 +6,7 @@
 #include "MathButtons.h"
 #include <QMainWindow>
 #include <QScrollArea>
+#include "Server.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,6 +23,12 @@ class MainWindow : public QMainWindow {
     MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow();
+
+    // return current editor text;
+    std::pair<QString, bool> getText();
+
+    // edit current editor text;
+    void replaceText(json::value &response);
 
   private slots:
 
@@ -50,6 +57,10 @@ class MainWindow : public QMainWindow {
     void on_actionFind_triggered();
 
     void on_actionFind_and_Replace_triggered();
+
+    void on_actionShow_user_info_triggered();
+
+    void on_actionChange_documet_triggered();
 
   protected:
     SyntaxHighlighter *syntax_highlighter;
