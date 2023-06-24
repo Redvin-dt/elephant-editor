@@ -1,25 +1,25 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QMainWindow>
+#include <QScrollArea>
 #include "CodeEditor.h"
 #include "ImageWidget.h"
 #include "MathButtons.h"
-#include <QMainWindow>
-#include <QScrollArea>
 #include "Server.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
 QT_END_NAMESPACE
 
 class SyntaxHighlighter;
 
 class MainWindow : public QMainWindow {
-    Q_OBJECT
+Q_OBJECT
 
-  public:
+public:
     MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow();
@@ -30,7 +30,7 @@ class MainWindow : public QMainWindow {
     // edit current editor text;
     void replaceText(json::value &response);
 
-  private slots:
+private slots:
 
     void on_actionSave_triggered();
 
@@ -62,10 +62,10 @@ class MainWindow : public QMainWindow {
 
     void on_actionChange_documet_triggered();
 
-  protected:
+protected:
     SyntaxHighlighter *syntax_highlighter;
 
-  private:
+private:
     Ui::MainWindow *ui;
     CodeEditor *editor;
     QScrollArea *scroll_area;
@@ -92,6 +92,7 @@ class MainWindow : public QMainWindow {
 
     // initialize Field for showing errors
     void initErrorMessage();
+
 };
 
 #endif // MAINWINDOW_H
