@@ -52,6 +52,11 @@ set(PROJECT_SOURCES
         FindWidget.ui
         TableWidget.h
         TableWidget.cpp
+        ShowInfoWidget.cpp
+        ShowInfoWidget.h
+        ShowInfoWidget.ui
+        Server.cpp
+        Server.h
         ${TS_FILES}
         )
 
