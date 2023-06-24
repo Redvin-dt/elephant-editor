@@ -71,9 +71,17 @@
     </property>
     <addaction name="actionRun"/>
    </widget>
+   <widget class="QMenu" name="menuShow_user_info">
+    <property name="title">
+     <string>Info</string>
+    </property>
+    <addaction name="actionShow_info"/>
+    <addaction name="actionSelec_document"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuRun"/>
+   <addaction name="menuShow_user_info"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNew_file">
@@ -139,6 +147,26 @@
   <action name="actionRun">
    <property name="text">
     <string>Run</string>
+   </property>
+  </action>
+  <action name="actionShow_user_info">
+   <property name="text">
+    <string>Show info</string>
+   </property>
+  </action>
+  <action name="actionChange_documet">
+   <property name="text">
+    <string>Change documet</string>
+   </property>
+  </action>
+  <action name="actionShow_info">
+   <property name="text">
+    <string>Show info</string>
+   </property>
+  </action>
+  <action name="actionSelec_document">
+   <property name="text">
+    <string>Select document</string>
    </property>
   </action>
  </widget>

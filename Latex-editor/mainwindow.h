@@ -6,6 +6,7 @@
 #include "CodeEditor.h"
 #include "ImageWidget.h"
 #include "MathButtons.h"
+#include "Server.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -23,10 +24,15 @@ public:
 
     ~MainWindow();
 
+    // return current editor text;
+    std::pair<QString, bool> getText();
+
+    // edit current editor text;
+    void replaceText(json::value &response);
+
 private slots:
 
     void on_actionSave_triggered();
-
 
     void on_actionSave_As_triggered();
 
@@ -49,6 +55,10 @@ private slots:
     void on_actionFind_triggered();
 
     void on_actionFind_and_Replace_triggered();
+
+    void on_actionShow_user_info_triggered();
+
+    void on_actionChange_documet_triggered();
 
 protected:
     SyntaxHighlighter *syntax_highlighter;
@@ -80,6 +90,7 @@ private:
 
     // initialize Field for showing errors
     void initErrorMessage();
+
 };
 
 #endif // MAINWINDOW_H
