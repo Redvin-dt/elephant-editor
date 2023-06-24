@@ -40,7 +40,7 @@
      <x>0</x>
      <y>0</y>
      <width>588</width>
-     <height>22</height>
+     <height>29</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -64,6 +64,7 @@
     <addaction name="actionRedo"/>
     <addaction name="actionFind"/>
     <addaction name="actionFind_and_Replace"/>
+    <addaction name="actionPaste_Table"/>
    </widget>
    <widget class="QMenu" name="menuRun">
     <property name="title">
@@ -149,6 +150,9 @@
     <string>Run</string>
    </property>
   </action>
+  <action name="actionPaste_Table">
+   <property name="text">
+    <string>Paste Table</string>
   <action name="actionShow_user_info">
    <property name="text">
     <string>Show info</string>

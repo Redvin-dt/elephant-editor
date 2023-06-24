@@ -49,13 +49,13 @@ set(PROJECT_SOURCES
         FramedText.cpp
         FindWidget.h
         FindWidget.ui
+        TableWidget.h
+        TableWidget.cpp
         ShowInfoWidget.cpp
         ShowInfoWidget.h
         ShowInfoWidget.ui
         Server.cpp
         Server.h
-        TableWidget.h
-        TableWidget.cpp
         ${TS_FILES}
         )
 

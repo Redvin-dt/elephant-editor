@@ -1,4 +1,4 @@
-#include <QApplication>
+include <QApplication>
 #include <QLocale>
 #include <QTranslator>
 #include <QTimer>
