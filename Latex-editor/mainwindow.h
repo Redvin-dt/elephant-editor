@@ -8,6 +8,7 @@
 #include "MathButtons.h"
 #include "Server.h"
 #include "ImageInsert.h"
+#include "QTimer"
 QT_BEGIN_NAMESPACE
 namespace Ui {
     class MainWindow;
@@ -20,7 +21,7 @@ class MainWindow : public QMainWindow {
 Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr, bool isOnline = false);
 
     ~MainWindow();
 
@@ -30,6 +31,9 @@ public:
     // edit current editor text;
     void replaceText(json::value &response);
 
+    void setOnline();
+    void setOffline();
+    bool getStatus();
 private slots:
 
     void on_actionSave_triggered();
@@ -63,8 +67,6 @@ private slots:
     void on_actionChange_documet_triggered();
 
     void on_actionInsert_Image_triggered();
-    void setOnline();
-    void setOffline();
 
 protected:
     SyntaxHighlighter *syntax_highlighter;
@@ -79,7 +81,9 @@ private:
     CodeEditor *error_message;
     MathButtons *buttons;
     ImageInsert *window;
-    bool isClientOnline;
+    bool isClientOnline = false;
+    QTimer timer_send;
+
     // Paint buttons in tab MathInput
     void initButtons();
 

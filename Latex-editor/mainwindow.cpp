@@ -20,7 +20,11 @@
 #include <memory>
 #include <poppler/qt5/poppler-qt5.h>
 #include <unistd.h>
-
+#include <QApplication>
+#include <QLocale>
+#include <QTranslator>
+#include <QTimer>
+#include <iostream>
 #include "./ui_mainwindow.h"
 #include "Server.h"
 #include "SyntaxHighlighter.h"
@@ -29,16 +33,66 @@ const QSize MINIMAL_WINDOW_SIZE = QSize(1000, 500);
 const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
 const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(QWidget *parent, bool isOnline)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-
     setCodeEditor();
     setMinimumSize(MINIMAL_WINDOW_SIZE);
     initImage();
     initErrorMessage();
     initButtons();
     syntax_highlighter = new SyntaxHighlighter(editor->document());
+    isClientOnline = isOnline;
+    const int doc_id = 0;
+    auto sendText = [&]() {
+
+        qDebug() << isClientOnline << '\n';
+        auto [text, type] = getText();
+        if (!type || text.isEmpty()) {
+            json::value getvalue = json::value::array();
+            getvalue[0] = json::value::string(std::to_string(doc_id));
+            cpprest_server::get_server().make_request(methods::GET, "get-text", getvalue);
+            return;
+        }
+
+        qDebug() << isClientOnline << '\n';
+
+        json::value putvalue = json::value::array();
+        putvalue[0] = json::value::number(doc_id);
+        int text_size = static_cast<int>(text.size());
+        QString line;
+        for (int position_in_text = 0, position_in_array = 1; position_in_text < text_size; position_in_text++) {
+            if (text[position_in_text] == '\n') {
+                putvalue[position_in_array] = json::value::string(line.toStdString());
+                position_in_array++;
+                line.clear();
+            } else {
+                line += text[position_in_text];
+            }
+
+            if (position_in_text + 1 == text_size && !line.isEmpty()) {
+                putvalue[position_in_array] = json::value::string(line.toStdString());
+            }
+        }
+        cpprest_server::display_json(putvalue, "S");
+        json::value response_put = cpprest_server::get_server().make_request(methods::PUT, "put-text", putvalue);
+        cpprest_server::display_json(response_put, "R");
+        replaceText(response_put);
+
+        //TODO think about delay
+
+        json::value getvalue = json::value::array();
+        getvalue[0] = json::value::string(std::to_string(doc_id));
+        json::value response_get = cpprest_server::get_server().make_request(methods::GET, "get-text", getvalue);
+        cpprest_server::display_json(response_get, "R");
+        replaceText(response_get);
+    };
+    qDebug() << isClientOnline << '\n';
+    if (isClientOnline) {
+        timer_send.setInterval(5000);
+        QObject::connect(&timer_send, &QTimer::timeout, sendText);
+        timer_send.start();
+    }
 }
 
 void MainWindow::initButtons() {
@@ -360,5 +414,9 @@ void MainWindow::setOnline(){
 }
 
 void MainWindow::setOffline(){
-    isClientOnline = true;
+    isClientOnline = false;
+}
+
+bool MainWindow::getStatus(){
+    return isClientOnline;
 }

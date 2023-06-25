@@ -13,7 +13,7 @@ class Authorization : public QDialog
 
 public:
 
-    MainWindow *mainwindow;
+    MainWindow *mainwindow = nullptr;
     explicit Authorization(QWidget *parent = nullptr);
     ~Authorization();
 

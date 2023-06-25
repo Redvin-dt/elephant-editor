@@ -20,7 +20,7 @@ void Authorization::on_Enter_button_clicked()
     //add check server and work offline if connection error
     if (login == "admin" && password == "admin"){
         hide();
-        mainwindow = new MainWindow();
+        mainwindow = new MainWindow(nullptr, true);
         mainwindow->setOnline();
         mainwindow->show();
     }
@@ -33,7 +33,7 @@ void Authorization::on_Enter_button_clicked()
 void Authorization::on_Offline_button_clicked()
 {
     hide();
-    mainwindow = new MainWindow();
+    mainwindow = new MainWindow(nullptr, false);
     mainwindow->setOffline();
     mainwindow->show();
 }
