@@ -2,16 +2,43 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="en_US">
 <context>
+    <name>Authorization</name>
+    <message>
+        <location filename="Authorization.ui" line="14"/>
+        <location filename="Authorization.ui" line="20"/>
+        <source>Authorization</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Authorization.ui" line="28"/>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Authorization.ui" line="38"/>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Authorization.ui" line="48"/>
+        <source>Enter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Authorization.ui" line="60"/>
+        <source>Offline</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FindWidget</name>
     <message>
         <location filename="FindWidget.ui" line="14"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_FindWidget.h" line="45"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="FindWidget.ui" line="36"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_FindWidget.h" line="46"/>
         <source>Search</source>
         <translation type="unfinished"></translation>
     </message>
@@ -20,138 +47,119 @@
     <name>MainWindow</name>
     <message>
         <location filename="mainwindow.ui" line="14"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="164"/>
         <source>MainWindow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="29"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="183"/>
         <source>Messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="48"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="184"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="mainwindow.ui" line="58"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="185"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="71"/>
-        <location filename="mainwindow.ui" line="150"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="177"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="186"/>
+        <location filename="mainwindow.ui" line="72"/>
+        <location filename="mainwindow.ui" line="151"/>
         <source>Run</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="77"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="187"/>
+        <location filename="mainwindow.ui" line="78"/>
         <source>Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="90"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="165"/>
+        <location filename="mainwindow.ui" line="91"/>
         <source>New File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="95"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="166"/>
+        <location filename="mainwindow.ui" line="96"/>
         <source>Open File </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="100"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="167"/>
+        <location filename="mainwindow.ui" line="101"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="105"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="168"/>
+        <location filename="mainwindow.ui" line="106"/>
         <source>Save As</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="110"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="169"/>
+        <location filename="mainwindow.ui" line="111"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="115"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="170"/>
+        <location filename="mainwindow.ui" line="116"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="120"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="171"/>
+        <location filename="mainwindow.ui" line="121"/>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="125"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="172"/>
+        <location filename="mainwindow.ui" line="126"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="130"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="173"/>
+        <location filename="mainwindow.ui" line="131"/>
         <source>Undo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="135"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="174"/>
+        <location filename="mainwindow.ui" line="136"/>
         <source>Redo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="140"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="175"/>
+        <location filename="mainwindow.ui" line="141"/>
         <source>Find</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="145"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="176"/>
+        <location filename="mainwindow.ui" line="146"/>
         <source>Replace</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="155"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="178"/>
+        <location filename="mainwindow.ui" line="156"/>
         <source>Paste Table</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="160"/>
-        <location filename="mainwindow.ui" line="170"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="179"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="181"/>
+        <location filename="mainwindow.ui" line="161"/>
+        <location filename="mainwindow.ui" line="171"/>
         <source>Show info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="165"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="180"/>
+        <location filename="mainwindow.ui" line="166"/>
         <source>Change documet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="175"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="182"/>
+        <location filename="mainwindow.ui" line="176"/>
         <source>Select document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="181"/>
+        <source>Insert Image</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -159,8 +167,96 @@
     <name>ShowInfoWidget</name>
     <message>
         <location filename="ShowInfoWidget.ui" line="14"/>
-        <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_ShowInfoWidget.h" line="40"/>
         <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>vertical_layout</name>
+    <message>
+        <location filename="ImageInsert.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="31"/>
+        <source>Set dimensions:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="37"/>
+        <location filename="ImageInsert.ui" line="56"/>
+        <source>Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="44"/>
+        <source>Height/Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="70"/>
+        <source>Height</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="80"/>
+        <source>Width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="96"/>
+        <source>Positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="102"/>
+        <source>Exactly in the text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="109"/>
+        <source>Next good place</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="116"/>
+        <source>On the left side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="123"/>
+        <source>On the right side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="130"/>
+        <source>At the bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="137"/>
+        <source>On the top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="146"/>
+        <source>Rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="156"/>
+        <source>Caption:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="179"/>
+        <source>Insert picture</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="ImageInsert.ui" line="186"/>
+        <source>Preview</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

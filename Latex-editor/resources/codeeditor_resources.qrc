@@ -8,5 +8,6 @@
         <file>languages/latex_all_commands.txt</file>
         <file>mathSymbols.txt</file>
         <file>start_project_pdf.pdf</file>
+        <file>image_template.png</file>
     </qresource>
 </RCC>

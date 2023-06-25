@@ -330,3 +330,35 @@ void MainWindow::on_actionChange_documet_triggered() {
 
 }
 
+void MainWindow::on_actionInsert_Image_triggered(){
+    window = new ImageInsert();
+    QString file_path = QFileDialog::getOpenFileName(this, "Open Image");
+    QStringList folders = file_path.split("/");
+    window->image_name = folders.back();
+    file_path.clear();
+    for (int i = 0; i + 1 < folders.size(); i++){
+        if (i){
+            file_path += "/";
+        }
+        file_path += folders[i];
+    }
+    window->path = file_path;
+    window->editor = editor;
+    window->show();
+    QString txt = editor->toPlainText();
+    for (int i = 0; i < txt.size() - 16; i++){
+        if (txt.mid(i, 16) == "\\begin{document}"){
+            txt.insert(i, "\\graphicspath{ {" + file_path + "} }\n" );
+            break;
+        }
+    }
+    editor->setPlainText(txt);
+}
+
+void MainWindow::setOnline(){
+    isClientOnline = true;
+}
+
+void MainWindow::setOffline(){
+    isClientOnline = true;
+}

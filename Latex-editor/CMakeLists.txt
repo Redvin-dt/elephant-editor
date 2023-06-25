@@ -56,6 +56,12 @@ set(PROJECT_SOURCES
         ShowInfoWidget.ui
         Server.cpp
         Server.h
+        ImageInsert.cpp
+        ImageInsert.h
+        ImageInsert.ui
+        Authorization.h
+        Authorization.cpp
+        Authorization.ui
         ${TS_FILES}
         )
 

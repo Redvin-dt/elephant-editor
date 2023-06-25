@@ -7,7 +7,7 @@
 #include "ImageWidget.h"
 #include "MathButtons.h"
 #include "Server.h"
-
+#include "ImageInsert.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
     class MainWindow;
@@ -62,6 +62,10 @@ private slots:
 
     void on_actionChange_documet_triggered();
 
+    void on_actionInsert_Image_triggered();
+    void setOnline();
+    void setOffline();
+
 protected:
     SyntaxHighlighter *syntax_highlighter;
 
@@ -74,7 +78,8 @@ private:
     QStringList compile_errors;
     CodeEditor *error_message;
     MathButtons *buttons;
-
+    ImageInsert *window;
+    bool isClientOnline;
     // Paint buttons in tab MathInput
     void initButtons();
 

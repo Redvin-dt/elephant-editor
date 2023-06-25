@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "mainwindow.h"
+#include "Authorization.h"
 #include "TableWidget.h"
 
 int main(int argc, char *argv[]) {
@@ -23,12 +24,12 @@ int main(int argc, char *argv[]) {
     //TODO auth
     const int doc_id = 0;
 
-    MainWindow w;
+    Authorization w;
     w.show();
-
+    /*
     QTimer timer_send;
     auto sendText = [&]() {
-        auto [text, type] = w.getText();
+        auto [text, type] = w.mainwindow->getText();
         if (!type || text.isEmpty()) {
             json::value getvalue = json::value::array();
             getvalue[0] = json::value::string(std::to_string(doc_id));
@@ -57,7 +58,7 @@ int main(int argc, char *argv[]) {
         cpprest_server::display_json(putvalue, "S");
         json::value response_put = cpprest_server::get_server().make_request(methods::PUT, "put-text", putvalue);
         cpprest_server::display_json(response_put, "R");
-        w.replaceText(response_put);
+        w.mainwindow->replaceText(response_put);
 
         //TODO think about delay
 
@@ -65,11 +66,11 @@ int main(int argc, char *argv[]) {
         getvalue[0] = json::value::string(std::to_string(doc_id));
         json::value response_get = cpprest_server::get_server().make_request(methods::GET, "get-text", getvalue);
         cpprest_server::display_json(response_get, "R");
-        w.replaceText(response_get);
+        w.mainwindow->replaceText(response_get);
     };
     timer_send.setInterval(5000);
     QObject::connect(&timer_send, &QTimer::timeout, sendText);
     timer_send.start();
-
+    */
     return a.exec();
 }
