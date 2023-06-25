@@ -26,7 +26,6 @@ int main(int argc, char *argv[]) {
 
     Authorization w;
     w.show();
-    /*
     QTimer timer_send;
     auto sendText = [&]() {
         auto [text, type] = w.mainwindow->getText();
@@ -71,6 +70,5 @@ int main(int argc, char *argv[]) {
     timer_send.setInterval(5000);
     QObject::connect(&timer_send, &QTimer::timeout, sendText);
     timer_send.start();
-    */
     return a.exec();
 }

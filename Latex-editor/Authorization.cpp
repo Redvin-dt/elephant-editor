@@ -21,6 +21,7 @@ void Authorization::on_Enter_button_clicked()
     if (login == "admin" && password == "admin"){
         hide();
         mainwindow = new MainWindow();
+        mainwindow->setOnline();
         mainwindow->show();
     }
     else {
@@ -33,5 +34,6 @@ void Authorization::on_Offline_button_clicked()
 {
     hide();
     mainwindow = new MainWindow();
+    mainwindow->setOffline();
     mainwindow->show();
 }
