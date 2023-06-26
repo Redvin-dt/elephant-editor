@@ -29,6 +29,7 @@
 #include "Server.h"
 #include "SyntaxHighlighter.h"
 #include "Authorization.h"
+#include "CreateDocument.h"
 const QSize MINIMAL_WINDOW_SIZE = QSize(1000, 500);
 const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
 const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
@@ -448,3 +449,11 @@ void MainWindow::on_actionLog_Out_triggered(){
     hide();
 }
 
+void MainWindow::on_actionCreate_new_document_triggered(){
+    QString *collabs;
+    QString *doc_name;
+    collabs = new QString();
+    doc_name = new QString();
+    CreateDocument *create_window = new CreateDocument(doc_name, collabs);
+    create_window->show();
+}
