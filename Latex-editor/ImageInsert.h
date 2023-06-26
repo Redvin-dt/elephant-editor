@@ -7,22 +7,24 @@
 #include "CodeEditor.h"
 
 namespace Ui {
-class vertical_layout;
+    class vertical_layout;
 }
 
-class ImageInsert : public QDialog
-{
-    Q_OBJECT
+class ImageInsert : public QDialog {
+Q_OBJECT
 
 public:
     explicit ImageInsert(QWidget *parent = nullptr);
+
     ~ImageInsert();
+
     CodeEditor *editor;
 
     QString image_name = "";
     QString path = "";
 
 private slots:
+
     void on_ScaleButton_clicked(bool checked);
 
     void on_HeightandWidth_clicked(bool checked);
@@ -42,7 +44,9 @@ private slots:
     bool field_check();
 
     void on_pushButton_clicked();
+
     void on_pushButton_2_clicked();
+
 private:
     Ui::vertical_layout *ui;
     int dim_mode = 0;

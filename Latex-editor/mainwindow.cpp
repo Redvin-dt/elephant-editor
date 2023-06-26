@@ -34,7 +34,7 @@ const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
 const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
 
 MainWindow::MainWindow(QWidget *parent, bool isOnline)
-    : QMainWindow(parent), ui(new Ui::MainWindow) {
+        : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     setCodeEditor();
     setMinimumSize(MINIMAL_WINDOW_SIZE);
@@ -136,7 +136,7 @@ void MainWindow::setPDF() {
         return;
     }
     std::unique_ptr<Poppler::Document> document(
-        Poppler::Document::load(filename));
+            Poppler::Document::load(filename));
     if (!document || document->isLocked()) {
         return;
     }
@@ -161,7 +161,7 @@ void MainWindow::setPDF() {
     for (int page_num = 1; page_num < document->numPages(); page_num++) {
         std::unique_ptr<Poppler::Page> pdfPage(document->page(page_num));
         QImage image =
-            pdfPage->renderToImage(X_ZOOM, Y_ZOOM, PDF_X, PDF_Y, WIDTH, HEIGHT);
+                pdfPage->renderToImage(X_ZOOM, Y_ZOOM, PDF_X, PDF_Y, WIDTH, HEIGHT);
 
         QImage image_sum(qMax(first_image.width(), image.width()),
                          first_image.height() + image.height(),
@@ -231,7 +231,7 @@ void MainWindow::on_actionOpen_file_triggered() {
     }
 
     current_file = filename;
-    int size = (int)current_file.size();
+    int size = (int) current_file.size();
     if (size < 5 || current_file[size - 4] != '.' ||
         current_file[size - 3] != 't' || current_file[size - 2] != 'e' ||
         current_file[size - 1] != 'x') {
@@ -250,10 +250,10 @@ void MainWindow::on_actionRun_triggered() {
     on_actionSave_triggered();
     compile_errors.clear();
     const QString COMPILE_OPTIONS =
-        "pdflatex --file-line-error -halt-on-error -interaction=nonstopmode ";
+            "pdflatex --file-line-error -halt-on-error -interaction=nonstopmode ";
     const QString INSTALLING_OPTIONS =
-        "texliveonfly --arguments=\"--file-line-error -halt-on-error "
-        "-interaction=nonstopmode\" ";
+            "texliveonfly --arguments=\"--file-line-error -halt-on-error "
+            "-interaction=nonstopmode\" ";
     QProcess installing(this);
     QProcess compiling(this);
 
@@ -308,7 +308,7 @@ void MainWindow::on_actionExit_triggered() { QApplication::quit(); }
 
 void MainWindow::on_actionPaste_Table_triggered() {
     TableWidget *table_window = new TableWidget(
-        [this](const QString &input) { insertMathInput(input); }, this);
+            [this](const QString &input) { insertMathInput(input); }, this);
     table_window->show();
 }
 
@@ -330,10 +330,10 @@ void MainWindow::on_actionFind_triggered() {
 void MainWindow::on_actionFind_and_Replace_triggered() {
     bool ok_find;
     QString find = QInputDialog::getText(
-        0, "Find and Replace", "Find:", QLineEdit::Normal, "", &ok_find);
+            0, "Find and Replace", "Find:", QLineEdit::Normal, "", &ok_find);
     bool ok_replace;
     QString replace = QInputDialog::getText(
-        0, "Find and Replace", "Replace:", QLineEdit::Normal, "", &ok_replace);
+            0, "Find and Replace", "Replace:", QLineEdit::Normal, "", &ok_replace);
 
     if (!ok_replace || !ok_find) {
         return;
@@ -384,14 +384,14 @@ void MainWindow::on_actionChange_documet_triggered() {
 
 }
 
-void MainWindow::on_actionInsert_Image_triggered(){
+void MainWindow::on_actionInsert_Image_triggered() {
     window = new ImageInsert();
     QString file_path = QFileDialog::getOpenFileName(this, "Open Image");
     QStringList folders = file_path.split("/");
     window->image_name = folders.back();
     file_path.clear();
-    for (int i = 0; i + 1 < folders.size(); i++){
-        if (i){
+    for (int i = 0; i + 1 < folders.size(); i++) {
+        if (i) {
             file_path += "/";
         }
         file_path += folders[i];
@@ -400,23 +400,23 @@ void MainWindow::on_actionInsert_Image_triggered(){
     window->editor = editor;
     window->show();
     QString txt = editor->toPlainText();
-    for (int i = 0; i < txt.size() - 16; i++){
-        if (txt.mid(i, 16) == "\\begin{document}"){
-            txt.insert(i, "\\graphicspath{ {" + file_path + "} }\n" );
+    for (int i = 0; i < txt.size() - 16; i++) {
+        if (txt.mid(i, 16) == "\\begin{document}") {
+            txt.insert(i, "\\graphicspath{ {" + file_path + "} }\n");
             break;
         }
     }
     editor->setPlainText(txt);
 }
 
-void MainWindow::setOnline(){
+void MainWindow::setOnline() {
     isClientOnline = true;
 }
 
-void MainWindow::setOffline(){
+void MainWindow::setOffline() {
     isClientOnline = false;
 }
 
-bool MainWindow::getStatus(){
+bool MainWindow::getStatus() {
     return isClientOnline;
 }

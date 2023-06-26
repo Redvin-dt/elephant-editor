@@ -20,6 +20,7 @@ find_package(QT NAMES Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt5 REQUIRED COMPONENTS Gui)
 find_package(Qt5 REQUIRED COMPONENTS Core)
+find_package(OpenSSL REQUIRED)
 
 find_package(cpprestsdk REQUIRED NAMES cpprestsdk cpprest)
 
@@ -62,6 +63,9 @@ set(PROJECT_SOURCES
         Authorization.h
         Authorization.cpp
         Authorization.ui
+        SignUp.ui
+        SignUp.cpp
+        SignUp.h
         ${TS_FILES}
         )
 
@@ -99,7 +103,7 @@ target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Gui)
 target_link_libraries(Latex-editor PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 target_link_libraries(Latex-editor PRIVATE PkgConfig::POPPLER_QT5)
 target_link_libraries(Latex-editor PRIVATE cpprestsdk::cpprest OpenSSL::Crypto)
-
+target_link_libraries(Latex-editor PRIVATE OpenSSL::SSL)
 
 set_target_properties(Latex-editor PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

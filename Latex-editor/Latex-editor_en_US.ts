@@ -5,32 +5,37 @@
     <name>Authorization</name>
     <message>
         <location filename="Authorization.ui" line="14"/>
-        <location filename="Authorization.ui" line="20"/>
+        <location filename="Authorization.ui" line="26"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_Authorization.h" line="95"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_Authorization.h" line="96"/>
         <source>Authorization</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Authorization.ui" line="28"/>
+        <location filename="Authorization.ui" line="32"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_Authorization.h" line="97"/>
         <source>Login</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Authorization.ui" line="38"/>
+        <location filename="Authorization.ui" line="42"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_Authorization.h" line="98"/>
         <source>Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Authorization.ui" line="48"/>
+        <location filename="Authorization.ui" line="56"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_Authorization.h" line="99"/>
         <source>Enter</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Authorization.ui" line="60"/>
+        <location filename="Authorization.ui" line="63"/>
+        <source>Sign Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="Authorization.ui" line="72"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_Authorization.h" line="100"/>
         <source>Offline</source>
         <translation type="unfinished"></translation>
@@ -202,6 +207,39 @@
         <location filename="ShowInfoWidget.ui" line="14"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_ShowInfoWidget.h" line="40"/>
         <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SignUp</name>
+    <message>
+        <location filename="SignUp.ui" line="14"/>
+        <source>SignUp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="SignUp.ui" line="26"/>
+        <source>Sign Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="SignUp.ui" line="38"/>
+        <source>Login</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="SignUp.ui" line="71"/>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="SignUp.ui" line="94"/>
+        <source>Enter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="SignUp.ui" line="107"/>
+        <source>Confirm password</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

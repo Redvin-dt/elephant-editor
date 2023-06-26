@@ -6,42 +6,50 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>240</width>
-    <height>228</height>
+    <width>253</width>
+    <height>244</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Authorization</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
-   <item>
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>Authorization</string>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>203</width>
+     <height>212</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Authorization</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Login</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="login"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Password</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="password"/>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string>Login</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="login"/>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Password</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="password"/>
-        </item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="QPushButton" name="Enter_button">
           <property name="text">
@@ -49,19 +57,26 @@
           </property>
          </widget>
         </item>
+        <item>
+         <widget class="QPushButton" name="SignUp_button">
+          <property name="text">
+           <string>Sign Up</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </item>
+      <item>
+       <widget class="QPushButton" name="Offline_button">
+        <property name="text">
+         <string>Offline</string>
+        </property>
+       </widget>
+      </item>
      </layout>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="Offline_button">
-     <property name="text">
-      <string>Offline</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <resources/>
  <connections/>
