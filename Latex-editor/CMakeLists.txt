@@ -66,6 +66,8 @@ set(PROJECT_SOURCES
         SignUp.ui
         SignUp.cpp
         SignUp.h
+        SelectDocument.h
+        SelectDocument.cpp
         ${TS_FILES}
         )
 
