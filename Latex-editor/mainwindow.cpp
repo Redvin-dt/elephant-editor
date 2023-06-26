@@ -1,57 +1,63 @@
 #include "mainwindow.h"
+#include "./ui_mainwindow.h"
+#include "Authorization.h"
 #include "FindWidget.h"
+#include "Server.h"
+#include "SyntaxHighlighter.h"
 #include "TableWidget.h"
+#include <QApplication>
 #include <QDebug>
 #include <QFileDialog>
 #include <QFormLayout>
 #include <QHeaderView>
+#include <QIcon>
 #include <QImage>
 #include <QInputDialog>
+#include <QLocale>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QScrollArea>
 #include <QSize>
 #include <QTableWidget>
 #include <QTextStream>
+#include <QTimer>
+#include <QTranslator>
 #include <QVector>
 #include <QtGui>
 #include <cstddef>
 #include <functional>
+#include <iostream>
 #include <memory>
 #include <poppler/qt5/poppler-qt5.h>
 #include <unistd.h>
-#include <QApplication>
-#include <QLocale>
-#include <QTranslator>
-#include <QTimer>
-#include <iostream>
-#include "./ui_mainwindow.h"
-#include "Server.h"
-#include "SyntaxHighlighter.h"
-#include "Authorization.h"
 const QSize MINIMAL_WINDOW_SIZE = QSize(1000, 500);
 const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
 const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
 
 MainWindow::MainWindow(QWidget *parent, bool isOnline)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
+    Q_INIT_RESOURCE(codeeditor_resources);
     ui->setupUi(this);
     setCodeEditor();
     setMinimumSize(MINIMAL_WINDOW_SIZE);
     initImage();
     initErrorMessage();
     initButtons();
+
+    QIcon icon(":/3069224.png");
+    setWindowTitle("Elephant editor");
+    setWindowIcon(icon);
     syntax_highlighter = new SyntaxHighlighter(editor->document());
     isClientOnline = isOnline;
     const int doc_id = 0;
     auto sendText = [&]() {
-
         qDebug() << isClientOnline << '\n';
         auto [text, type] = getText();
         if (!type || text.isEmpty()) {
             json::value getvalue = json::value::array();
             getvalue[0] = json::value::string(std::to_string(doc_id));
-            cpprest_server::get_server().make_request(methods::GET, "get-text", getvalue);
+            cpprest_server::get_server().make_request(methods::GET, "get-text",
+                                                      getvalue);
             return;
         }
 
@@ -61,9 +67,11 @@ MainWindow::MainWindow(QWidget *parent, bool isOnline)
         putvalue[0] = json::value::number(doc_id);
         int text_size = static_cast<int>(text.size());
         QString line;
-        for (int position_in_text = 0, position_in_array = 1; position_in_text < text_size; position_in_text++) {
+        for (int position_in_text = 0, position_in_array = 1;
+             position_in_text < text_size; position_in_text++) {
             if (text[position_in_text] == '\n') {
-                putvalue[position_in_array] = json::value::string(line.toStdString());
+                putvalue[position_in_array] =
+                    json::value::string(line.toStdString());
                 position_in_array++;
                 line.clear();
             } else {
@@ -71,19 +79,22 @@ MainWindow::MainWindow(QWidget *parent, bool isOnline)
             }
 
             if (position_in_text + 1 == text_size && !line.isEmpty()) {
-                putvalue[position_in_array] = json::value::string(line.toStdString());
+                putvalue[position_in_array] =
+                    json::value::string(line.toStdString());
             }
         }
         cpprest_server::display_json(putvalue, "S");
-        json::value response_put = cpprest_server::get_server().make_request(methods::PUT, "put-text", putvalue);
+        json::value response_put = cpprest_server::get_server().make_request(
+            methods::PUT, "put-text", putvalue);
         cpprest_server::display_json(response_put, "R");
         replaceText(response_put);
 
-        //TODO think about delay
+        // TODO think about delay
 
         json::value getvalue = json::value::array();
         getvalue[0] = json::value::string(std::to_string(doc_id));
-        json::value response_get = cpprest_server::get_server().make_request(methods::GET, "get-text", getvalue);
+        json::value response_get = cpprest_server::get_server().make_request(
+            methods::GET, "get-text", getvalue);
         cpprest_server::display_json(response_get, "R");
         replaceText(response_get);
     };
@@ -136,7 +147,7 @@ void MainWindow::setPDF() {
         return;
     }
     std::unique_ptr<Poppler::Document> document(
-            Poppler::Document::load(filename));
+        Poppler::Document::load(filename));
     if (!document || document->isLocked()) {
         return;
     }
@@ -161,7 +172,7 @@ void MainWindow::setPDF() {
     for (int page_num = 1; page_num < document->numPages(); page_num++) {
         std::unique_ptr<Poppler::Page> pdfPage(document->page(page_num));
         QImage image =
-                pdfPage->renderToImage(X_ZOOM, Y_ZOOM, PDF_X, PDF_Y, WIDTH, HEIGHT);
+            pdfPage->renderToImage(X_ZOOM, Y_ZOOM, PDF_X, PDF_Y, WIDTH, HEIGHT);
 
         QImage image_sum(qMax(first_image.width(), image.width()),
                          first_image.height() + image.height(),
@@ -231,7 +242,7 @@ void MainWindow::on_actionOpen_file_triggered() {
     }
 
     current_file = filename;
-    int size = (int) current_file.size();
+    int size = (int)current_file.size();
     if (size < 5 || current_file[size - 4] != '.' ||
         current_file[size - 3] != 't' || current_file[size - 2] != 'e' ||
         current_file[size - 1] != 'x') {
@@ -250,10 +261,10 @@ void MainWindow::on_actionRun_triggered() {
     on_actionSave_triggered();
     compile_errors.clear();
     const QString COMPILE_OPTIONS =
-            "pdflatex --file-line-error -halt-on-error -interaction=nonstopmode ";
+        "pdflatex --file-line-error -halt-on-error -interaction=nonstopmode ";
     const QString INSTALLING_OPTIONS =
-            "texliveonfly --arguments=\"--file-line-error -halt-on-error "
-            "-interaction=nonstopmode\" ";
+        "texliveonfly --arguments=\"--file-line-error -halt-on-error "
+        "-interaction=nonstopmode\" ";
     QProcess installing(this);
     QProcess compiling(this);
 
@@ -292,25 +303,25 @@ void MainWindow::on_actionRun_triggered() {
             line_block.clear();
         }
     }
-    if (compile_errors.size()){
+    if (compile_errors.size()) {
         QTextCursor c = editor->textCursor();
         c.movePosition(QTextCursor::Start);
         int err_line = 0;
-        for (auto line : compile_errors){
-            if (line.indexOf(".tex") != -1){
+        for (auto line : compile_errors) {
+            if (line.indexOf(".tex") != -1) {
                 QStringList err_place = line.split(":");
                 err_line = std::stoi(err_place[1].toStdString());
                 break;
             }
         }
         qDebug() << err_line << "\n";
-            c.movePosition(QTextCursor::Down,QTextCursor::MoveAnchor,err_line - 1);
+        c.movePosition(QTextCursor::Down, QTextCursor::MoveAnchor,
+                       err_line - 1);
         c.select(QTextCursor::LineUnderCursor);
         editor->setTextCursor(c);
         editor->setStyleSheet("selection-background-color: red");
         error_message->setText("Compile Error\n" + compile_errors.join('\n'));
-    }
-    else {
+    } else {
 
         error_message->setText("Compiled successfully\n");
     }
@@ -329,7 +340,7 @@ void MainWindow::on_actionExit_triggered() { QApplication::quit(); }
 
 void MainWindow::on_actionPaste_Table_triggered() {
     TableWidget *table_window = new TableWidget(
-            [this](const QString &input) { insertMathInput(input); }, this);
+        [this](const QString &input) { insertMathInput(input); }, this);
     table_window->show();
 }
 
@@ -351,10 +362,10 @@ void MainWindow::on_actionFind_triggered() {
 void MainWindow::on_actionFind_and_Replace_triggered() {
     bool ok_find;
     QString find = QInputDialog::getText(
-            0, "Find and Replace", "Find:", QLineEdit::Normal, "", &ok_find);
+        0, "Find and Replace", "Find:", QLineEdit::Normal, "", &ok_find);
     bool ok_replace;
     QString replace = QInputDialog::getText(
-            0, "Find and Replace", "Replace:", QLineEdit::Normal, "", &ok_replace);
+        0, "Find and Replace", "Replace:", QLineEdit::Normal, "", &ok_replace);
 
     if (!ok_replace || !ok_find) {
         return;
@@ -386,24 +397,25 @@ std::pair<QString, bool> MainWindow::getText() {
 void MainWindow::replaceText(json::value &response) {
     QString new_text = "";
     int response_size = static_cast<int>(response.size());
-    for (int position_in_json = 1; position_in_json < response_size; position_in_json++) {
+    for (int position_in_json = 1; position_in_json < response_size;
+         position_in_json++) {
         if (!response[position_in_json].is_string()) {
-            std::cerr << "WTF??? " << "in get-text i = " << position_in_json << " isnt string" << std::endl;
+            std::cerr << "WTF??? "
+                      << "in get-text i = " << position_in_json
+                      << " isnt string" << std::endl;
         }
-        new_text += QString::fromStdString(response[position_in_json].as_string());
+        new_text +=
+            QString::fromStdString(response[position_in_json].as_string());
     }
-    //std::cerr << new_text.toStdString() << std::endl;
+    // std::cerr << new_text.toStdString() << std::endl;
     editor->setText(new_text);
 }
 
 void MainWindow::on_actionShow_user_info_triggered() {
-    //взять из бд
-
+    // взять из бд
 }
 
-void MainWindow::on_actionChange_documet_triggered() {
-
-}
+void MainWindow::on_actionChange_documet_triggered() {}
 
 void MainWindow::on_actionInsert_Image_triggered() {
     window = new ImageInsert();
@@ -430,21 +442,14 @@ void MainWindow::on_actionInsert_Image_triggered() {
     editor->setPlainText(txt);
 }
 
-void MainWindow::setOnline() {
-    isClientOnline = true;
-}
+void MainWindow::setOnline() { isClientOnline = true; }
 
-void MainWindow::setOffline() {
-    isClientOnline = false;
-}
+void MainWindow::setOffline() { isClientOnline = false; }
 
-bool MainWindow::getStatus() {
-    return isClientOnline;
-}
+bool MainWindow::getStatus() { return isClientOnline; }
 
-void MainWindow::on_actionLog_Out_triggered(){
+void MainWindow::on_actionLog_Out_triggered() {
     auth->show();
     timer_send.stop();
     hide();
 }
-
