@@ -28,13 +28,13 @@
 #include "./ui_mainwindow.h"
 #include "Server.h"
 #include "SyntaxHighlighter.h"
-
+#include "Authorization.h"
 const QSize MINIMAL_WINDOW_SIZE = QSize(1000, 500);
 const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
 const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
 
 MainWindow::MainWindow(QWidget *parent, bool isOnline)
-        : QMainWindow(parent), ui(new Ui::MainWindow) {
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     setCodeEditor();
     setMinimumSize(MINIMAL_WINDOW_SIZE);
@@ -292,7 +292,28 @@ void MainWindow::on_actionRun_triggered() {
             line_block.clear();
         }
     }
+    if (compile_errors.size()){
+        QTextCursor c = editor->textCursor();
+        c.movePosition(QTextCursor::Start);
+        int err_line = 0;
+        for (auto line : compile_errors){
+            if (line.indexOf(".tex") != -1){
+                QStringList err_place = line.split(":");
+                err_line = std::stoi(err_place[1].toStdString());
+                break;
+            }
+        }
+        qDebug() << err_line << "\n";
+            c.movePosition(QTextCursor::Down,QTextCursor::MoveAnchor,err_line - 1);
+        c.select(QTextCursor::LineUnderCursor);
+        editor->setTextCursor(c);
+        editor->setStyleSheet("selection-background-color: red");
+        error_message->setText("Compile Error\n" + compile_errors.join('\n'));
+    }
+    else {
 
+        error_message->setText("Compiled successfully\n");
+    }
     QFile::remove(extrafiles);
     extrafiles.replace(".log", ".aux");
     QFile::remove(extrafiles);
@@ -420,3 +441,10 @@ void MainWindow::setOffline() {
 bool MainWindow::getStatus() {
     return isClientOnline;
 }
+
+void MainWindow::on_actionLog_Out_triggered(){
+    auth->show();
+    timer_send.stop();
+    hide();
+}
+

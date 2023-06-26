@@ -4,25 +4,27 @@
 #include <QCheckBox>
 #include <QComboBox>
 #include <QGridLayout>
+#include <QLayout>
 #include <QLineEdit>
 #include <QMainWindow>
 #include <QPushButton>
 #include <QString>
 #include <QWidget>
 #include <functional>
-
+#include "ImageWidget.h"
 class TableWidget : public QWidget {
     Q_OBJECT
 
     QMainWindow *main_window;
     QGridLayout *layout;
+    QHBoxLayout *main_layout;
     QLineEdit *row_line_edit, *column_line_edit;
     QComboBox *separator_combo_box, *border_combo_box;
     QLineEdit *default_text_line_edit;
     QCheckBox *bold_check_box, *italic_check_box, *underline_check_box;
     QComboBox *alignment_combo_box;
-    QPushButton *cancel_button, *create_button;
-
+    QPushButton *cancel_button, *create_button, *preview_button;
+    ImageWidget *image_widget;
     std::function<void(const QString &)> insert_function;
 
     /**
@@ -43,6 +45,11 @@ class TableWidget : public QWidget {
      *
      */
     void on_cancel_button_click();
+    /**
+     * @brief Preview table construct
+     *
+     */
+    void on_preview_button_click();
 
   public:
     /**

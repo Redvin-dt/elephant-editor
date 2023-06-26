@@ -9,6 +9,8 @@
 #include "Server.h"
 #include "ImageInsert.h"
 #include "QTimer"
+#include "Authorization.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
     class MainWindow;
@@ -16,7 +18,6 @@ namespace Ui {
 QT_END_NAMESPACE
 
 class SyntaxHighlighter;
-
 class MainWindow : public QMainWindow {
 Q_OBJECT
 
@@ -28,6 +29,7 @@ public:
     // return current editor text;
     std::pair<QString, bool> getText();
 
+    Authorization *auth;
     // edit current editor text;
     void replaceText(json::value &response);
 
@@ -67,6 +69,8 @@ private slots:
     void on_actionChange_documet_triggered();
 
     void on_actionInsert_Image_triggered();
+
+    void on_actionLog_Out_triggered();
 
 protected:
     SyntaxHighlighter *syntax_highlighter;

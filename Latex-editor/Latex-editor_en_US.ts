@@ -84,7 +84,7 @@
     </message>
     <message>
         <location filename="mainwindow.ui" line="72"/>
-        <location filename="mainwindow.ui" line="151"/>
+        <location filename="mainwindow.ui" line="160"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="181"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="191"/>
         <source>Run</source>
@@ -97,107 +97,123 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="91"/>
+        <location filename="mainwindow.ui" line="85"/>
+        <source>Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="100"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="169"/>
         <source>New File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="96"/>
+        <location filename="mainwindow.ui" line="105"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="170"/>
         <source>Open File </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="101"/>
+        <location filename="mainwindow.ui" line="110"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="171"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="106"/>
+        <location filename="mainwindow.ui" line="115"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="172"/>
         <source>Save As</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="111"/>
+        <location filename="mainwindow.ui" line="120"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="173"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="116"/>
+        <location filename="mainwindow.ui" line="125"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="174"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="121"/>
+        <location filename="mainwindow.ui" line="130"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="175"/>
         <source>Paste</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="126"/>
+        <location filename="mainwindow.ui" line="135"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="176"/>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="131"/>
+        <location filename="mainwindow.ui" line="140"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="177"/>
         <source>Undo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="136"/>
+        <location filename="mainwindow.ui" line="145"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="178"/>
         <source>Redo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="141"/>
+        <location filename="mainwindow.ui" line="150"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="179"/>
         <source>Find</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="146"/>
+        <location filename="mainwindow.ui" line="155"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="180"/>
         <source>Replace</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="156"/>
+        <location filename="mainwindow.ui" line="165"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="182"/>
         <source>Paste Table</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="161"/>
-        <location filename="mainwindow.ui" line="171"/>
+        <location filename="mainwindow.ui" line="170"/>
+        <location filename="mainwindow.ui" line="180"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="183"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="185"/>
         <source>Show info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="166"/>
+        <location filename="mainwindow.ui" line="175"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="184"/>
         <source>Change documet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="176"/>
+        <location filename="mainwindow.ui" line="185"/>
+        <location filename="mainwindow.ui" line="200"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="186"/>
         <source>Select document</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="181"/>
+        <location filename="mainwindow.ui" line="190"/>
         <location filename="cmake-build-debug/Latex-editor_autogen/include/ui_mainwindow.h" line="187"/>
         <source>Insert Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="195"/>
+        <source>Create new document</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="mainwindow.ui" line="205"/>
+        <source>Log Out</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

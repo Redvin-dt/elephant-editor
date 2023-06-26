@@ -25,6 +25,7 @@ void Authorization::on_Enter_button_clicked() {
     if (is_exist.as_bool()) {
         hide();
         mainwindow = new MainWindow(nullptr, true);
+        mainwindow->auth = this;
         mainwindow->setOnline();
         mainwindow->show();
     } else {
@@ -38,6 +39,7 @@ void Authorization::on_Enter_button_clicked() {
 void Authorization::on_Offline_button_clicked() {
     hide();
     mainwindow = new MainWindow(nullptr, false);
+    mainwindow->auth = this;
     mainwindow->setOffline();
     mainwindow->show();
 }
