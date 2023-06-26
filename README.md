@@ -8,4 +8,8 @@ Arch-based
 
 sudo pacman -S texlive-bibtexextra   texlive-formatsextra  texlive-langcyrillic  texlive-langkorean    texlive-pstricks texlive-games texlive-langextra texlive-latexextra texlive-publishers texlive-humanities texlive-langgreek texlive-music texlive-science texlive-langchinese texlive-langjapanese texlive-pictures texlive-bin texlive-core
 
+Windows 
+Уставновка с официального сайта:
+https://tug.org/texlive/windows.html
+
 Программа готова к использованию
