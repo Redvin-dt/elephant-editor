@@ -72,7 +72,7 @@ class MainWindow : public QMainWindow {
 
     void on_actionLog_Out_triggered();
 
-    void on_actionSelect_document();
+    void on_actionSelect_document_triggered();
 
   protected:
     SyntaxHighlighter *syntax_highlighter;

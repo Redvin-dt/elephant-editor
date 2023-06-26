@@ -456,19 +456,18 @@ void MainWindow::on_actionLog_Out_triggered() {
     hide();
 }
 
-void MainWindow::on_actionSelect_document() {
+void MainWindow::on_actionSelect_document_triggered() {
     QStringList list = {"asdasd", "dasdasd"};
     SelectDocument *select = new SelectDocument(list, this);
 
     select->show();
 
-    QString clicked_button = "";
+    QString *clicked_button = new QString("");
 
     for (std::size_t index = 0; index < list.size(); index++) {
-        select->connect_button(index, [&]() { clicked_button = list[index]; });
+        select->connect_button(
+            index, [clicked_button = clicked_button, name = list[index]]() {
+                *clicked_button = name;
+            });
     }
-
-    while (clicked_button == "") {
-    }
-    qDebug() << clicked_button << '\n';
 }
