@@ -69,6 +69,8 @@ set(PROJECT_SOURCES
         CreateDocument.cpp
         CreateDocument.h
         CreateDocument.ui
+        SelectDocument.h
+        SelectDocument.cpp
         ${TS_FILES}
         )
 
