@@ -31,12 +31,21 @@
 #include <memory>
 #include <poppler/qt5/poppler-qt5.h>
 #include <unistd.h>
-
+#include <QApplication>
+#include <QLocale>
+#include <QTranslator>
+#include <QTimer>
+#include <iostream>
+#include "./ui_mainwindow.h"
+#include "Server.h"
+#include "SyntaxHighlighter.h"
+#include "Authorization.h"
+#include "CreateDocument.h"
 const QSize MINIMAL_WINDOW_SIZE = QSize(1000, 500);
 const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
 const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
 
-MainWindow::MainWindow(QWidget *parent, bool isOnline)
+MainWindow::MainWindow(QWidget *parent, bool isOnline, QString login)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
     Q_INIT_RESOURCE(codeeditor_resources);
     ui->setupUi(this);
@@ -53,7 +62,6 @@ MainWindow::MainWindow(QWidget *parent, bool isOnline)
     isClientOnline = isOnline;
     const int doc_id = 0;
     auto sendText = [&]() {
-        qDebug() << isClientOnline << '\n';
         auto [text, type] = getText();
         if (!type || text.isEmpty()) {
             json::value getvalue = json::value::array();
@@ -62,9 +70,6 @@ MainWindow::MainWindow(QWidget *parent, bool isOnline)
                                                       getvalue);
             return;
         }
-
-        qDebug() << isClientOnline << '\n';
-
         json::value putvalue = json::value::array();
         putvalue[0] = json::value::number(doc_id);
         int text_size = static_cast<int>(text.size());
@@ -89,7 +94,12 @@ MainWindow::MainWindow(QWidget *parent, bool isOnline)
         json::value response_put = cpprest_server::get_server().make_request(
             methods::PUT, "put-text", putvalue);
         cpprest_server::display_json(response_put, "R");
-        replaceText(response_put);
+        if (response_put != json::value::null()) {
+            isClientOnline = true;
+            replaceText(response_put);
+        } else {
+            isClientOnline = false;
+        }
 
         // TODO think about delay
 
@@ -98,9 +108,36 @@ MainWindow::MainWindow(QWidget *parent, bool isOnline)
         json::value response_get = cpprest_server::get_server().make_request(
             methods::GET, "get-text", getvalue);
         cpprest_server::display_json(response_get, "R");
-        replaceText(response_get);
+        if (response_put != json::value::null()) {
+            replaceText(response_put);
+        } else {
+            // offline
+        }
     };
-    qDebug() << isClientOnline << '\n';
+    user_login = login;
+    auto client_status = [&]() {
+        QString status_bar;
+        if (isClientOnline){
+            status_bar += "Network connection : online, User : " + user_login + ", Document " + current_doc;
+        }
+        else {
+            status_bar += "Network connection : offline";
+        }
+        status_bar += ", ";
+        if (!current_file.isEmpty()){
+            status_bar += "Current file : " + current_file;
+        }
+        else {
+            status_bar += "No file selected";
+        }
+        status_bar += ".";
+        ui->InfoLine->setText(status_bar);
+        ui->InfoLine->setReadOnly(true);
+    };
+    client_status();
+    status_check.setInterval(5000);
+    QObject::connect(&status_check, &QTimer::timeout, client_status);
+    status_check.start();
     if (isClientOnline) {
         timer_send.setInterval(5000);
         QObject::connect(&timer_send, &QTimer::timeout, sendText);
@@ -453,6 +490,7 @@ bool MainWindow::getStatus() { return isClientOnline; }
 void MainWindow::on_actionLog_Out_triggered() {
     auth->show();
     timer_send.stop();
+    status_check.stop();
     hide();
 }
 
@@ -470,4 +508,12 @@ void MainWindow::on_actionSelect_document_triggered() {
                 *clicked_button = name;
             });
     }
+
+void MainWindow::on_actionCreate_new_document_triggered(){
+    QString *collabs;
+    QString *doc_name;
+    collabs = new QString();
+    doc_name = new QString();
+    CreateDocument *create_window = new CreateDocument(doc_name, collabs);
+    create_window->show();
 }

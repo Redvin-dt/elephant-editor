@@ -20,15 +20,13 @@ QT_END_NAMESPACE
 class SyntaxHighlighter;
 class MainWindow : public QMainWindow {
     Q_OBJECT
-
-  public:
-    MainWindow(QWidget *parent = nullptr, bool isOnline = false);
+public:
+    MainWindow(QWidget *parent = nullptr, bool isOnline = false, QString login = "");
 
     ~MainWindow();
 
     // return current editor text;
     std::pair<QString, bool> getText();
-
     Authorization *auth;
     // edit current editor text;
     void replaceText(json::value &response);
@@ -75,6 +73,7 @@ class MainWindow : public QMainWindow {
     void on_actionSelect_document_triggered();
 
   protected:
+    void on_actionCreate_new_document_triggered();
     SyntaxHighlighter *syntax_highlighter;
 
   private:
@@ -88,8 +87,8 @@ class MainWindow : public QMainWindow {
     MathButtons *buttons;
     ImageInsert *window;
     bool isClientOnline = false;
-    QTimer timer_send;
-
+    QTimer timer_send, status_check;
+    QString user_login, current_doc, doc_id;
     // Paint buttons in tab MathInput
     void initButtons();
 
