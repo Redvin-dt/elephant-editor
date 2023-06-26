@@ -72,6 +72,8 @@ private slots:
 
     void on_actionLog_Out_triggered();
 
+    void on_actionCreate_new_document_triggered();
+
 protected:
     SyntaxHighlighter *syntax_highlighter;
 
