@@ -72,8 +72,9 @@ public:
 
     void on_actionSelect_document_triggered();
 
-  protected:
     void on_actionCreate_new_document_triggered();
+
+  protected:
     SyntaxHighlighter *syntax_highlighter;
 
   private:

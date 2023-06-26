@@ -495,25 +495,45 @@ void MainWindow::on_actionLog_Out_triggered() {
 }
 
 void MainWindow::on_actionSelect_document_triggered() {
-    QStringList list = {"asdasd", "dasdasd"};
-    SelectDocument *select = new SelectDocument(list, this);
+    if (isClientOnline){
+        //get list of access docs from db and make it into QStringList
+        QStringList list = {"asdasd", "dasdasd"};
+        SelectDocument *select = new SelectDocument(list, this);
 
-    select->show();
+        select->show();
 
-    QString *clicked_button = new QString("");
+        QString *clicked_button = new QString("");
 
-    for (std::size_t index = 0; index < list.size(); index++) {
-        select->connect_button(
-            index, [clicked_button = clicked_button, name = list[index]]() {
-                *clicked_button = name;
-            });
+        for (std::size_t index = 0; index < list.size(); index++) {
+            select->connect_button(
+                index, [clicked_button = clicked_button, name = list[index]]() {
+                    *clicked_button = name;
+                });
+        }
+        //change doc_id
+        current_doc = *clicked_button;
     }
+    else {
+        QMessageBox::information(this, "Network error",
+                                 "Connect to server to select document");
+
+    }
+}
 
 void MainWindow::on_actionCreate_new_document_triggered(){
-    QString *collabs;
-    QString *doc_name;
-    collabs = new QString();
-    doc_name = new QString();
-    CreateDocument *create_window = new CreateDocument(doc_name, collabs);
-    create_window->show();
+    if (isClientOnline){
+        QString *collabs;
+        QString *doc_name;
+        collabs = new QString();
+        doc_name = new QString();
+        CreateDocument *create_window = new CreateDocument(doc_name, collabs);
+        create_window->show();
+        current_doc = *doc_name;
+        //change doc_id
+        //send new doc to db and update users access
+    }
+    else {
+        QMessageBox::information(this, "Network error",
+                             "Connect to server to create new document");
+    }
 }
