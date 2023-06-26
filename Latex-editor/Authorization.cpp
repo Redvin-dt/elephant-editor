@@ -24,7 +24,7 @@ void Authorization::on_Enter_button_clicked() {
     std::cerr << is_exist << '\n';
     if (is_exist.as_bool()) {
         hide();
-        mainwindow = new MainWindow(nullptr, true);
+        mainwindow = new MainWindow(nullptr, true, ui->login->text());
         mainwindow->auth = this;
         mainwindow->setOnline();
         mainwindow->show();

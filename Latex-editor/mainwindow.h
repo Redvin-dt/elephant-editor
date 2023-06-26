@@ -22,13 +22,12 @@ class MainWindow : public QMainWindow {
 Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr, bool isOnline = false);
+    MainWindow(QWidget *parent = nullptr, bool isOnline = false, QString login = "");
 
     ~MainWindow();
 
     // return current editor text;
     std::pair<QString, bool> getText();
-
     Authorization *auth;
     // edit current editor text;
     void replaceText(json::value &response);
@@ -88,8 +87,8 @@ private:
     MathButtons *buttons;
     ImageInsert *window;
     bool isClientOnline = false;
-    QTimer timer_send;
-
+    QTimer timer_send, status_check;
+    QString user_login, current_doc, doc_id;
     // Paint buttons in tab MathInput
     void initButtons();
 
