@@ -25,8 +25,13 @@ class SelectDocument : public QWidget {
                    QWidget *parrent = nullptr);
 
     template <typename F>
-    void conect_button(std::size_t row, std::size_t column, F function) {
+    void connect_button(std::size_t row, std::size_t column, F function) {
         connect(buttons[row][column], &QPushButton::clicked, function);
+    }
+
+    template <typename F> void connect_button(std::size_t index, F function) {
+        const static std::size_t COLUMN_COUNT = 3;
+        connect_button(index / COLUMN_COUNT, index % COLUMN_COUNT, function);
     }
 
     ~SelectDocument();

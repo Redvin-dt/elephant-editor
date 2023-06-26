@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 #include "Authorization.h"
 #include "FindWidget.h"
+#include "SelectDocument.h"
 #include "Server.h"
 #include "SyntaxHighlighter.h"
 #include "TableWidget.h"
@@ -30,6 +31,7 @@
 #include <memory>
 #include <poppler/qt5/poppler-qt5.h>
 #include <unistd.h>
+
 const QSize MINIMAL_WINDOW_SIZE = QSize(1000, 500);
 const QSize MINIMAL_CODE_EDITOR_SIZE = QSize(500, 300);
 const QString START_IMAGE_FILENAME = ":/start_project_pdf.pdf";
@@ -452,4 +454,21 @@ void MainWindow::on_actionLog_Out_triggered() {
     auth->show();
     timer_send.stop();
     hide();
+}
+
+void MainWindow::on_actionSelect_document() {
+    QStringList list = {"asdasd", "dasdasd"};
+    SelectDocument *select = new SelectDocument(list, this);
+
+    select->show();
+
+    QString clicked_button = "";
+
+    for (std::size_t index = 0; index < list.size(); index++) {
+        select->connect_button(index, [&]() { clicked_button = list[index]; });
+    }
+
+    while (clicked_button == "") {
+    }
+    qDebug() << clicked_button << '\n';
 }

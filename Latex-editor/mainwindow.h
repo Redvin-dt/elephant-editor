@@ -1,27 +1,27 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QScrollArea>
+#include "Authorization.h"
 #include "CodeEditor.h"
+#include "ImageInsert.h"
 #include "ImageWidget.h"
 #include "MathButtons.h"
-#include "Server.h"
-#include "ImageInsert.h"
 #include "QTimer"
-#include "Authorization.h"
+#include "Server.h"
+#include <QMainWindow>
+#include <QScrollArea>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-    class MainWindow;
+class MainWindow;
 }
 QT_END_NAMESPACE
 
 class SyntaxHighlighter;
 class MainWindow : public QMainWindow {
-Q_OBJECT
+    Q_OBJECT
 
-public:
+  public:
     MainWindow(QWidget *parent = nullptr, bool isOnline = false);
 
     ~MainWindow();
@@ -36,7 +36,7 @@ public:
     void setOnline();
     void setOffline();
     bool getStatus();
-private slots:
+  private slots:
 
     void on_actionSave_triggered();
 
@@ -72,10 +72,12 @@ private slots:
 
     void on_actionLog_Out_triggered();
 
-protected:
+    void on_actionSelect_document();
+
+  protected:
     SyntaxHighlighter *syntax_highlighter;
 
-private:
+  private:
     Ui::MainWindow *ui;
     CodeEditor *editor;
     QScrollArea *scroll_area;
@@ -105,7 +107,6 @@ private:
 
     // initialize Field for showing errors
     void initErrorMessage();
-
 };
 
 #endif // MAINWINDOW_H
