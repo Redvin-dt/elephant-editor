@@ -16,6 +16,7 @@ pkg_check_modules(POPPLER_QT5 REQUIRED IMPORTED_TARGET poppler-qt5)
 #add_compile_options(-fsanitize=undefined)
 
 
+
 find_package(QT NAMES Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt5 REQUIRED COMPONENTS Widgets LinguistTools)
 find_package(Qt5 REQUIRED COMPONENTS Gui)
@@ -27,50 +28,50 @@ find_package(cpprestsdk REQUIRED NAMES cpprestsdk cpprest)
 set(TS_FILES Latex-editor_en_US.ts)
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
-        CodeEditor.cpp
-        CodeEditor.h
-        SyntaxStyle.cpp
-        SyntaxStyle.h
-        ImageWidget.cpp
-        ImageWidget.h
-        LineNumberArea.cpp
-        LineNumberArea.h
-        LatexCompleter.cpp
-        LatexCompleter.h
-        SyntaxHighlighter.cpp
-        SyntaxHighlighter.h
-        MathButtons.cpp
-        MathButtons.h
-        FindWidget.cpp
-        FramedText.h
-        FramedText.cpp
-        FindWidget.h
-        FindWidget.ui
-        TableWidget.h
-        TableWidget.cpp
-        ShowInfoWidget.cpp
-        ShowInfoWidget.h
-        ShowInfoWidget.ui
-        Server.cpp
-        Server.h
-        ImageInsert.cpp
-        ImageInsert.h
-        ImageInsert.ui
-        Authorization.h
-        Authorization.cpp
-        Authorization.ui
-        SignUp.ui
-        SignUp.cpp
-        SignUp.h
-        CreateDocument.cpp
-        CreateDocument.h
-        CreateDocument.ui
-        SelectDocument.h
-        SelectDocument.cpp
+        src/main.cpp
+        src/mainwindow.cpp
+        include/mainwindow.h
+        src/mainwindow.ui
+        src/CodeEditor.cpp
+        include/CodeEditor.h
+        src/SyntaxStyle.cpp
+        include/SyntaxStyle.h
+        src/ImageWidget.cpp
+        include/ImageWidget.h
+        src/LineNumberArea.cpp
+        include/LineNumberArea.h
+        src/LatexCompleter.cpp
+        include/LatexCompleter.h
+        src/SyntaxHighlighter.cpp
+        include/SyntaxHighlighter.h
+        src/MathButtons.cpp
+        include/MathButtons.h
+        src/FindWidget.cpp
+        include/FramedText.h
+        src/FramedText.cpp
+        include/FindWidget.h
+        src/FindWidget.ui
+        include/TableWidget.h
+        src/TableWidget.cpp
+        src/ShowInfoWidget.cpp
+        include/ShowInfoWidget.h
+        src/ShowInfoWidget.ui
+        src/Server.cpp
+        include/Server.h
+        src/ImageInsert.cpp
+        include/ImageInsert.h
+        src/ImageInsert.ui
+        include/Authorization.h
+        src/Authorization.cpp
+        src/Authorization.ui
+        src/SignUp.ui
+        src/SignUp.cpp
+        include/SignUp.h
+        src/CreateDocument.cpp
+        include/CreateDocument.h
+        src/CreateDocument.ui
+        include/SelectDocument.h
+        src/SelectDocument.cpp
         ${TS_FILES}
         )
 
