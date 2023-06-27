@@ -31,7 +31,10 @@ class SelectDocument : public QWidget {
 
     template <typename F> void connect_button(std::size_t index, F function) {
         const static std::size_t COLUMN_COUNT = 3;
-        connect_button(index / COLUMN_COUNT, index % COLUMN_COUNT, function);
+
+        connect_button(index / COLUMN_COUNT, index % COLUMN_COUNT, [function = function, select_window = this](){ function();
+            select_window->close();
+        });
     }
 
     ~SelectDocument();

@@ -60,18 +60,30 @@ MainWindow::MainWindow(QWidget *parent, bool isOnline, QString login)
     setWindowIcon(icon);
     syntax_highlighter = new SyntaxHighlighter(editor->document());
     isClientOnline = isOnline;
-    const int doc_id = 0;
+    initClientStatus = isOnline;
     auto sendText = [&]() {
+        if (this->current_doc.toStdString() == "")
+            return;
         auto [text, type] = getText();
         if (!type || text.isEmpty()) {
+            QTextCursor cursor = this->editor->textCursor();
+            int position = cursor.position();
             json::value getvalue = json::value::array();
-            getvalue[0] = json::value::string(std::to_string(doc_id));
-            cpprest_server::get_server().make_request(methods::GET, "get-text",
-                                                      getvalue);
+            getvalue[0] = json::value::string(this->current_doc.toStdString());
+            json::value response_get = cpprest_server::get_server().make_request(
+                    methods::GET, "get-text", getvalue);
+            cpprest_server::display_json(response_get, "R");
+            if (response_get != json::value::null()) {
+                replaceText(response_get);
+            }
+            cursor.setPosition(position);
+            this->editor->setTextCursor(cursor);
             return;
         }
+        QTextCursor cursor = this->editor->textCursor();
+        int position = cursor.position();
         json::value putvalue = json::value::array();
-        putvalue[0] = json::value::number(doc_id);
+        putvalue[0] = json::value::string(this->current_doc.toStdString());
         int text_size = static_cast<int>(text.size());
         QString line;
         for (int position_in_text = 0, position_in_array = 1;
@@ -94,40 +106,34 @@ MainWindow::MainWindow(QWidget *parent, bool isOnline, QString login)
         json::value response_put = cpprest_server::get_server().make_request(
             methods::PUT, "put-text", putvalue);
         cpprest_server::display_json(response_put, "R");
-        if (response_put != json::value::null()) {
-            isClientOnline = true;
-            replaceText(response_put);
-        } else {
-            isClientOnline = false;
-        }
-
-        // TODO think about delay
 
         json::value getvalue = json::value::array();
-        getvalue[0] = json::value::string(std::to_string(doc_id));
+        putvalue[0] = json::value::string(this->current_doc.toStdString());
         json::value response_get = cpprest_server::get_server().make_request(
             methods::GET, "get-text", getvalue);
         cpprest_server::display_json(response_get, "R");
         if (response_put != json::value::null()) {
             replaceText(response_put);
-        } else {
-            // offline
         }
+        cursor.setPosition(position);
+        this->editor->setTextCursor(cursor);
     };
     user_login = login;
     auto client_status = [&]() {
         QString status_bar;
-        if (isClientOnline){
-            status_bar += "Network connection : online, User : " + user_login + ", Document " + current_doc;
-        }
-        else {
-            status_bar += "Network connection : offline";
+        json::value response = cpprest_server::get_server().make_request(
+                methods::GET, "is-server-alive", json::value::null());
+        if (initClientStatus && response != json::value::null()){
+            isClientOnline = true;
+            status_bar += "Network connection: online, User: " + user_login + ", Document " + current_doc;
+        } else {
+            isClientOnline = false;
+            status_bar += "Network connection: offline";
         }
         status_bar += ", ";
         if (!current_file.isEmpty()){
-            status_bar += "Current file : " + current_file;
-        }
-        else {
+            status_bar += "Current file: " + current_file;
+        } else {
             status_bar += "No file selected";
         }
         status_bar += ".";
@@ -135,11 +141,11 @@ MainWindow::MainWindow(QWidget *parent, bool isOnline, QString login)
         ui->InfoLine->setReadOnly(true);
     };
     client_status();
-    status_check.setInterval(5000);
+    status_check.setInterval(500);
     QObject::connect(&status_check, &QTimer::timeout, client_status);
     status_check.start();
     if (isClientOnline) {
-        timer_send.setInterval(5000);
+        timer_send.setInterval(1000);
         QObject::connect(&timer_send, &QTimer::timeout, sendText);
         timer_send.start();
     }
@@ -236,7 +242,7 @@ void MainWindow::on_actionSave_As_triggered() {
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::warning(this, "Warning",
-                             "Cannot save file : " + file.errorString());
+                             "Cannot save file: " + file.errorString());
         return;
     }
     qDebug() << filename << '\n';
@@ -258,7 +264,7 @@ void MainWindow::on_actionSave_triggered() {
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::warning(this, "Warning",
-                             "Cannot save file : " + file.errorString());
+                             "Cannot save file: " + file.errorString());
         return;
     }
     qDebug() << filename << '\n';
@@ -276,7 +282,7 @@ void MainWindow::on_actionOpen_file_triggered() {
     qDebug() << filename << '\n';
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::warning(this, "Warning",
-                             "Cannot open file : " + file.errorString());
+                             "Cannot open file: " + file.errorString());
         return;
     }
 
@@ -434,27 +440,21 @@ std::pair<QString, bool> MainWindow::getText() {
 }
 
 void MainWindow::replaceText(json::value &response) {
-    QString new_text = "";
+    std::string new_text = "";
     int response_size = static_cast<int>(response.size());
-    for (int position_in_json = 1; position_in_json < response_size;
+    for (int position_in_json = 0; position_in_json < response_size;
          position_in_json++) {
         if (!response[position_in_json].is_string()) {
-            std::cerr << "WTF??? "
-                      << "in get-text i = " << position_in_json
+            std::cerr << "in get-text i = " << position_in_json
                       << " isnt string" << std::endl;
+        } else {
+            new_text +=
+                    response[position_in_json].as_string() + "\n";
         }
-        new_text +=
-            QString::fromStdString(response[position_in_json].as_string());
     }
     // std::cerr << new_text.toStdString() << std::endl;
-    editor->setText(new_text);
+    editor->setText(QString::fromStdString(new_text));
 }
-
-void MainWindow::on_actionShow_user_info_triggered() {
-    // взять из бд
-}
-
-void MainWindow::on_actionChange_documet_triggered() {}
 
 void MainWindow::on_actionInsert_Image_triggered() {
     window = new ImageInsert();
@@ -494,24 +494,38 @@ void MainWindow::on_actionLog_Out_triggered() {
     hide();
 }
 
+void MainWindow::select_doc_button_click() {
+    json::value request = json::value::array();
+    request[0] = json::value::string(this->current_doc.toStdString());
+    json::value response = cpprest_server::get_server().make_request(
+            methods::GET, "get-document", request);
+    replaceText(response);
+}
+
 void MainWindow::on_actionSelect_document_triggered() {
     if (isClientOnline){
-        //get list of access docs from db and make it into QStringList
-        QStringList list = {"asdasd", "dasdasd"};
+
+        json::value request = json::value::array();
+        request[0] = json::value::string(this->user_login.toStdString());
+        json::value response = cpprest_server::get_server().make_request(
+                methods::GET, "get-documents", request);
+
+        QStringList list;
+        auto response_array = response.as_array();
+        for (auto &i: response_array) {
+            list.append(QString::fromStdString(i.as_string()));
+        }
         SelectDocument *select = new SelectDocument(list, this);
 
         select->show();
 
-        QString *clicked_button = new QString("");
-
         for (std::size_t index = 0; index < list.size(); index++) {
             select->connect_button(
-                index, [clicked_button = clicked_button, name = list[index]]() {
-                    *clicked_button = name;
+                index, [this, name = list[index]]() {
+                    current_doc = name;
+                    select_doc_button_click();
                 });
         }
-        //change doc_id
-        current_doc = *clicked_button;
     }
     else {
         QMessageBox::information(this, "Network error",
@@ -526,14 +540,35 @@ void MainWindow::on_actionCreate_new_document_triggered(){
         QString *doc_name;
         collabs = new QString();
         doc_name = new QString();
-        CreateDocument *create_window = new CreateDocument(doc_name, collabs);
+        CreateDocument *create_window = new CreateDocument(doc_name, collabs, this);
         create_window->show();
+        create_window->exec();
         current_doc = *doc_name;
-        //change doc_id
-        //send new doc to db and update users access
+        json::value request = json::value::array();
+        request[0] = json::value::string(doc_name->toStdString());
+        request[1] = json::value::string(this->user_login.toStdString());
+        std::string collaborator;
+        std::string collaborators = collabs->toStdString();
+        int position = 2;
+        for (char i : collaborators) {
+            if (i == ' ') {
+                request[position++] = json::value::string(collaborator);
+                collaborator = "";
+            } else {
+                collaborator += i;
+            }
+        }
+        if (!collaborator.empty()) {
+            request[position++] = json::value::string(collaborator);
+        }
+        json::value response = cpprest_server::get_server().make_request(
+                methods::POST, "add-document", request);
+        std::cerr << "finished" << '\n';
     }
     else {
         QMessageBox::information(this, "Network error",
                              "Connect to server to create new document");
     }
 }
+
+

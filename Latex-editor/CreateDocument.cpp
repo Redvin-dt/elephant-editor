@@ -1,6 +1,7 @@
 #include "CreateDocument.h"
 #include "ui_CreateDocument.h"
 #include <QDebug>
+#include <iostream>
 CreateDocument::CreateDocument(QString* d_name, QString* colab, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CreateDocument)
@@ -15,15 +16,13 @@ CreateDocument::~CreateDocument()
     delete ui;
 }
 
-
-
 void CreateDocument::on_Add_clicked()
 {
     if (!ui->Colaborators->text().isEmpty()){
         *collaborators += ui->Colaborators->text() + " ";
+        ui->Colaborators->clear();
     }
 }
-
 
 void CreateDocument::on_Create_doc_clicked()
 {

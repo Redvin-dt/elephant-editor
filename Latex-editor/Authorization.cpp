@@ -22,7 +22,9 @@ void Authorization::on_Enter_button_clicked() {
     json::value is_exist = cpprest_server::get_server().make_request(
         methods::GET, "check-user", getvalue);
     std::cerr << is_exist << '\n';
-    if (is_exist.as_bool()) {
+    if (is_exist == json::value::null()) {
+        QMessageBox::information(this, "Authorization error", "Server is currently offline. Try later or open offline mode");
+    } else  if (is_exist.as_bool()) {
         hide();
         mainwindow = new MainWindow(nullptr, true, ui->login->text());
         mainwindow->auth = this;

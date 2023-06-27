@@ -62,10 +62,6 @@ public:
 
     void on_actionFind_and_Replace_triggered();
 
-    void on_actionShow_user_info_triggered();
-
-    void on_actionChange_documet_triggered();
-
     void on_actionInsert_Image_triggered();
 
     void on_actionLog_Out_triggered();
@@ -74,7 +70,7 @@ public:
 
     void on_actionCreate_new_document_triggered();
 
-  protected:
+protected:
     SyntaxHighlighter *syntax_highlighter;
 
   private:
@@ -88,6 +84,7 @@ public:
     MathButtons *buttons;
     ImageInsert *window;
     bool isClientOnline = false;
+    bool initClientStatus = false;
     QTimer timer_send, status_check;
     QString user_login, current_doc, doc_id;
     // Paint buttons in tab MathInput
@@ -107,6 +104,9 @@ public:
 
     // initialize Field for showing errors
     void initErrorMessage();
+
+    //
+    void select_doc_button_click();
 };
 
 #endif // MAINWINDOW_H

@@ -127,14 +127,14 @@ void ImageInsert::on_pushButton_clicked() {
     if (dim_mode == 2) {
         picture_code += "\\includegraphics[width=" + ui->Width->text() + "cm" + ", height=" + ui->Height->text() + "cm";
         if (!ui->lineEdit_4->text().isEmpty()) {
-            picture_code += "angle=" + ui->lineEdit_4->text();
+            picture_code += ", angle=" + ui->lineEdit_4->text();
         }
         picture_code += "]";
         picture_code += "{" + image_name + "}" + '\n';
     } else {
         picture_code += "\\includegraphics[scale=" + ui->Scale->text();
         if (!ui->lineEdit_4->text().isEmpty()) {
-            picture_code += "angle=" + ui->lineEdit_4->text();
+            picture_code += ", angle=" + ui->lineEdit_4->text();
         }
         picture_code += "]";
         picture_code += "{" + image_name + "}" + '\n';

@@ -76,13 +76,6 @@
     </property>
     <addaction name="actionRun"/>
    </widget>
-   <widget class="QMenu" name="menuShow_user_info">
-    <property name="title">
-     <string>Info</string>
-    </property>
-    <addaction name="actionShow_info"/>
-    <addaction name="actionSelec_document"/>
-   </widget>
    <widget class="QMenu" name="menuServer">
     <property name="title">
      <string>Server</string>
@@ -94,7 +87,6 @@
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuRun"/>
-   <addaction name="menuShow_user_info"/>
    <addaction name="menuServer"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -206,6 +198,11 @@
   <action name="actionLog_Out">
    <property name="text">
     <string>Log Out</string>
+   </property>
+  </action>
+  <action name="actionAdd_collaborator">
+   <property name="text">
+    <string>Add collaborator</string>
    </property>
   </action>
  </widget>

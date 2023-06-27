@@ -22,8 +22,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    // TODO auth
-
     Authorization w;
     w.show();
 
