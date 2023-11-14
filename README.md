@@ -13,3 +13,5 @@ Windows
 https://tug.org/texlive/windows.html
 
 Программа готова к использованию
+
+Видео: https://drive.google.com/file/d/1RB2j6CeR3Gatudygz7ZiVtfrd1EJVpYP/view?resourcekey
